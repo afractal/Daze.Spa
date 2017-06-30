@@ -19,7 +19,7 @@
         "start-local": "webpack-dev-server --inline --progress --port 3000",
         "build": "rimraf dist && webpack --config config/webpack.prod.js --bail",
         "heroku-prebuild": "npm install --only=dev",
-        "heroku-postbuild": "echo This runs afterwards."
+        "heroku-postbuild": "npm run build"
     },
     "dependencies": {
         "@angular/animations": "^4.1.3",
