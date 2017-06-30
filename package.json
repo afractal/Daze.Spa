@@ -19,7 +19,7 @@
         "start": "node index.js",
         "start-local": "webpack-dev-server --inline --progress --port 3000",
         "build-local": "rimraf dist && webpack --config config/webpack.prod.js --bail",
-        "heroku-prebuild": "npm install rimraf",
+        "heroku-prebuild": "npm install --only=dev",
         "postinstall": "npm run build-local"
     },
     "dependencies": {
