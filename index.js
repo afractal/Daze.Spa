@@ -12,9 +12,9 @@ app.use(express.static(__dirname + '/dist'));
 // For all GET requests, send back index.html
 // so that PathLocationStrategy can be used
 
-// app.listen(app.get('port'), function () {
-//     console.log('Node app is running on port', app.get('port'));
-// });
+app.listen(app.get('port'), function () {
+    console.log('Node app is running on port', app.get('port'));
+});
 
 app.get('/*', function (req, res) {
     res.sendFile(path.join(__dirname + '/dist/index.html'));
