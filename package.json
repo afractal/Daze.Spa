@@ -11,15 +11,15 @@
         "url": "https://github.com/afractal/Daze.git"
     },
     "engines": {
-        "node": "6.9.2",
-        "npm": "3.10.9"
+        "npm": "4.6.1"
     },
     "scripts": {
         "ng": "ng",
         "start": "node index.js",
         "start-local": "webpack-dev-server --inline --progress --port 3000",
-        "build-local": "rimraf dist && webpack --config config/webpack.prod.js --bail",
-        "postinstall": "npm install --only=dev"
+        "build": "rimraf dist && webpack --config config/webpack.prod.js --bail",
+        "heroku-prebuild": "npm install --only=dev",
+        "heroku-postbuild": "echo This runs afterwards."
     },
     "dependencies": {
         "@angular/animations": "^4.1.3",
