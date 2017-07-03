@@ -3,9 +3,9 @@
     "version": "0.5.165",
     "author": "afractal",
     "description": "The dazed programmer blog.",
-    "private": true,
     "main": "index.js",
     "angular-cli": {},
+    "private": true,
     "repository": {
         "type": "github",
         "url": "https://github.com/afractal/Daze.git"

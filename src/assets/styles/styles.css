@@ -17,6 +17,7 @@ html, body {
     /*font-family: 'Kreon', serif;*/
     /*font-family: 'PT Sans', Helvetica, Arial, sans-serif;*/
     overflow-y: auto;
+    height: 100%;
 }
 
 p {

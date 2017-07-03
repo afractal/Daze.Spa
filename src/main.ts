@@ -3,6 +3,8 @@ import { enableProdMode } from '@angular/core';
 
 import { AppModule } from './app/app.module';
 
+// Enable production mode unless running locally
+// if (!/localhost/.test(document.location.host)) {
 if (process.env.ENV === 'production') {
     enableProdMode();
 }

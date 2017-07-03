@@ -9,14 +9,14 @@ import IProject = Daze.Interfaces.IProject;
     styleUrls: ['./projects.style.css']
 })
 export class ProjectsComponent implements OnInit {
-    private _projects = new Array<IProject>();
-    private _isLoading = true;
+    projects = new Array<IProject>();
+    isLoading = true;
     constructor(private readonly _projectService: ProjectService) { }
 
     ngOnInit() {
         this._projectService.getProjects()
-            .subscribe(p => this._projects.push(p),
+            .subscribe(p => this.projects.push(p),
             _ => _,
-            () => this._isLoading = false);
+            () => this.isLoading = false);
     }
 }
