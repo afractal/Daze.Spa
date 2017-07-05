@@ -6,7 +6,7 @@ import 'rxjs/add/operator/exhaustMap';
 import 'rxjs/add/operator/retry';
 import IProject = Daze.Interfaces.IProject;
 import IApiService = Daze.Interfaces.IApiService;
-1
+
 
 @Injectable()
 export class ProjectService implements IApiService {

@@ -5,5 +5,6 @@ namespace Daze.Interfaces {
         ProjectName: string;
         Description: string;
         Url: string;
+        PublishedYear?: number;
     }
 }

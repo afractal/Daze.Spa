@@ -4,7 +4,7 @@
 }
 
 .adminNavLinks md-list-item {
-    padding: 10px; 
+    padding: 10px;
 }
 
 .adminNavLinks a {
@@ -28,7 +28,7 @@
     padding: 10px 0;
 }
 
-.detail { 
+.detail {
     text-align: center;
     padding: 20px;
     flex-basis: 55%;

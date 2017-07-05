@@ -1,18 +1,13 @@
 {
-  "name": "Daze.Spa",
-  "description": "",
-  "scripts": {
-  },
-  "env": {
-  },
-  "formation": {
-  },
-  "addons": [
-
-  ],
-  "buildpacks": [
-    {
-      "url": "heroku/nodejs"
-    }
-  ]
+    "name": "Daze.Spa",
+    "description": "",
+    "scripts": {},
+    "env": {},
+    "formation": {},
+    "addons": [],
+    "buildpacks": [
+        {
+            "url": "heroku/nodejs"
+        }
+    ]
 }

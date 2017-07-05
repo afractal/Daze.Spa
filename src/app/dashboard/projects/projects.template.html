@@ -1,17 +1,16 @@
 <spinner *ngIf="isLoading"></spinner>
 
-<section class="projectSection">
-    <div *ngFor="let project of projects">
-        <div>
-            {{project.ProjectName}}
+<section *ngIf="!isLoading" class="project-section">
+    <div *ngFor="let project of projects" class="project-template">
+        <div class="project-head">
+            <div class="project-name">
+                <a href="{{project.Url}}" target="_blank" rel="noopener">{{project.ProjectName}}</a>
+            </div>
+            <div class="published-date">{{project.PublishedYear}}</div>
         </div>
-        <div>
-            <p>{{project.Description}}</p>
-        </div>
-        <div class="projectActions">
-            <a href="{{project.Url}}" target="_blank" rel="noopener">
-                <i class="material-icons">open_in_new</i>
-            </a>
+
+        <div class="project-body">
+            {{project.Description}}
         </div>
     </div>
 </section>
