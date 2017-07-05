@@ -2,6 +2,7 @@ import { Injectable, Inject } from '@angular/core';
 import { Http, Headers } from '@angular/http';
 import { Observable } from 'rxjs';
 import { AuthService } from './auth.service';
+import { environment } from '../../../environments/environment';
 import 'rxjs/add/operator/exhaustMap';
 import 'rxjs/add/operator/take';
 import 'rxjs/add/operator/skip';
@@ -13,7 +14,7 @@ import IApiService = Daze.Interfaces.IApiService;
 
 @Injectable()
 export class PostService implements IApiService {
-    readonly requestUri = 'http://127.0.0.1:8080/api/post/';
+    readonly requestUri = environment.apiUrl + 'post/';
     constructor( @Inject(AuthService) private readonly _authService: AuthService,
         private readonly _http: Http) {
     }
@@ -32,7 +33,7 @@ export class PostService implements IApiService {
             .exhaustMap(posts => posts);
     }
 
-    async getPostsArrayified() {
+    async getPostsArrayifiedAsync() {
         return await this._http.get(this.requestUri)
             .retry(2)
             .map(res => res.json() as Array<IPost>)
@@ -43,6 +44,16 @@ export class PostService implements IApiService {
         return this._http.get(`${this.requestUri}${id}`)
             .retry(2)
             .map(res => res.json() as IPost);
+    }
+
+    async isPaginatableAsync(numberOfItemsPerPage: number) {
+        const postCount = await this._http.get(`${this.requestUri}`)
+            .map(r => r.json() as Array<IPost>)
+            .exhaustMap(posts => posts)
+            .count()
+            .toPromise();
+
+        return (postCount > numberOfItemsPerPage);
     }
 
     createPost(post: IPost) {

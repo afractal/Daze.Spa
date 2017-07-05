@@ -1,36 +1,46 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, ViewChild, HostListener, Input, ElementRef } from '@angular/core';
+import { animate, state, style, transition, trigger } from '@angular/animations';
+import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
     selector: 'up',
-    template: `
-        <a class="up" (click)="onUpClick()" >
-            <i class="material-icons">keyboard_arrow_up</i>
-        </a>
-    `,
-    styles: [`
-        .up {
-            cursor: pointer;
-            position: fixed;
-            padding: 0.4em 1.4em;
-            right: 2%;
-            background: white;
-            color: #22384e;
-            border-radius: 1.4em;
-            bottom: 2%;
-            transition: all 2s;
-            box-shadow: 0 2px 2px rgba(0,0,0,0.24), 0 0 2px rgba(0,0,0,0.12);
-            transition: cubic-bezier(0.075, 0.82, 0.165, 1);
-            transition-duration: 1200ms;
-            transition-delay: 2ms;
-        }
-        .up:hover {
-            background: #22384e;
-            color: white;
-        }
-    `]
+    templateUrl: './up.template.html',
+    styleUrls: ['./up.style.css']
 })
-export class UpComponent {
-    onUpClick() {
+export class UpComponent implements OnInit {
+    constructor(private readonly _router: Router) { }
+
+    @ViewChild('up') _selector: ElementRef;
+
+    ngAfterViewInit() {
+        this._onWindowScroll();
+    }
+
+    @HostListener('window:scroll')
+    _onWindowScroll(): void {
+        let el = this._selector.nativeElement as HTMLElement;
+        el.scrollIntoView(true);
+        console.log(el);
         window.scroll(undefined, 1);
+        // window.scrollY > this.position ? jQuery(el).fadeIn(this.showSpeed) : jQuery(el).fadeOut(this.showSpeed);
+    }
+
+    position: number = 400;
+    showSpeed: number = 500;
+    moveSpeed: number = 1000;
+
+    onUpClick() {
+        let el = this._selector.nativeElement as HTMLElement;
+        el.scrollIntoView(true);
+        // window.scrollTo(0, 0);
+        // window.scroll(undefined, 1);
+    }
+
+    ngOnInit() {
+        // this._router.events.subscribe(evt => {
+        //     if (evt instanceof NavigationEnd) {
+        //         window.scrollTo(0, 0);
+        //     }
+        // });
     }
 }

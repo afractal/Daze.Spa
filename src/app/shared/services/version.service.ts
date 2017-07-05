@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
+import { environment } from '../../../environments/environment';
 import IApiService = Daze.Interfaces.IApiService;
 
 
 @Injectable()
 export class VersionService implements IApiService {
-    readonly requestUri = 'http://127.0.0.1:8080/api/version/';
+    readonly requestUri = environment.apiUrl + 'version/';
     constructor(private readonly _http: Http) { }
 
     getVersion() {

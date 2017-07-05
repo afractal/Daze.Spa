@@ -13,11 +13,11 @@
     text-decoration: none;
 }
 
-ul.postList {
+.postList {
     list-style-type: none;
 }
 
-article.postArticle {
+.postArticle {
     padding: 0;
     margin: 50px 100px;
     height: 260px;
@@ -28,11 +28,11 @@ article.postArticle {
     background: #fff;
 }
 
-article.postArticle:hover {
+.postArticle:hover {
     box-shadow: 0 0 0 2px #22384e;
 }
 
-article.postArticle hr {
+.postArticle hr {
     margin: 0;
     padding: 0;
     border-width: 2px;

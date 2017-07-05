@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
+import { environment } from '../../../environments/environment';
 import IApiService = Daze.Interfaces.IApiService;
 import ITag = Daze.Interfaces.ITag;
 
 @Injectable()
 export class TagService implements IApiService {
-    readonly requestUri = 'http://127.0.0.1:8080/api/tag/';
-
+    readonly requestUri = environment.apiUrl + 'tag/';
     constructor(private readonly _http: Http) { }
 
     getTags() {

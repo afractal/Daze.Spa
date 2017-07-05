@@ -3,6 +3,7 @@ import { Http, Headers } from '@angular/http';
 import { FocusArea } from '../types/focus_area';
 import { Observable } from 'rxjs/Observable';
 import { AuthService } from './auth.service';
+import { environment } from '../../../environments/environment';
 import 'rxjs/add/operator/exhaustMap';
 import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/take';
@@ -11,7 +12,7 @@ import IApiService = Daze.Interfaces.IApiService;
 
 @Injectable()
 export class SkillService implements IApiService {
-    readonly requestUri = 'http://127.0.0.1:8080/api/skill/';
+    readonly requestUri = environment.apiUrl + 'skill/';
     constructor( @Inject(AuthService) private readonly _authService: AuthService,
         private readonly _http: Http) { }
 

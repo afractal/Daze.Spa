@@ -1,13 +1,15 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers } from '@angular/http';
 import { LoginModel } from '../../shared/models/login.model';
+import { environment } from '../../../environments/environment';
 import IApiService = Daze.Interfaces.IApiService;
 import ILoginResponse = Daze.Interfaces.ILoginResponse;
 
+
 @Injectable()
 export class AuthService implements IApiService {
-    readonly requestUri = 'http://127.0.0.1:8080/api/authenticate/';
-    readonly loginRequestUri = 'http://127.0.0.1:8080/api/login/';
+    readonly requestUri = environment.apiUrl + 'authenticate/';
+    readonly loginRequestUri = environment.apiUrl + 'login/';
     constructor(private readonly _http: Http) { }
 
     authenticate(model: LoginModel) {

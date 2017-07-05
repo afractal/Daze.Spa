@@ -10,24 +10,27 @@ import IPost = Daze.Interfaces.IPost;
 })
 export class PostsComponent implements OnInit {
     private static _currentPage = 1;
-    private _posts = new Array<IPost>();
-    private _isLoading = true;
-    private _numberOfItemsPerPage = 2;
+    private readonly _numberOfItemsPerPage = 2;
+    posts = new Array<IPost>();
+    isLoading = true;
+    isPaginatable = false;
     constructor(private readonly _postService: PostService) { }
 
     onLoadmore() {
         ++PostsComponent._currentPage;
 
         this._postService.getPagedPosts(PostsComponent._currentPage, this._numberOfItemsPerPage)
-            .subscribe(p => this._posts.push(p),
+            .subscribe(p => this.posts.push(p),
             _ => _,
-            () => this._isLoading = false);
+            () => this.isLoading = false);
     }
 
-    ngOnInit() {
+    async ngOnInit() {
+        this.isPaginatable = await this._postService.isPaginatableAsync(this._numberOfItemsPerPage);
+
         this._postService.getPagedPosts(1, this._numberOfItemsPerPage)
-            .subscribe(p => this._posts.push(p),
+            .subscribe(p => this.posts.push(p),
             _ => _,
-            () => this._isLoading = false);
+            () => this.isLoading = false);
     }
 }
