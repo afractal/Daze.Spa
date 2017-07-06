@@ -8,7 +8,6 @@ app.set('port', (process.env.PORT || 5000));
 // in the dist directory
 app.use(express.static(__dirname + '/dist'));
 
-// ...
 // For all GET requests, send back index.html
 // so that PathLocationStrategy can be used
 app.listen(app.get('port'), function () {
