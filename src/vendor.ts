@@ -13,6 +13,7 @@ import 'rxjs';
 // You can import js, ts, css, sass, ...
 
 import './assets/styles/styles.css';
+import './assets/styles/github-markdown.css';
 import '../node_modules/material-design-icons/iconfont/material-icons.css';
 import '../node_modules/font-awesome/css/font-awesome.min.css';
 
