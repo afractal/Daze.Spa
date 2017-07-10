@@ -35,13 +35,16 @@
 .postArticle hr {
     margin: 0;
     padding: 0;
-    border-width: 2px;
-    border-color: gray;
-    border-style: solid;
+    border: 0.1em solid gray;
 }
 
 .postArticleImage {
     width: 30%;
+}
+
+.postArticleImage img {
+    object-fit: contain;
+    -o-object-fit: contain;
 }
 
 .postArticleImage > img {
@@ -54,7 +57,7 @@
 
 .postArticleBody {
     width: 70%;
-
+    border-left: 0.2em solid grey;
 }
 
 .postArticleBodyTitle {
