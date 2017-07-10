@@ -1,10 +1,12 @@
-<article *ngIf="!!_post" class="post-article markdown-body">
+<spinner *ngIf="isLoading"></spinner>
+
+<article *ngIf="!!post && !isLoading" class="post-article markdown-body">
     <!--<img src=" http://placehold.it/350x150 " class="post-article-image ">-->
 
-    <h2 class="post-article-title "> {{_post.Title}} </h2>
-    <p class="post-article-content " [innerHTML]="_post.Content | markdown | sanitize "> </p>
-    <ul *ngIf=" !!_post.Tags " class="post-article-tags ">
-        <li *ngFor="let tag of _post.Tags ">
+    <h2 class="post-article-title "> {{post.Title}} </h2>
+    <p class="post-article-content " [innerHTML]="post.Content | markdown | sanitize "> </p>
+    <ul *ngIf=" !!post.Tags " class="post-article-tags ">
+        <li *ngFor="let tag of post.Tags ">
             <a> {{tag.TagName}} </a>
         </li>
     </ul>

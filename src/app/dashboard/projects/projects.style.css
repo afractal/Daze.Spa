@@ -41,9 +41,15 @@ a:hover {
     text-align: left;
 }
 
-.published-date {
+.published-date-holder {
     flex-basis: 20%;
     text-align: right;
+}
+
+.published-date {
+    background-color: #6b6571;
+    border-radius: 0.6em;
+    padding: 0.1em 1em;
 }
 
 .project-body {

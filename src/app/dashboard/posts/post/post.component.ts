@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PostService } from '../../../shared/services/post.service';
-// import { MarkdownPipe } from '../../../shared/pipes/markdown.pipe';
 import IPost = Daze.Interfaces.IPost;
 
 @Component({
@@ -11,7 +10,8 @@ import IPost = Daze.Interfaces.IPost;
     styleUrls: ['./post.style.css']
 })
 export class PostComponent implements OnInit {
-    private _post: IPost | null = null;
+    post: IPost | null = null;
+    isLoading = true;
     constructor(private readonly _postService: PostService,
         private readonly _router: ActivatedRoute) { }
 
@@ -20,8 +20,8 @@ export class PostComponent implements OnInit {
             const postId = p['id'];
             this._postService.findPostById(postId)
                 .subscribe(post => {
-                    this._post = post;
-                    console.log('post', post);
+                    this.post = post;
+                    this.isLoading = false;
                 });
         });
     }
