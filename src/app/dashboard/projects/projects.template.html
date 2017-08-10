@@ -1,4 +1,4 @@
-<spinner *ngIf="isLoading"></spinner>
+<spinner [isSpinning]="isLoading"></spinner>
 
 <section *ngIf="!isLoading" class="project-section">
     <div *ngFor="let project of projects" class="project-template">

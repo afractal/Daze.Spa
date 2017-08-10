@@ -1,4 +1,4 @@
-<spinner *ngIf="isLoading"></spinner>
+<spinner [isSpinning]="isLoading"></spinner>
 
 <article *ngIf="!!post && !isLoading" class="post-article markdown-body">
     <!--<img src=" http://placehold.it/350x150 " class="post-article-image ">-->

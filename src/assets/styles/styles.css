@@ -93,3 +93,21 @@ dazeApp {
     height: 100%;
     overflow-y: auto;
 }
+
+
+::-webkit-scrollbar {
+    width: 0.6em;
+    height: 0.6em;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #22384e;
+}
+
+#nprogress .bar {
+    background: #03ffc7 !important;
+}

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import * as highlight from 'highlight.js';
+import { highlightAuto } from 'highlight.js';
 import * as marked from 'marked';
 
 @Injectable()
@@ -12,11 +12,10 @@ export class MarkdownParserService {
             sanitize: true,
             tables: true,
             breaks: true,
-            highlight: (code) => {
-                return highlight.highlightAuto(code).value;
+            highlight: code => {
+                return highlightAuto(code).value;
             }
         });
-
     }
 
     convertToHtml(markdown: string) {

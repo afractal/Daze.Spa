@@ -17,10 +17,4 @@ import './assets/styles/github-markdown.css';
 import '../node_modules/material-design-icons/iconfont/material-icons.css';
 import '../node_modules/font-awesome/css/font-awesome.min.css';
 import '../node_modules/highlight.js/styles/github-gist.css';
-
-import * as hljs from 'highlight.js';
-hljs.initHighlightingOnLoad();
-
-
-
-
+import '../node_modules/nprogress/nprogress.css'

@@ -1,4 +1,4 @@
-<spinner *ngIf="isLoading"></spinner>
+<spinner [isSpinning]="isLoading"></spinner>
 
 <ul *ngIf="!isLoading" class="postList">
     <!--<li *ngFor="let post of (currentPage == 1 ? _pagedPosts : _posts)">-->
