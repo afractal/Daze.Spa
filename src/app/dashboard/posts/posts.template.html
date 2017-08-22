@@ -5,15 +5,15 @@
     <li *ngFor="let post of posts">
         <article class="postArticle card card-1">
             <div class="postArticleImage">
-                <img src="{{post.CoverImage}}" alt="postImage">
+                <img src="{{post.coverImage}}" alt="postImage">
             </div>
             <div class="postArticleBody">
                 <h3 class="postArticleBodyTitle">
-                    <a class="blogLink" routerLink="/posts/{{post.Id}}">{{post.Title}}</a>
+                    <a class="blogLink" routerLink="/posts/{{post.id}}">{{post.title}}</a>
                 </h3>
                 <hr />
                 <p class="postArticleBodyDetails">
-                    {{post.HeroContent}}
+                    {{post.heroContent}}
                 </p>
             </div>
         </article>

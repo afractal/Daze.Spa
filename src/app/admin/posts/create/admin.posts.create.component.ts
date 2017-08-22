@@ -39,9 +39,9 @@ export class AdminPostsCreateComponent implements OnInit {
 
     ngOnInit() {
         this.postForm = this._formBuilder.group({
-            title: [this.post.Title, Validators.required],
-            content: [this.post.Content, Validators.required],
-            slug: [this.post.Slug, Validators.required]
+            title: [this.post.title, Validators.required],
+            content: [this.post.content, Validators.required],
+            slug: [this.post.slug, Validators.required]
         });
         this.postForm.valueChanges.subscribe(data => this.onValueChanged(data));
         this.onValueChanged(); // (re)set validation messages now

@@ -24,15 +24,15 @@
     <section *ngIf="_selectedProject" class="detail">
         <div>
             <div>
-                <div>{{_selectedProject.ProjectName}}</div>
-                <div>{{_selectedProject.Url}}</div>
+                <div>{{_selectedProject.projectName}}</div>
+                <div>{{_selectedProject.url}}</div>
             </div>
-            <div>{{_selectedProject.Description}}</div>
+            <div>{{_selectedProject.description}}</div>
             <div>
-                <button (click)="onProjectDelete(_selectedProject.Id)" type="button">
+                <button (click)="onProjectDelete(_selectedProject.id)" type="button">
                     <i>delete_forever</i>
                 </button>
-                <a routerLink="/admin/projects/update/{{_selectedProject.Id}}">
+                <a routerLink="/admin/projects/update/{{_selectedProject.id}}">
                     <i>edit</i>
                 </a>
             </div>

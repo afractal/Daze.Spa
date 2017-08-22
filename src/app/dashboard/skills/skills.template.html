@@ -5,9 +5,9 @@
     <ul class="skillsList" *ngIf="!_isLanguagesLoading">
         <h3><em>Languages</em></h3>
         <li *ngFor="let language of _languages" class="skill">
-            <label>{{language.Name}}</label>
+            <label>{{language.name}}</label>
             <div class="barHolder">
-                <div class="progressBar" [style.width.%]="language.Level"></div>
+                <div class="progressBar" [style.width.%]="language.level"></div>
             </div>
         </li>
     </ul>
@@ -18,9 +18,9 @@
     <ul class="skillsList" *ngIf="!_isFrameworksLoading">
         <h3><em>Frameworks</em></h3>
         <li *ngFor="let framework of _frameworks" class="skill">
-            <label>{{framework.Name}}</label>
+            <label>{{framework.name}}</label>
             <div class="barHolder">
-                <div class="progressBar" [style.width.%]="framework.Level"></div>
+                <div class="progressBar" [style.width.%]="framework.level"></div>
             </div>
         </li>
     </ul>

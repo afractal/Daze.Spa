@@ -1,10 +1,10 @@
 namespace Daze.Interfaces {
 
     export interface IProject {
-        Id: string;
-        ProjectName: string;
-        Description: string;
-        Url: string;
-        PublishedYear?: number;
+        id: string;
+        projectName: string;
+        description: string;
+        url: string;
+        publishedYear?: number;
     }
 }

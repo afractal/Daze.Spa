@@ -1,5 +1,5 @@
 import { Injectable, Inject } from '@angular/core';
-import { Http, Headers } from '@angular/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { AuthService } from './auth.service';
 import { environment } from '../../../environments/environment';
@@ -11,44 +11,49 @@ import 'rxjs/add/operator/debounceTime';
 import IPost = Daze.Interfaces.IPost;
 import ITag = Daze.Interfaces.ITag;
 import IApiService = Daze.Interfaces.IApiService;
+// import IResponse = Daze.Interfaces.IResponse;
 
 @Injectable()
 export class PostService implements IApiService {
     readonly requestUri = environment.apiUrl + 'post/';
+
     constructor( @Inject(AuthService) private readonly _authService: AuthService,
-        private readonly _http: Http) {
-    }
+        private readonly _http: HttpClient) { }
 
     getPosts() {
-        return this._http.get(this.requestUri)
+        return this._http
+            .get<Daze.Interfaces.IResponse<Array<IPost>>>(this.requestUri)
             .retry(2)
-            .map(res => res.json() as Array<IPost>)
+            .map(r => r._embedded)
             .exhaustMap(posts => posts);
     }
 
     getPagedPosts(page: number, pageSize: number) {
         return this._http
-            .get(`${this.requestUri}${page}/${pageSize}`)
-            .map(res => res.json() as Array<IPost>)
+            .get<Daze.Interfaces.IResponse<Array<IPost>>>(`${this.requestUri}${page}/${pageSize}`)
+            .map(r => r._embedded)
             .exhaustMap(posts => posts);
     }
 
     async getPostsArrayifiedAsync() {
-        return await this._http.get(this.requestUri)
+        return await this._http
+            .get<Daze.Interfaces.IResponse<Array<IPost>>>(this.requestUri)
             .retry(2)
-            .map(res => res.json() as Array<IPost>)
+            .map(res => res._embedded)
             .toPromise();
     }
 
     findPostById(id: string) {
-        return this._http.get(`${this.requestUri}${id}`)
+        return this._http
+            .get<Daze.Interfaces.IResponse<IPost>>(`${this.requestUri}${id}`)
             .retry(2)
-            .map(res => res.json() as IPost);
+            .map(res => res._embedded);
     }
 
     async isPaginatableAsync(numberOfItemsPerPage: number) {
-        const postCount = await this._http.get(`${this.requestUri}`)
-            .map(r => r.json() as Array<IPost>)
+        const postCount = await this._http
+            .get<Daze.Interfaces.IResponse<Array<IPost>>>(`${this.requestUri}`)
+            .map(r => r._embedded)
             .exhaustMap(posts => posts)
             .count()
             .toPromise();
@@ -75,6 +80,7 @@ export class PostService implements IApiService {
     deletePost(id: string) {
         let headers = this._authService.generateHeadersFromStorage();
         return this._http.delete(`${this.requestUri}${id}`, {
+            observe: 'response',
             headers: headers
         });
     }

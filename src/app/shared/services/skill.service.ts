@@ -1,5 +1,5 @@
 import { Injectable, Inject } from '@angular/core';
-import { Http, Headers } from '@angular/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { FocusArea } from '../types/focus_area';
 import { Observable } from 'rxjs/Observable';
 import { AuthService } from './auth.service';
@@ -9,32 +9,36 @@ import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/take';
 import ISkill = Daze.Interfaces.ISkill;
 import IApiService = Daze.Interfaces.IApiService;
+// import IResponse = Daze.Interfaces.IResponse;
 
 @Injectable()
 export class SkillService implements IApiService {
     readonly requestUri = environment.apiUrl + 'skill/';
     constructor( @Inject(AuthService) private readonly _authService: AuthService,
-        private readonly _http: Http) { }
+        private readonly _http: HttpClient) { }
 
     getSkills() {
-        return this._http.get(this.requestUri)
+        return this._http
+            .get<Daze.Interfaces.IResponse<Array<ISkill>>>(this.requestUri)
             .retry(3)
-            .map(res => res.json() as Array<ISkill>)
+            .map(r => r._embedded)
             .exhaustMap(skills => skills);
     }
 
     getSkillsByFocusArea(focusArea: FocusArea) {
-        return this._http.get(this.requestUri)
+        return this._http
+            .get<Daze.Interfaces.IResponse<Array<ISkill>>>(this.requestUri)
             .retry(3)
-            .map(res => res.json() as Array<ISkill>)
+            .map(r => r._embedded)
             .exhaustMap(skills => skills)
-            .filter(skill => skill.FocusArea == focusArea);
+            .filter(skill => skill.focusArea == focusArea);
     }
 
     findSkillById(id: string) {
-        return this._http.get(`${this.requestUri}${id}`)
+        return this._http
+            .get<Daze.Interfaces.IResponse<ISkill>>(`${this.requestUri}${id}`)
             .retry(3)
-            .map(res => res.json() as ISkill);
+            .map(r => r._embedded);
     }
 
     updateSkill(skill: ISkill) {
@@ -56,6 +60,7 @@ export class SkillService implements IApiService {
     deleteSkill(id: string) {
         let headers = this._authService.generateHeadersFromStorage();
         return this._http.delete(`${this.requestUri}${id}`, {
+            observe: 'response',
             headers: headers
         });
     }

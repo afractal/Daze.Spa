@@ -2,8 +2,8 @@ import ISkill = Daze.Interfaces.ISkill;
 import ICourse = Daze.Interfaces.ICourse;
 
 export class Skill implements ISkill {
-    constructor(public Name: string | null, public Level: number | null) { }
-    Id: string;
-    Courses: Array<ICourse>;
-    FocusArea: string;
+    constructor(public name: string | null, public level: number | null) { }
+    id: string;
+    courses: Array<ICourse>;
+    focusArea: string;
 }

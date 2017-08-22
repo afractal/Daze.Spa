@@ -4,15 +4,15 @@
     <div *ngFor="let project of projects" class="project-template">
         <div class="project-head">
             <div class="project-name">
-                <a href="{{project.Url}}" target="_blank" rel="noopener">{{project.ProjectName}}</a>
+                <a href="{{project.url}}" target="_blank" rel="noopener">{{project.projectName}}</a>
             </div>
             <div class="published-date-holder">
-                <span class="published-date">{{project.PublishedYear}}</span>
+                <span class="published-date">{{project.publishedYear}}</span>
             </div>
         </div>
 
         <div class="project-body">
-            {{project.Description}}
+            {{project.description}}
         </div>
     </div>
 </section>

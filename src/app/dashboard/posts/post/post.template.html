@@ -3,11 +3,11 @@
 <article *ngIf="!!post && !isLoading" class="post-article markdown-body">
     <!--<img src=" http://placehold.it/350x150 " class="post-article-image ">-->
 
-    <h2 class="post-article-title "> {{post.Title}} </h2>
-    <p class="post-article-content " [innerHTML]="post.Content | markdown | sanitize"> </p>
+    <h2 class="post-article-title "> {{post.title}} </h2>
+    <p class="post-article-content " [innerHTML]="post.content | markdown | sanitize"> </p>
     <ul *ngIf=" !!post.Tags " class="post-article-tags ">
-        <li *ngFor="let tag of post.Tags ">
-            <a> {{tag.TagName}} </a>
+        <li *ngFor="let tag of post.tags">
+            <a> {{tag.tagName}} </a>
         </li>
     </ul>
 </article>

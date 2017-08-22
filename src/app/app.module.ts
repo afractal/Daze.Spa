@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
-// import { CommonModule } from '@angular/common';
+import { CommonModule } from '@angular/common';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Route, RouterOutlet } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -59,6 +60,8 @@ const routes = new RouterBuilder()
 @NgModule({
     imports: [
         BrowserModule,
+        CommonModule,
+        HttpClientModule,
         HttpModule,
         FormsModule,
         ReactiveFormsModule,
@@ -92,6 +95,7 @@ const routes = new RouterBuilder()
         DomSanitizerPipe
     ],
     providers: [
+        HttpClient,
         MarkdownParserService,
         AuthService,
         LoginGuard

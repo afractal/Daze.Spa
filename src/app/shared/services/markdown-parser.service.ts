@@ -1,13 +1,11 @@
 import { Injectable } from '@angular/core';
 import { highlightAuto } from 'highlight.js';
-import * as marked from 'marked';
+import { setOptions, parse } from 'marked';
 
 @Injectable()
 export class MarkdownParserService {
-    private md: MarkedStatic;
     constructor() {
-        this.md = marked;
-        this.md.setOptions({
+        setOptions({
             gfm: true,
             sanitize: true,
             tables: true,
@@ -19,6 +17,6 @@ export class MarkdownParserService {
     }
 
     convertToHtml(markdown: string) {
-        return this.md.parse(markdown);
+        return parse(markdown);
     }
 }

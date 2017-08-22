@@ -20,7 +20,7 @@ export class AdminProjectsUpdateComponent implements OnInit {
 
     onFormSubmit(event: MouseEvent) {
         if (this._project) {
-            this._project.Id = this._projectId;
+            this._project.id = this._projectId;
             this._projectService.updateProject(this._project)
                 .subscribe(p => console.log('project was updated ', p),
                 err => console.log(err),
@@ -35,9 +35,9 @@ export class AdminProjectsUpdateComponent implements OnInit {
     populateForm(project?: Project) {
         if (project) {
             this._updateProjectForm = this._formBuilder.group({
-                name: [project.ProjectName, Validators.required],
-                description: [project.Description, Validators.required],
-                url: [project.Url, Validators.required]
+                name: [project.projectName, Validators.required],
+                description: [project.description, Validators.required],
+                url: [project.url, Validators.required]
             });
             this._updateProjectForm.valueChanges.subscribe(p => this.onValueChanged(p));
             this.onValueChanged();
