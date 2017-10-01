@@ -1,19 +1,18 @@
-var webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var helpers = require('./helpers');
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const helpers = require('./helpers');
+const path = require('path');
 
 module.exports = {
     entry: {
-        'polyfills': './src/polyfills.ts',
-        'vendor': './src/vendor.ts',
-        'app': './src/main.ts'
+        'polyfills': path.join(__dirname, '../src/polyfills.ts'),
+        'vendor': path.join(__dirname, '../src/vendor.ts'),
+        'app': path.join(__dirname, '../src/main.ts')
     },
-
     resolve: {
         extensions: ['.ts', '.js']
     },
-
     module: {
         rules: [
             {
@@ -21,7 +20,9 @@ module.exports = {
                 loaders: [
                     {
                         loader: 'awesome-typescript-loader',
-                        options: { configFileName: helpers.root('src', 'tsconfig.json') }
+                        options: {
+                            configFileName: helpers.root('src', 'tsconfig.json')
+                        }
                     }, 'angular2-template-loader'
                 ]
             },
@@ -36,7 +37,10 @@ module.exports = {
             {
                 test: /\.css$/,
                 exclude: helpers.root('src', 'app'),
-                loader: ExtractTextPlugin.extract({ fallbackLoader: 'style-loader', loader: 'css-loader?sourceMap' })
+                loader: ExtractTextPlugin.extract({
+                    fallback: 'style-loader',
+                    use: 'css-loader?sourceMap'
+                })
             },
             {
                 test: /\.css$/,
@@ -54,11 +58,9 @@ module.exports = {
             helpers.root('./src'), // location of your src
             {} // a map of your routes
         ),
-
         new webpack.optimize.CommonsChunkPlugin({
             name: ['app', 'vendor', 'polyfills']
         }),
-
         new HtmlWebpackPlugin({
             template: 'src/index.html'
         })

@@ -57,6 +57,7 @@ const routes = new RouterBuilder()
     .addNotFound(NotFoundComponent)
     .build();
 
+
 @NgModule({
     imports: [
         BrowserModule,

@@ -3,21 +3,23 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { AuthService } from './auth.service';
 import { environment } from '../../../environments/environment';
+import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/exhaustMap';
 import 'rxjs/add/operator/take';
 import 'rxjs/add/operator/skip';
 import 'rxjs/add/operator/retry';
 import 'rxjs/add/operator/debounceTime';
+import 'rxjs/add/operator/toPromise';
 import IPost = Daze.Interfaces.IPost;
 import ITag = Daze.Interfaces.ITag;
 import IApiService = Daze.Interfaces.IApiService;
-// import IResponse = Daze.Interfaces.IResponse;
 
 @Injectable()
 export class PostService implements IApiService {
     readonly requestUri = environment.apiUrl + 'post/';
 
-    constructor( @Inject(AuthService) private readonly _authService: AuthService,
+    constructor(
+        @Inject(AuthService) private readonly _authService: AuthService,
         private readonly _http: HttpClient) { }
 
     getPosts() {

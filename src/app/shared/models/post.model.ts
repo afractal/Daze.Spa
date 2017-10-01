@@ -7,7 +7,7 @@ export class Post implements IPost {
     slug: string;
     heroContent: string;
     content: string;
-    cùoverImage: string;
+    coverImage: string;
     createdAt: Date;
     modifiedAt: Date;
     tags: Array<ITag>;
