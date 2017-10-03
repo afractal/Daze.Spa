@@ -39,7 +39,9 @@
     margin-top: 1em;
     display: inline-flex;
     flex-direction: row;
+    -ms-flex-direction: row;
     flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
     width: 100%;
     justify-content: center;
     align-content: center;

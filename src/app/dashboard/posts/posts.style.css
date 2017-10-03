@@ -56,6 +56,7 @@
 .postArticleImage img {
     object-fit: contain;
     -o-object-fit: contain;
+    font-family: 'object-fit: contain;';
 }
 
 .postArticleImage > img {

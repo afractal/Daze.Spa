@@ -5,7 +5,7 @@
     <li *ngFor="let post of posts">
         <article class="postArticle card card-1">
             <div class="postArticleImage">
-                <img src="{{post.coverImage}}" alt="postImage">
+                <img [src]="post.coverImage" class="object-fit-contain" alt="postImage">
             </div>
             <div class="postArticleBody">
                 <h3 class="postArticleBodyTitle">

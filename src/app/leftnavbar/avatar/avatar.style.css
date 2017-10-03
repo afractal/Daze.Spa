@@ -8,7 +8,10 @@
     /* border: 4px solid #3a667b; */
     pointer-events: none;
     object-fit: contain;
+    -o-object-fit: contain;
     object-position: center;
+    -o-object-position: center;
+    font-family: 'object-fit: contain;';
 }
 
 .penName {
