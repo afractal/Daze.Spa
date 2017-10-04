@@ -1,7 +1,6 @@
 
 leftnavbar {
-    /*border: 1px dashed black;*/
-    /*flex-basis: 24%;*/
+    /* width: 25%; */
     text-align: center;
     background-color: #22384e;
     position: fixed;
@@ -10,15 +9,11 @@ leftnavbar {
 }
 
 .dashboard {
-    /*flex-basis: 76%;*/
-    /*width: 100%;*/
-    /*border: 1px dashed black;*/
+    /* width: 75%; */
     text-align: center;
-    /* background-color: #ECF0F1; */
     background-color: rgb(250, 250, 250);
     margin: 0 0 0 20em;
     min-height: 100%;
     overflow-x: hidden;
+    overflow-y: overlay;
 }
-
-

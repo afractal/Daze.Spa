@@ -4,8 +4,6 @@
 .avatarImageContainer > img {
     height: 8em;
     width: 8em;
-    /* border-radius: 200px;  */
-    /* border: 4px solid #3a667b; */
     pointer-events: none;
     object-fit: contain;
     -o-object-fit: contain;
@@ -15,7 +13,5 @@
 }
 
 .penName {
-    /*margin: 0 0 20px 0;*/
     letter-spacing: 0.2em;
-    /*color: rgb(169, 169, 169);*/
 }
