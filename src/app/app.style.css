@@ -1,11 +1,16 @@
 
-leftnavbar {
+.leftnavbar {
     /* width: 25%; */
     text-align: center;
     background-color: #22384e;
     position: fixed;
+    opacity: 1;
     width: 20em;
     height: 100%;
+    /* -webkit-transition: all 2s ease-in-out;
+    -moz-transition: all 2s ease-in-out; */
+    -webkit-transition: opacity 300ms, width 300ms;
+    transition: opacity 300ms, width 300ms;
 }
 
 .dashboard {
@@ -16,4 +21,16 @@ leftnavbar {
     min-height: 100%;
     overflow-x: hidden;
     overflow-y: overlay;
+}
+
+@media screen and (max-width: 820px) {
+    .leftnavbar {
+        /* visibility: hidden; */
+        opacity: 0;
+        width: 0;
+    }
+
+    .dashboard {
+        margin: 0;
+    }
 }
