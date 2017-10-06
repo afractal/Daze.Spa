@@ -85,6 +85,8 @@
 
 .postArticleBodyDetails:hover {
     overflow-y: visible;
+    -moz-transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+    -webkit-transition: cubic-bezier(0.075, 0.82, 0.165, 1);
     transition: cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
@@ -96,7 +98,7 @@
     }
 }
 
-@media screen and (max-width: 1020px) {
+@media screen and (max-width: 1024px) {
     .postArticle {
         height: 12em;
         width: 36em;

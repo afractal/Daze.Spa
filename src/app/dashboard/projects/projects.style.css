@@ -67,3 +67,16 @@ a:hover {
     border-right: 0;
     border-bottom: 2px solid #CACACA; */
 }
+
+
+@media screen and (max-width: 1024px) {
+    .project-template {
+        width: 30em;
+    }
+}
+
+@media screen and (max-width: 860px) {
+    .project-template {
+        width: 20em;
+    }
+}

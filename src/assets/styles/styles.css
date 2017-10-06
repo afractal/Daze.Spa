@@ -86,6 +86,13 @@ button.btn:hover {
     color: #054d94;
 }
 
+.nonDraggable {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
 dazeApp {
     /* display: inline-flex;
     flex-direction: row; */
