@@ -12,13 +12,14 @@ import IPost = Daze.Interfaces.IPost;
 export class PostComponent implements OnInit {
     post: IPost | null = null;
     isLoading = true;
+
     constructor(private readonly _postService: PostService,
         private readonly _router: ActivatedRoute) { }
 
     ngOnInit() {
         this._router.params.subscribe(p => {
-            const postId = p['id'];
-            this._postService.findPostById(postId)
+            const postSlug = p['slug'];
+            this._postService.findPostBySlug(postSlug)
                 .subscribe(post => {
                     this.post = post;
                     this.isLoading = false;

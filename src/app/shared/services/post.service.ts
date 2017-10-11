@@ -13,6 +13,7 @@ import 'rxjs/add/operator/toPromise';
 import IPost = Daze.Interfaces.IPost;
 import ITag = Daze.Interfaces.ITag;
 import IApiService = Daze.Interfaces.IApiService;
+import IResponse = Daze.Interfaces.IResponse;
 
 @Injectable()
 export class PostService implements IApiService {
@@ -24,7 +25,7 @@ export class PostService implements IApiService {
 
     getPosts() {
         return this._http
-            .get<Daze.Interfaces.IResponse<Array<IPost>>>(this.requestUri)
+            .get<IResponse<Array<IPost>>>(this.requestUri)
             .retry(2)
             .map(r => r._embedded)
             .exhaustMap(posts => posts);
@@ -32,14 +33,14 @@ export class PostService implements IApiService {
 
     getPagedPosts(page: number, pageSize: number) {
         return this._http
-            .get<Daze.Interfaces.IResponse<Array<IPost>>>(`${this.requestUri}${page}/${pageSize}`)
+            .get<IResponse<Array<IPost>>>(`${this.requestUri}${page}/${pageSize}`)
             .map(r => r._embedded)
             .exhaustMap(posts => posts);
     }
 
     async getPostsArrayifiedAsync() {
         return await this._http
-            .get<Daze.Interfaces.IResponse<Array<IPost>>>(this.requestUri)
+            .get<IResponse<Array<IPost>>>(this.requestUri)
             .retry(2)
             .map(res => res._embedded)
             .toPromise();
@@ -47,14 +48,23 @@ export class PostService implements IApiService {
 
     findPostById(id: string) {
         return this._http
-            .get<Daze.Interfaces.IResponse<IPost>>(`${this.requestUri}${id}`)
+            .get<IResponse<Array<IPost>>>(`${this.requestUri}${id}`)
             .retry(2)
-            .map(res => res._embedded);
+            .exhaustMap(res => res._embedded)
+            .first();
+    }
+
+    findPostBySlug(slug: string) {
+        return this._http
+            .get<IResponse<Array<IPost>>>(`${this.requestUri}?slug=${slug}`)
+            .retry(2)
+            .exhaustMap(res => res._embedded)
+            .first();
     }
 
     async isPaginatableAsync(numberOfItemsPerPage: number) {
         const postCount = await this._http
-            .get<Daze.Interfaces.IResponse<Array<IPost>>>(`${this.requestUri}`)
+            .get<IResponse<Array<IPost>>>(`${this.requestUri}`)
             .map(r => r._embedded)
             .exhaustMap(posts => posts)
             .count()

@@ -39,7 +39,7 @@ import { DomSanitizerPipe } from './shared/pipes/dom-sanitizer.pipe';
 
 const routes = new RouterBuilder()
     .addRoute('posts', PostsComponent)
-    .addRoute('posts/:id', PostComponent)
+    .addRoute('posts/:slug', PostComponent)
     .addRoute('skills', SkillsComponent)
     .addRoute('projects', ProjectsComponent)
     .addRoute('login', LoginComponent)
@@ -56,7 +56,6 @@ const routes = new RouterBuilder()
     .addDefault(PostsComponent)
     .addNotFound(NotFoundComponent)
     .build();
-
 
 @NgModule({
     imports: [
