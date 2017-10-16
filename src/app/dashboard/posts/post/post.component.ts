@@ -19,6 +19,7 @@ export class PostComponent implements OnInit {
     ngOnInit() {
         this._router.params.subscribe(p => {
             const postSlug = p['slug'];
+
             this._postService.findPostBySlug(postSlug)
                 .subscribe(post => {
                     this.post = post;

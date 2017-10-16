@@ -12,6 +12,7 @@ import { PostsComponent } from './dashboard/posts/posts.component';
 import { PostComponent } from './dashboard/posts/post/post.component';
 import { SkillsComponent } from './dashboard/skills/skills.component';
 import { ProjectsComponent } from './dashboard/projects/projects.component';
+import { AboutComponent } from './dashboard/about/about.component';
 import { NotFoundComponent } from './shared/notfound/notfound.component';
 import { SpinnerComponent } from './shared/spinner/spinner.component';
 import { PagerComponent } from './shared/pager/pager.component';
@@ -42,6 +43,7 @@ const routes = new RouterBuilder()
     .addRoute('posts/:slug', PostComponent)
     .addRoute('skills', SkillsComponent)
     .addRoute('projects', ProjectsComponent)
+    .addRoute('about', AboutComponent)
     .addRoute('login', LoginComponent)
     .addRoute('admin', AdminComponent, true)
     .addRoute('admin/posts', AdminPostsComponent, true)
@@ -76,6 +78,7 @@ const routes = new RouterBuilder()
         PostComponent,
         SkillsComponent,
         ProjectsComponent,
+        AboutComponent,
         NotFoundComponent,
         SpinnerComponent,
         PagerComponent,

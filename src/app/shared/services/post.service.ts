@@ -48,18 +48,16 @@ export class PostService implements IApiService {
 
     findPostById(id: string) {
         return this._http
-            .get<IResponse<Array<IPost>>>(`${this.requestUri}${id}`)
+            .get<IResponse<IPost>>(`${this.requestUri}${id}`)
             .retry(2)
-            .exhaustMap(res => res._embedded)
-            .first();
+            .map(res => res._embedded);
     }
 
     findPostBySlug(slug: string) {
         return this._http
-            .get<IResponse<Array<IPost>>>(`${this.requestUri}?slug=${slug}`)
+            .get<IResponse<IPost>>(`${this.requestUri}slug/${slug}`)
             .retry(2)
-            .exhaustMap(res => res._embedded)
-            .first();
+            .map(res => res._embedded);
     }
 
     async isPaginatableAsync(numberOfItemsPerPage: number) {
