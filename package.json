@@ -25,6 +25,8 @@
     },
     "private": true,
     "dependencies": {
+        "@angular/cli": "^1.4.8",
+        "@angular/compiler-cli": "^4.4.6",
         "@angular/animations": "^4.4.6",
         "@angular/common": "^4.4.6",
         "@angular/compiler": "^4.4.6",
@@ -51,8 +53,6 @@
         "@types/hammerjs": "^2.0.35",
         "@types/highlight.js": "^9.1.10",
         "@types/marked": "^0.3.0",
-        "@angular/cli": "^1.4.8",
-        "@angular/compiler-cli": "^4.4.6",
         "@angular/language-service": "^4.4.6",
         "@types/jasmine": "~2.6.0",
         "@types/jasminewd2": "~2.0.3",
