@@ -10,7 +10,7 @@
         "url": "https://github.com/afractal/Daze.git"
     },
     "engines": {
-        "npm": "7.9.0"
+        "npm": "8.6.0"
     },
     "scripts": {
         "ng": "ng",
