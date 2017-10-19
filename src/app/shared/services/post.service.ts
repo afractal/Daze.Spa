@@ -10,6 +10,7 @@ import 'rxjs/add/operator/skip';
 import 'rxjs/add/operator/retry';
 import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/toPromise';
+import 'rxjs/add/operator/count';
 import IPost = Daze.Interfaces.IPost;
 import ITag = Daze.Interfaces.ITag;
 import IApiService = Daze.Interfaces.IApiService;
