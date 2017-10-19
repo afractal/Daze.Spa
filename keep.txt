@@ -1,1 +1,2 @@
-        "heroku-postbuild": "npm run build"
+"heroku-postbuild": "npm run build"
+"heroku-prebuild": "npm install --only=dev"

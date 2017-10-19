@@ -10,17 +10,17 @@
         "url": "https://github.com/afractal/Daze.git"
     },
     "engines": {
-        "node": "7.10.1"
+        "node": "7.10.1",
+        "npm": "4.6.1"
     },
     "scripts": {
         "ng": "ng",
+        "start": "node index.js",
         "start-local": "ng serve --port 3000",
         "build": "ng build",
         "test": "ng test",
         "lint": "ng lint",
-        "e2e": "ng e2e",
-        "start": "node index.js",
-        "heroku-prebuild": "npm install --only=dev"
+        "e2e": "ng e2e"
     },
     "private": true,
     "dependencies": {
