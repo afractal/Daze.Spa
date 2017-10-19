@@ -21,11 +21,12 @@
         "test": "ng test",
         "lint": "ng lint",
         "e2e": "ng e2e",
-        "heroku-postbuild": "npm run build",
-        "heroku-prebuild": "npm install --only=dev"
+        "postinstall": "ng build --aot -prod"
     },
     "private": true,
     "dependencies": {
+        "@angular/cli": "^1.4.8",
+        "@angular/compiler-cli": "^4.4.6",
         "@angular/animations": "^4.4.6",
         "@angular/common": "^4.4.6",
         "@angular/compiler": "^4.4.6",
