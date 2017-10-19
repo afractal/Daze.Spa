@@ -20,8 +20,7 @@
         "lint": "ng lint",
         "e2e": "ng e2e",
         "start": "node index.js",
-        "heroku-prebuild": "npm install --only=dev",
-        "heroku-postbuild": "npm run build"
+        "heroku-prebuild": "npm install --only=dev"
     },
     "private": true,
     "dependencies": {
