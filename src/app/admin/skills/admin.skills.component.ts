@@ -9,13 +9,13 @@ import ISkill = Daze.Interfaces.ISkill;
     styleUrls: ['./../admin.style.css']
 })
 export class AdminSkillsComponent implements OnInit {
-    private _skills = new Array<ISkill>();
-    private _selectedSkill: ISkill | null | undefined = null;
-    private _isLoading = true;
+    skills = new Array<ISkill>();
+    selectedSkill: ISkill | null | undefined = null;
+    isLoading = true;
     constructor(private readonly _skillService: SkillService) { }
 
     onSkillClick(id: string) {
-        this._selectedSkill = this._skills.find(s => s.id == id);
+        this.selectedSkill = this.skills.find(s => s.id == id);
     }
 
     onSkillDelete(id: string) {
@@ -23,14 +23,14 @@ export class AdminSkillsComponent implements OnInit {
             .subscribe(res => (res.status == 200) ?
                 console.log("skill deleted") :
                 console.log("error"));
-        this._skills = this._skills.filter(s => s.id != id);
-        this._selectedSkill = null;
+        this.skills = this.skills.filter(s => s.id != id);
+        this.selectedSkill = null;
     }
 
     ngOnInit() {
         this._skillService.getSkills()
-            .subscribe(s => this._skills.push(s),
+            .subscribe(s => this.skills.push(s),
             _ => _,
-            () => this._isLoading = false);
+            () => this.isLoading = false);
     }
 }

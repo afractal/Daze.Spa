@@ -12,9 +12,9 @@ import { Post } from '../../../shared/models/post.model';
     styleUrls: ['./admin.posts.create.style.css']
 })
 export class AdminPostsCreateComponent implements OnInit {
-    public postForm: FormGroup;
-    public post = new Post();
-    public parsedText = '';
+    postForm: FormGroup;
+    post = new Post();
+    parsedText = '';
     constructor(private readonly _postService: PostService,
         private readonly _tagService: TagService,
         private readonly _mdParserService: MarkdownParserService,

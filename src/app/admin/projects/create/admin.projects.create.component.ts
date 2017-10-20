@@ -9,8 +9,8 @@ import { Project } from '../../../shared/models/project.model';
     templateUrl: './admin.projects.create.template.html'
 })
 export class AdminProjectsCreateComponent implements OnInit {
-    public projectForm: FormGroup;
-    public project = new Project();
+    projectForm: FormGroup;
+    project = new Project();
     constructor(private readonly _projectService: ProjectService,
         private readonly _formBuilder: FormBuilder) { }
 

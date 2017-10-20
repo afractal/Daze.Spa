@@ -9,31 +9,31 @@ import { Skill } from '../../shared/models/skill.model';
     styleUrls: ['./skills.style.css']
 })
 export class SkillsComponent implements OnInit {
-    private _languages = new Array<Skill>();
-    private _frameworks = new Array<Skill>();
-    private _databases = new Array<Skill>();
-    private _isLanguagesLoading = true;
-    private _isDatabasesLoading = true;
-    private _isFrameworksLoading = true;
+    languages = new Array<Skill>();
+    frameworks = new Array<Skill>();
+    databases = new Array<Skill>();
+    isLanguagesLoading = true;
+    isDatabasesLoading = true;
+    isFrameworksLoading = true;
     constructor(private readonly _skillService: SkillService) { }
 
     ngOnInit() {
         this._skillService.getSkillsByFocusArea("languages")
-            .subscribe(l => this._languages.push(
+            .subscribe(l => this.languages.push(
                 new Skill(l.name, !!l.courses ? l.courses.length : 0)),
             _ => _,
-            () => this._isLanguagesLoading = false);
+            () => this.isLanguagesLoading = false);
 
         this._skillService.getSkillsByFocusArea("databases")
-            .subscribe(d => this._databases.push(
+            .subscribe(d => this.databases.push(
                 new Skill(d.name, !!d.courses ? d.courses.length : 0)),
             _ => _,
-            () => this._isDatabasesLoading = false);
+            () => this.isDatabasesLoading = false);
 
         this._skillService.getSkillsByFocusArea("frameworks")
-            .subscribe(f => this._frameworks.push(
+            .subscribe(f => this.frameworks.push(
                 new Skill(f.name, !!f.courses ? f.courses.length : 0)),
             _ => _,
-            () => this._isFrameworksLoading = false);
+            () => this.isFrameworksLoading = false);
     }
 }

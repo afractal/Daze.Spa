@@ -11,28 +11,28 @@ import { Router, ActivatedRoute } from "@angular/router";
     styleUrls: ['./login.style.css']
 })
 export class LoginComponent implements OnInit {
-    private _loginForm: FormGroup;
-    private _loginModel = new LoginModel();
+    loginForm: FormGroup;
+    loginModel = new LoginModel();
     constructor(private readonly _authService: AuthService,
         private readonly _formBuilder: FormBuilder,
         private readonly _router: Router,
         private readonly _activatedRoute: ActivatedRoute) { }
 
     onLoginFormSubmit($event: MouseEvent) {
-        this._authService.login(this._loginModel);
+        this._authService.login(this.loginModel);
     }
 
     onValueChange(loginData?: LoginModel) {
-        this._loginModel = !!loginData ? loginData : new LoginModel();
+        this.loginModel = !!loginData ? loginData : new LoginModel();
     }
 
     ngOnInit() {
-        this._loginForm = this._formBuilder.group({
+        this.loginForm = this._formBuilder.group({
             username: ['', Validators.required],
             password: ['', Validators.required]
         });
 
-        this._loginForm.valueChanges.subscribe(data => this.onValueChange(data));
+        this.loginForm.valueChanges.subscribe(data => this.onValueChange(data));
         this.onValueChange();
     }
 }

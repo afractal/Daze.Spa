@@ -1,6 +1,6 @@
-<spinner *ngIf="_isLoading"></spinner>
+<spinner *ngIf="isLoading"></spinner>
 
-<ul *ngIf="!_isLoading" class="actions">
+<ul *ngIf="!isLoading" class="actions">
     <li>
         <a routerLink="/admin/projects/create">
             <i>add</i>
@@ -8,10 +8,10 @@
     </li>
 </ul>
 
-<div *ngIf="!_isLoading" class="masterDetail">
+<div *ngIf="!isLoading" class="masterDetail">
     <section class="master">
         <ul>
-            <li *ngFor="let project of _projects">
+            <li *ngFor="let project of projects">
                 <a class="masterLink" (click)="onProjectClick(project.Id)">
                     {{project.ProjectName}}
                 </a>
@@ -21,18 +21,18 @@
 
     <div class="verticalLine"></div>
 
-    <section *ngIf="_selectedProject" class="detail">
+    <section *ngIf="selectedProject" class="detail">
         <div>
             <div>
-                <div>{{_selectedProject.projectName}}</div>
-                <div>{{_selectedProject.url}}</div>
+                <div>{{selectedProject.projectName}}</div>
+                <div>{{selectedProject.url}}</div>
             </div>
-            <div>{{_selectedProject.description}}</div>
+            <div>{{selectedProject.description}}</div>
             <div>
-                <button (click)="onProjectDelete(_selectedProject.id)" type="button">
+                <button (click)="onProjectDelete(selectedProject.id)" type="button">
                     <i>delete_forever</i>
                 </button>
-                <a routerLink="/admin/projects/update/{{_selectedProject.id}}">
+                <a routerLink="/admin/projects/update/{{selectedProject.id}}">
                     <i>edit</i>
                 </a>
             </div>

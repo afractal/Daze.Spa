@@ -11,17 +11,17 @@ import { Project } from '../../../shared/models/project.model';
     styleUrls: ['./admin.projects.update.style.css']
 })
 export class AdminProjectsUpdateComponent implements OnInit {
-    private _project: Project = null;
-    private _projectId: string;
-    private _updateProjectForm: FormGroup;
+    project: Project = null;
+    projectId: string;
+    updateProjectForm: FormGroup;
     constructor(private readonly _projectService: ProjectService,
         private readonly _router: ActivatedRoute,
         private readonly _formBuilder: FormBuilder) { }
 
     onFormSubmit(event: MouseEvent) {
-        if (this._project) {
-            this._project.id = this._projectId;
-            this._projectService.updateProject(this._project)
+        if (this.project) {
+            this.project.id = this.projectId;
+            this._projectService.updateProject(this.project)
                 .subscribe(p => console.log('project was updated ', p),
                 err => console.log(err),
                 () => { });
@@ -29,21 +29,21 @@ export class AdminProjectsUpdateComponent implements OnInit {
     }
 
     onValueChanged(data?: Project) {
-        this._project = !!data ? data : new Project;
+        this.project = !!data ? data : new Project;
     }
 
     populateForm(project?: Project) {
         if (project) {
-            this._updateProjectForm = this._formBuilder.group({
+            this.updateProjectForm = this._formBuilder.group({
                 name: [project.projectName, Validators.required],
                 description: [project.description, Validators.required],
                 url: [project.url, Validators.required]
             });
-            this._updateProjectForm.valueChanges.subscribe(p => this.onValueChanged(p));
+            this.updateProjectForm.valueChanges.subscribe(p => this.onValueChanged(p));
             this.onValueChanged();
 
         } else {
-            this._updateProjectForm = this._formBuilder.group({
+            this.updateProjectForm = this._formBuilder.group({
                 name: new FormControl(),
                 description: new FormControl(),
                 url: new FormControl()
@@ -55,10 +55,10 @@ export class AdminProjectsUpdateComponent implements OnInit {
         this.populateForm();
         this._router.params.subscribe(pr => {
             const projectId = pr['id'];
-            this._projectId = projectId;
+            this.projectId = projectId;
             this._projectService.findProjectById(projectId)
                 .subscribe(p => {
-                    this._project = p;
+                    this.project = p;
                     this.populateForm(p);
                 });
         });

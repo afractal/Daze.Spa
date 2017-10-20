@@ -9,13 +9,13 @@ import IProject = Daze.Interfaces.IProject;
     styleUrls: ['./../admin.style.css']
 })
 export class AdminProjectsComponent implements OnInit {
-    private _projects = new Array<IProject>();
-    private _isLoading = true;
-    private _selectedProject: IProject | undefined | null = null;
+    projects = new Array<IProject>();
+    isLoading = true;
+    selectedProject: IProject | undefined | null = null;
     constructor(private readonly _projectService: ProjectService) { }
 
     onProjectClick(id: string) {
-        this._selectedProject = this._projects.find(p => p.id == id);
+        this.selectedProject = this.projects.find(p => p.id == id);
     }
 
     onProjectDelete(id: string) {
@@ -23,14 +23,14 @@ export class AdminProjectsComponent implements OnInit {
             .subscribe(res => (res.status == 200)
                 ? console.log("project deleted")
                 : console.log("error"));
-        this._projects = this._projects.filter(p => p.id != id);
-        this._selectedProject = null;
+        this.projects = this.projects.filter(p => p.id != id);
+        this.selectedProject = null;
     }
 
     ngOnInit() {
         this._projectService.getProjects()
-            .subscribe(p => this._projects.push(p),
+            .subscribe(p => this.projects.push(p),
             _ => _,
-            () => this._isLoading = false);
+            () => this.isLoading = false);
     }
 }

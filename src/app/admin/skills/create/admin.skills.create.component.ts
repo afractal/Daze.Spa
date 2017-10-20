@@ -9,8 +9,8 @@ import { Skill } from '../../../shared/models/skill.model';
     templateUrl: './admin.skills.create.template.html'
 })
 export class AdminSkillsCreateComponent implements OnInit {
-    public skillForm: FormGroup;
-    public skill = new Skill(null, null);
+    skillForm: FormGroup;
+    skill = new Skill(null, null);
     constructor(private readonly _skillService: SkillService,
         private readonly _formBuilder: FormBuilder) { }
 

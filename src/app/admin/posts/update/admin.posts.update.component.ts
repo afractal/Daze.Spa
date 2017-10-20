@@ -11,17 +11,17 @@ import { Post } from '../../../shared/models/post.model';
     styleUrls: ['./admin.posts.update.style.css']
 })
 export class AdminPostsUpdateComponent implements OnInit {
-    private _post: Post = null;
-    private _postId: string;
-    private _updatePostForm: FormGroup;
+    post: Post = null;
+    postId: string;
+    updatePostForm: FormGroup;
     constructor(private readonly _postService: PostService,
         private readonly _router: ActivatedRoute,
         private readonly _formBuilder: FormBuilder) { }
 
     onFormSubmit(event: MouseEvent) {
-        if (this._post) {
-            this._post.id = this._postId;
-            this._postService.updatePost(this._post)
+        if (this.post) {
+            this.post.id = this.postId;
+            this._postService.updatePost(this.post)
                 .subscribe(p => console.log('p was added, ', p),
                 err => console.log(err),
                 () => { });
@@ -29,19 +29,19 @@ export class AdminPostsUpdateComponent implements OnInit {
     }
 
     onValueChanged(data?: Post) {
-        this._post = !!data ? data : new Post();
+        this.post = !!data ? data : new Post();
     }
 
     populateForm(post?: Post) {
         if (post) {
-            this._updatePostForm = this._formBuilder.group({
+            this.updatePostForm = this._formBuilder.group({
                 title: [post.title, Validators.required],
                 content: [post.content, Validators.required]
             });
-            this._updatePostForm.valueChanges.subscribe(data => this.onValueChanged(data));
+            this.updatePostForm.valueChanges.subscribe(data => this.onValueChanged(data));
             this.onValueChanged(); // (re)set validation messages now
         } else {
-            this._updatePostForm = this._formBuilder.group({
+            this.updatePostForm = this._formBuilder.group({
                 title: new FormControl(),
                 content: new FormControl()
             });
@@ -52,10 +52,10 @@ export class AdminPostsUpdateComponent implements OnInit {
         this.populateForm();
         this._router.params.subscribe(par => {
             const postId = par['id'];
-            this._postId = postId;
+            this.postId = postId;
             this._postService.findPostById(postId)
                 .subscribe(p => {
-                    this._post = p;
+                    this.post = p;
                     this.populateForm(p);
                 });
         });

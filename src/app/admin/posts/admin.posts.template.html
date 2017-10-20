@@ -1,8 +1,8 @@
-<spinner *ngIf="_isLoading"></spinner>
+<spinner *ngIf="isLoading"></spinner>
 
-<!--<spinner *ngIf="_isLoading"></spinner>-->
+<!--<spinner *ngIf="isLoading"></spinner>-->
 
-<ul *ngIf="!_isLoading" class="actions">
+<ul *ngIf="!isLoading" class="actions">
     <li>
         <a routerLink="/admin/posts/create">
             <i>add</i>
@@ -10,10 +10,10 @@
     </li>
 </ul>
 
-<div *ngIf="!_isLoading" class="masterDetail">
+<div *ngIf="!isLoading" class="masterDetail">
     <section class="master">
         <ul>
-            <li *ngFor="let post of _posts">
+            <li *ngFor="let post of posts">
                 <a class="masterLink" (click)="onPostClick(post.id)">
                     {{post.title}}
                 </a>
@@ -23,18 +23,18 @@
 
     <div class="verticalLine"></div>
 
-    <section *ngIf="_selectedPost" class="detail">
+    <section *ngIf="selectedPost" class="detail">
         <div>
             <div>
-                <div>{{_selectedPost.title}}</div>
-                <div>{{_selectedPost.slug}}</div>
+                <div>{{selectedPost.title}}</div>
+                <div>{{selectedPost.slug}}</div>
             </div>
-            <div>{{_selectedPost.content}}</div>
+            <div>{{selectedPost.content}}</div>
             <div>
-                <button (click)="onPostDelete(_selectedPost.id)" type="button">
+                <button (click)="onPostDelete(selectedPost.id)" type="button">
                     <i>delete_forever</i>
                 </button>
-                <a routerLink="/admin/posts/update/{{_selectedPost.id}}">
+                <a routerLink="/admin/posts/update/{{selectedPost.id}}">
                     <i>edit</i>
                 </a>
             </div>
