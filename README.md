@@ -9,6 +9,7 @@
 - progress indication
 - add mobile support
 - add support for edge
+- add resources page
 
 *v.0.1.0*
 
@@ -17,4 +18,3 @@
 - add ui improments
 - style project template
 - use new HttpClient
-- add about page

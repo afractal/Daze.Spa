@@ -1,6 +1,6 @@
 {
     "name": "daze.spa",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "author": "afractal",
     "description": "Front-End of afractal blog.",
     "main": "index.js",

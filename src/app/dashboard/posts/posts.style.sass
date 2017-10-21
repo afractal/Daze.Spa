@@ -1,0 +1,119 @@
+
+$postArticleHeight : 16.25em
+$postArticleWidth : 50em
+
+.card
+    background: #fff
+    border-radius: 2px
+    display: inline-block
+    height: 300px
+    margin: 1rem
+    position: relative
+    width: 300px
+    &:hover
+        box-shadow: 0 8px 8px rgba(0,0,0,0.24), 0 0 8px rgba(0,0,0,0.12)
+        text-decoration: none
+
+.postList
+    list-style-type: none
+
+.postArticle
+    padding: 0
+    margin: 4em auto
+    height: $postArticleHeight
+    width: $postArticleWidth
+    display: flex
+    border-radius: 3px
+    box-shadow: 0 1px 4px rgba(0,0,0,.04)
+    background: #fff
+    border: 1px solid rgba(0,0,0,.09)
+    &:hover
+        box-shadow: 0 0 0 2px #22384e
+
+.postArticle hr
+    margin: 0
+    padding: 0
+    border: 0.1em solid gray
+
+.postArticleImage
+    width: 30%
+
+.postArticleImage img
+    object-fit: contain
+    font-family: 'object-fit: contain;'
+
+.postArticleImage > img
+    height: 100%
+    width: 100%
+    border-bottom-left-radius: 10px
+    border-top-left-radius: 10px
+    pointer-events: none
+
+.postArticleBody
+    width: 70%
+    border-left: 0.2em solid grey
+
+.postArticleBodyTitle
+    white-space: nowrap
+    overflow: hidden
+    text-overflow: ellipsis
+
+    /*font-size: 16pt;*/
+    padding: 14px 20px 20px 20px
+    height: 10px
+    text-align: center
+
+.postArticleBodyDetails
+    white-space: normal
+    overflow: hidden
+    text-overflow: ellipsis
+
+    font-size: 12pt
+    height: 140px
+    float: left
+    text-align: left
+    padding: 12px 12px 36px 12px
+    &:hover
+        overflow-y: visible
+        -moz-transition: cubic-bezier(0.075, 0.82, 0.165, 1)
+        -webkit-transition: cubic-bezier(0.075, 0.82, 0.165, 1)
+        transition: cubic-bezier(0.075, 0.82, 0.165, 1)
+
+
+@media screen and (max-width: 1170px)
+    .postArticle
+        height: $postArticleHeight - 2em
+        width: $postArticleWidth - 8em
+
+@media screen and (max-width: 1070px)
+    .postArticle
+        height: $postArticleHeight - 4em
+        width: $postArticleWidth - 14em
+
+@media screen and (max-width: 970px)
+    .postArticle
+        height: $postArticleHeight - 6em
+        width: $postArticleWidth - 20em
+
+    .postArticleBodyTitle
+        font-size: 11pt
+
+    .postArticleBodyDetails
+        font-size: 10pt
+
+@media screen and (max-width: 570px)
+    .postArticleImage
+        display: none
+
+    .postArticleBody
+        width: 100%
+        border-left: 0
+
+    .postArticle
+        height: $postArticleHeight - 6em
+        width: 80%
+
+    .postArticleBodyDetails
+        height: 32%
+
+

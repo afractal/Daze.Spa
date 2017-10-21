@@ -6,7 +6,7 @@ import IPost = Daze.Interfaces.IPost;
     selector: 'posts',
     providers: [PostService],
     templateUrl: './posts.template.html',
-    styleUrls: ['./posts.style.css']
+    styleUrls: ['./posts.style.sass']
 })
 export class PostsComponent implements OnInit {
     private static _currentPage = 1;
