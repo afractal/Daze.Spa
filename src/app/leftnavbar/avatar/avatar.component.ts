@@ -5,7 +5,7 @@ import { AvatarService } from './avatar.service';
     selector: 'avatar',
     providers: [AvatarService],
     templateUrl: './avatar.template.html',
-    styleUrls: ['./avatar.style.css']
+    styleUrls: ['./avatar.style.sass']
 })
 export class AvatarComponent implements OnInit {
     private _avatar = {};

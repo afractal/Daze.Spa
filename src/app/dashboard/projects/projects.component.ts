@@ -6,7 +6,7 @@ import IProject = Daze.Interfaces.IProject;
     selector: 'projects',
     providers: [ProjectService],
     templateUrl: './projects.template.html',
-    styleUrls: ['./projects.style.css']
+    styleUrls: ['./projects.style.sass']
 })
 export class ProjectsComponent implements OnInit {
     projects = new Array<IProject>();

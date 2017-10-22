@@ -1,31 +1,28 @@
 
 .leftnavbar
-    text-align: center;
-    background-color: #22384e;
-    position: fixed;
-    opacity: 1;
-    width: 20em;
-    height: 100%;
-    -moz-transition: all 2s ease-in-out;
-    -webkit-transition: opacity 300ms, width 300ms;
-    transition: opacity 300ms, width 300ms;
+    text-align: center
+    background-color: #22384e
+    position: fixed
+    opacity: 1
+    width: 20em
+    height: 100%
+    -moz-transition: all 2s ease-in-out
+    -webkit-transition: opacity 300ms, width 300ms, margin 300ms
+    transition: opacity 300ms, width 300ms, margin 300ms
 
 .dashboard
-    text-align: center;
-    background-color: rgb(250, 250, 250);
-    margin: 0 0 0 20em;
-    min-height: 100%;
-    overflow-x: hidden;
-    overflow-y: hidden;
-
-@mixin redit
-    color: red;
+    text-align: center
+    background-color: rgb(250, 250, 250)
+    margin: 0 0 0 20em
+    min-height: 100%
+    overflow-x: hidden
+    overflow-y: hidden
 
 @media screen and (max-width: 870px)
     .leftnavbar
-        opacity: 0;
-        width: 0;
+        width: 0
+        // opacity: 1
 
     .dashboard
-        margin: 0;
+        margin: 3.8em 0 0 0
 

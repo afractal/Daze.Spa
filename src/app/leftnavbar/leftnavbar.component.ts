@@ -5,7 +5,7 @@ import { VersionService } from '../shared/services/version.service';
     selector: 'leftnavbar',
     providers: [VersionService],
     templateUrl: './leftnavbar.template.html',
-    styleUrls: ['./leftnavbar.style.css']
+    styleUrls: ['./leftnavbar.style.sass']
 })
 export class LeftNavbarComponent implements OnInit {
     private version = '';
