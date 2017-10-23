@@ -56,7 +56,7 @@
         "@types/hammerjs": "^2.0.35",
         "@types/highlight.js": "^9.1.10",
         "@types/marked": "^0.3.0",
-        "@angular/cli": "^1.4.8",
+        "@angular/cli": "^1.4.9",
         "@angular/compiler-cli": "^4.4.6",
         "@angular/language-service": "^4.4.6",
         "@types/jasmine": "~2.6.0",
