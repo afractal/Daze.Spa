@@ -1,4 +1,0 @@
-"heroku-postbuild": "npm run build"
-"heroku-prebuild": "npm install --only=dev"
-"postinstall": "ng build --aot -prod",
-NPM_CONFIG_PRODUCTION=false

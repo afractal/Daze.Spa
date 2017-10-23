@@ -1,7 +1,11 @@
 {
     "name": "daze.spa",
     "version": "0.2.0",
-    "author": "afractal",
+    "author": {
+        "name": "afractal",
+        "email": "hermesxgjini@gmail.com",
+        "url": "https://afractal.herokuapp.com"
+    },
     "description": "Front-End of afractal blog.",
     "main": "index.js",
     "license": "MIT",
@@ -34,6 +38,7 @@
         "@angular/platform-browser": "^4.4.6",
         "@angular/platform-browser-dynamic": "^4.4.6",
         "@angular/router": "^4.4.6",
+        "compression": "^1.7.1",
         "core-js": "^2.5.1",
         "express": "^4.16.2",
         "font-awesome": "^4.7.0",
