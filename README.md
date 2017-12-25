@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/afractal/Daze.Spa.svg?token=sN9qiKvy34fJyhwzHohM&branch=master)](https://travis-ci.com/afractal/Daze.Spa)
+[![Build Status](https://travis-ci.org/afractal/Daze.Spa.svg?branch=master)](https://travis-ci.org/afractal/Daze.Spa)
 
 
 ## Changes
