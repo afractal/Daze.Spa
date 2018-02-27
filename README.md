@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/afractal/Daze.Spa.svg?branch=master)](https://travis-ci.org/afractal/Daze.Spa)
+[![codebeat badge](https://codebeat.co/badges/990d060d-6cd7-4e1e-a8f1-d854740001e5)](https://codebeat.co/projects/github-com-afractal-daze-spa-master)
 
 
 ## Changes
