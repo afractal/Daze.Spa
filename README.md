@@ -13,6 +13,7 @@
 - add support for edge
 - add resources page
 
+
 *v.0.1.0*
 
 - seperated front-end and back-end into seperate projects
