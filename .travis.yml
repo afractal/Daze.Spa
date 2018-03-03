@@ -1,16 +1,18 @@
-dist: trusty
+
 language: node_js
 
 node_js:
-    - "7"
+    - lts/*
 
 install:
     - npm install
-
-before_script:
-    - export DISPLAY=:99.0
-    - sh -e /etc/init.d/xvfb start
-    - sleep 3
+    - npm install -g typescript
+    - npm install -g codeclimate-test-reporter
 
 script:
-    - npm run build
+    - yarn build
+    - yarn test
+    - yarn run test:coverage
+
+after_script:
+    codeclimate-test-reporter < coverage/lcov.info
