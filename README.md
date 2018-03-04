@@ -5,7 +5,11 @@
 
 ## Changes
 
-*v.0.2.0*
+*v1.0*
+
+- rewrite in react
+
+*v0.2.\**
 
 - convert to angular-cli
 - progress indication
@@ -14,7 +18,7 @@
 - add resources page
 
 
-*v.0.1.0*
+*v0.1.\**
 
 - seperated front-end and back-end into seperate projects
 - add CI integration

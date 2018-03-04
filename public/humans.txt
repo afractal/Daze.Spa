@@ -1,0 +1,12 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+  <afractal> -- <Fullstack Developer> -- <https://twitter.com/hermesgjini>
+
+
+# TECHNOLOGY COLOPHON
+
+  HTML5, CSS3
+  React, Relay, GraphQL, TypeScript, Webpack
