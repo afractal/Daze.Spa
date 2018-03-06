@@ -1,10 +1,10 @@
 import * as React from 'react';
-import './PostList.sass';
+import './PostList.css';
 
 type PostListProps = {}
 
 export const PostList = (props: PostListProps) => (
-    <></>
+    <h1>Post List</h1>
 );
 
 /*
