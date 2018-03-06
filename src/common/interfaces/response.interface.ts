@@ -1,6 +1,6 @@
 namespace Daze.Interfaces {
 
-    export interface IResponse<T> {
+    export interface Response<T> {
         _links: {
             self: { href: string | null },
             next: { href: string | null }

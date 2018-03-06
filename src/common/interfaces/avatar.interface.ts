@@ -1,6 +1,6 @@
 namespace Daze.Interfaces {
 
-    export interface IAvatar {
+    export interface Avatar {
         penName: string;
         profileImageUrl: string;
         bio: string;

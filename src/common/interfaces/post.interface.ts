@@ -1,6 +1,6 @@
 namespace Daze.Interfaces {
 
-    export interface IPost {
+    export interface Post {
         id: string;
         title: string;
         slug: string;
@@ -9,6 +9,6 @@ namespace Daze.Interfaces {
         coverImage: string;
         createdAt: Date;
         modifiedAt: Date;
-        tags: Array<ITag>;
+        tags: Array<Tag>;
     }
 }

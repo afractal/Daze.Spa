@@ -1,6 +1,6 @@
 namespace Daze.Interfaces {
 
-    export interface IApiService {
+    export interface ApiService {
         readonly requestUri: string;
     }
 }

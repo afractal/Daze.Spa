@@ -1,6 +1,6 @@
 namespace Daze.Interfaces {
 
-    export interface ICourse {
+    export interface Course {
         courseTag: string;
         courseTitle: string;
     }

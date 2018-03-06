@@ -1,6 +1,6 @@
 namespace Daze.Interfaces {
 
-    export interface ILoginResponse {
+    export interface LoginResponse {
         new_id: string;
         success: string;
         message: string;

@@ -1,19 +1,18 @@
 import * as React from 'react';
-import IPost = Daze.Interfaces.IPost;
+import './Post.sass';
 
 export const Post = () => (
     <></>
     // <spinner [isSpinning] = "isLoading" ></spinner>
-
     //     <article * ngIf="!!post && !isLoading" class="post-article markdown-body" >
     //         <h2 class="post-article-title "> {{ post.title }} </h2>
     //         <p class="post-article-content " [innerHTML] = "post.content | markdown | sanitize"></p>
     //             <ul * ngIf=" !!post.Tags " class="post-article-tags ">
     //                 <li * ngFor="let tag of post.tags" >
     //                     <a> {{ tag.tagName }} </a>
-    //             </li >
-    //         </ul >
-    //     </article >
+    //             </li>
+    //         </ul>
+    //     </article>
 );
 
 

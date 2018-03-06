@@ -1,8 +1,8 @@
 namespace Daze.Interfaces {
 
-    export interface ITag {
+    export interface Tag {
         id: string;
         tagName: string;
-        posts: Array<IPost>;
+        posts: Array<Post>;
     }
 }

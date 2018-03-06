@@ -1,5 +1,5 @@
 import * as React from 'react';
-import IPost = Daze.Interfaces.IPost;
+import './PostList.sass';
 
 type PostListProps = {}
 
