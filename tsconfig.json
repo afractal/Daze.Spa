@@ -4,10 +4,6 @@
         "outDir": "build/dist",
         "module": "esnext",
         "target": "es5",
-        "lib": [
-            "es2017",
-            "dom"
-        ],
         "sourceMap": true,
         "allowJs": true,
         "jsx": "react",
@@ -19,7 +15,11 @@
         "noImplicitAny": false,
         "strictNullChecks": true,
         "suppressImplicitAnyIndexErrors": true,
-        "noUnusedLocals": true
+        "noUnusedLocals": true,
+        "lib": [
+            "es2017",
+            "dom"
+        ]
     },
     "exclude": [
         "node_modules",
