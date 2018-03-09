@@ -2,9 +2,7 @@ import * as React from 'react';
 import { Link } from 'react-router-dom';
 import './LeftNavbar.css';
 
-type LeftnavbarProps = {}
-
-export const LeftNavbar = (props: LeftnavbarProps) => (
+export const LeftNavbar = (props) => (
     <nav>
         <ul className="leftnavbarActionsList nonDraggable">
             {/* <li>
@@ -45,13 +43,13 @@ export const LeftNavbar = (props: LeftnavbarProps) => (
             </li>
 
             <li className="leftnavbarAction">
-                <a href="https://www.codewars.com/users/afractal" target="_blank" rel="noopener">
+                <a href="https://www.codewars.com/users/afractal" target="_blank" rel="noopener noreferrer">
                     <span>codewars</span>
                 </a>
             </li>
 
             <li className="leftnavbarAction">
-                <a href="https://twitter.com/hermesgjini" target="_blank" rel="noopener">
+                <a href="https://twitter.com/hermesgjini" target="_blank" rel="noopener noreferrer">
                     <del style={{ pointerEvents: "none" }}>
                         <span>twitter</span>
                     </del>
@@ -59,7 +57,7 @@ export const LeftNavbar = (props: LeftnavbarProps) => (
             </li>
 
             <li className="leftnavbarAction">
-                <a href="https://www.producthunt.com/@hermesgjini/submitted" target="_blank" rel="noopener">
+                <a href="https://www.producthunt.com/@hermesgjini/submitted" target="_blank" rel="noopener noreferrer">
                     <del style={{ pointerEvents: "none" }}>
                         <span>product hunt</span>
                     </del>

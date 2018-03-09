@@ -1,10 +1,6 @@
 import * as React from 'react';
 import './App.css';
 import { LeftNavbar } from './leftnavbar/LeftNavbar';
-
-const Home = () => (
-    <h1>hello there</h1>
-);
 import { Switch, Route } from 'react-router';
 import { BrowserRouter } from 'react-router-dom';
 import { PostList } from './dashboard/posts/PostList';
@@ -12,6 +8,11 @@ import { About } from './dashboard/about/About';
 import { SkillList } from './dashboard/skills/SkillList';
 import { ProjectList } from './dashboard/projects/ProjectList';
 import { Spinner } from './shared/Spinner';
+
+const Home = () => (
+    <h1>hello there</h1>
+);
+
 
 class App extends React.Component {
     render() {

@@ -15,7 +15,6 @@ export const Post = () => (
     //     </article>
 );
 
-
 /*
 @Component({
     selector: 'post',

@@ -5,6 +5,9 @@ var compression = require('compression');
 
 var app = express();
 
+import { graphql } from 'relay-runtime';
+graphql`query me { user { id, name } }`;
+
 app.set('port', (process.env.PORT || 5000));
 
 app.use(compression());

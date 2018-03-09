@@ -1,9 +1,7 @@
 import * as React from 'react';
 import './ProjectList.css';
 
-type ProjectListProps = {}
-
-export const ProjectList = (props: ProjectListProps) => (
+export const ProjectList = (props) => (
     <h1>project</h1>
 );
 

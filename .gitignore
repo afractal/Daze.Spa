@@ -46,3 +46,6 @@ Thumbs.db
 
 # old folder
 /old
+
+# relay generated files
+ __generate__/**
