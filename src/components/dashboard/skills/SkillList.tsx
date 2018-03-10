@@ -1,6 +1,6 @@
 import * as React from 'react';
-import './SkillList.css';
+import './SkillList.sass';
 
 export const SkillList = () => (
-    <h1> skills </h1>
+    <></>
 );

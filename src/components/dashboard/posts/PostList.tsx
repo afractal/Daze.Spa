@@ -1,7 +1,9 @@
 import * as React from 'react';
-import './PostList.css';
+import './PostList.sass';
 
-export const PostList = (props) => (
+type PostListProps = {};
+
+export const PostList = (props: PostListProps) => (
     <h1>Post List</h1>
 );
 

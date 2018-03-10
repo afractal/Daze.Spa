@@ -1,13 +1,14 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
-import './LeftNavbar.css';
 
-export const LeftNavbar = (props) => (
+type LeftnavBarProps = {}
+
+export const LeftnavBar = (props: LeftnavBarProps) => (
     <nav>
         <ul className="leftnavbarActionsList nonDraggable">
-            {/* <li>
-                <avatar></avatar>
-            </li> */}
+            <li>
+                {/* <avatar></avatar> */}
+            </li>
 
             <li className="leftnavbarAction">
                 <Link to="/posts">
