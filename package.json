@@ -29,14 +29,8 @@
         "isomorphic-fetch": "^2.2.1",
         "node-sass-chokidar": "^0.0.3",
         "npm-run-all": "^4.1.2",
-<<<<<<< HEAD
         "nprogress": "^0.2.0",
         "react-relay": "^1.5.0",
-=======
-        "react": "^16.2.0",
-        "react-dom": "^16.2.0",
-        "react-redux": "^5.0.7",
->>>>>>> parent of 78977cc... readd spinner component
         "react-router-dom": "^4.2.2",
         "relay-devtools": "^1.4.0",
         "relay-runtime": "^1.5.0"
@@ -46,6 +40,7 @@
         "@types/isomorphic-fetch": "^0.0.34",
         "@types/jest": "^22.1.4",
         "@types/node": "^9.4.6",
+        "@types/nprogress": "^0.0.29",
         "@types/react": "^16.0.40",
         "@types/react-dom": "^16.0.4",
         "@types/react-relay": "^1.3.4",
