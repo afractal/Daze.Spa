@@ -1,13 +1,18 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
-import './LeftNavbar.css';
 
+<<<<<<< HEAD:src/components/leftnavbar/LeftNavbar.js
 export const LeftNavbar = (props) => (
+=======
+type LeftnavBarProps = {}
+
+export const LeftnavBar = (props: LeftnavBarProps) => (
+>>>>>>> parent of 78977cc... readd spinner component:src/components/leftnavbar/LeftnavBar.tsx
     <nav>
         <ul className="leftnavbarActionsList nonDraggable">
-            {/* <li>
-                <avatar></avatar>
-            </li> */}
+            <li>
+                {/* <avatar></avatar> */}
+            </li>
 
             <li className="leftnavbarAction">
                 <Link to="/posts">
@@ -49,16 +54,26 @@ export const LeftNavbar = (props) => (
             </li>
 
             <li className="leftnavbarAction">
+<<<<<<< HEAD:src/components/leftnavbar/LeftNavbar.js
                 <a href="https://twitter.com/hermesgjini" target="_blank" rel="noopener noreferrer">
                     <del style={{ pointerEvents: "none" }}>
+=======
+                <a href="https://twitter.com/hermesgjini" target="_blank" rel="noopener">
+                    <del style={{ "pointer-events": "none" }}>
+>>>>>>> parent of 78977cc... readd spinner component:src/components/leftnavbar/LeftnavBar.tsx
                         <span>twitter</span>
                     </del>
                 </a>
             </li>
 
             <li className="leftnavbarAction">
+<<<<<<< HEAD:src/components/leftnavbar/LeftNavbar.js
                 <a href="https://www.producthunt.com/@hermesgjini/submitted" target="_blank" rel="noopener noreferrer">
                     <del style={{ pointerEvents: "none" }}>
+=======
+                <a href="https://www.producthunt.com/@hermesgjini/submitted" target="_blank" rel="noopener">
+                    <del style={{ "pointer-events": "none" }}>
+>>>>>>> parent of 78977cc... readd spinner component:src/components/leftnavbar/LeftnavBar.tsx
                         <span>product hunt</span>
                     </del>
                 </a>

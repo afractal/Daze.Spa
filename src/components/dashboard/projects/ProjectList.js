@@ -1,8 +1,15 @@
 import * as React from 'react';
-import './ProjectList.css';
+import './ProjectList.sass';
 
+<<<<<<< HEAD:src/components/dashboard/projects/ProjectList.js
 export const ProjectList = (props) => (
     <h1>project</h1>
+=======
+type ProjectListProps = {}
+
+export const ProjectList = (props: ProjectListProps) => (
+    <></>
+>>>>>>> parent of 78977cc... readd spinner component:src/components/dashboard/projects/ProjectList.tsx
 );
 
 /*

@@ -1,8 +1,15 @@
 import * as React from 'react';
-import './PostList.css';
+import './PostList.sass';
 
+<<<<<<< HEAD:src/components/dashboard/posts/PostList.js
 export const PostList = (props) => (
     <h1>Post List</h1>
+=======
+type PostListProps = {}
+
+export const PostList = (props: PostListProps) => (
+    <></>
+>>>>>>> parent of 78977cc... readd spinner component:src/components/dashboard/posts/PostList.tsx
 );
 
 /*
