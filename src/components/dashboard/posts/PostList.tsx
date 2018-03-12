@@ -1,10 +1,23 @@
 import * as React from 'react';
 import './PostList.sass';
+import { Post } from './post/Post';
 
-type PostListProps = {};
+type PostListProps = {
+    posts: Object[]
+};
 
+
+const renderPosts = (posts: Object[]) => {
+    return posts.map(p =>
+        <Post />);
+};
+
+// <h1>Post List</h1>
+// ngIf = "!isLoading"
 export const PostList = (props: PostListProps) => (
-    <h1>Post List</h1>
+    <ul className="postList">
+        {renderPosts(props.posts)}
+    </ul>
 );
 
 /*

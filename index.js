@@ -1,12 +1,8 @@
-var path = require('path');
-var express = require('express');
-var compression = require('compression');
-var compression = require('compression');
+const path = require('path');
+const express = require('express');
+const compression = require('compression');
 
-var app = express();
-
-import { graphql } from 'relay-runtime';
-graphql`query me { user { id, name } }`;
+const app = express();
 
 app.set('port', (process.env.PORT || 5000));
 
