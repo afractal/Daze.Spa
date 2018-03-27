@@ -1,9 +1,9 @@
 
-type Env = 'development' | 'production'
+type Env = 'development' | 'production';
 
 type EnvironmentNode = {
     apiUrl: string
-}
+};
 
 type Environment = {
     production: EnvironmentNode,

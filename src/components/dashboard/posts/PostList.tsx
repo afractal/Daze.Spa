@@ -8,8 +8,7 @@ type PostListProps = {
 
 
 const renderPosts = (posts: Object[]) => {
-    return posts.map(p =>
-        <Post />);
+    return posts.map(p => <Post />);
 };
 
 // <h1>Post List</h1>
