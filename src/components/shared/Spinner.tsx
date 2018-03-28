@@ -2,7 +2,11 @@ import * as React from 'react';
 import * as NProgress from 'nprogress';
 import './Spinner.css';
 
-const updateSpinner = (shouldSpin) => {
+type SpinnerProps = {
+    willSpin: boolean
+};
+
+const updateSpinner = (shouldSpin: boolean) => {
     NProgress.configure({
         showSpinner: true,
         minimum: 0.1,
@@ -13,8 +17,7 @@ const updateSpinner = (shouldSpin) => {
 };
 
 // TODO: replace fdsf with childrens
-export const Spinner = ({ shouldSpin }) => {
-    updateSpinner(shouldSpin);
-    return <span> fdsf </span>;
+export const Spinner = ({ willSpin }: SpinnerProps) => {
+    updateSpinner(willSpin);
+    return <span> loading </span>;
 };
-

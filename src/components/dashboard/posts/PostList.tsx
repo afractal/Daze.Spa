@@ -1,14 +1,13 @@
 import * as React from 'react';
 import './PostList.sass';
-import { Post } from './post/Post';
+// import { Post } from './post/Post';
 
 type PostListProps = {
     posts: Object[]
 };
 
-
 const renderPosts = (posts: Object[]) => {
-    return posts.map(p => <Post />);
+    return posts.map(p => <></>);
 };
 
 // <h1>Post List</h1>
@@ -47,4 +46,3 @@ export class PostsComponent implements OnInit {
     }
 }
 */
-
