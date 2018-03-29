@@ -1,13 +1,13 @@
 import * as React from 'react';
 import './Post.sass';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 type PostProps = {
     slug: string
     title: string
     coverImage: string
     heroContent: string
-}
+};
 
 export const Post = (props: PostProps) => (
     <li>

@@ -1,5 +1,5 @@
 export * from './types';
-export { default as postActions } from './postActions';
+export { default as postActions } from './postsActions';
 
 import { ActionTypes, ActionPayloads, Action } from './types';
 

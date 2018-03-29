@@ -10,4 +10,3 @@ export type Post = {
     modifiedAt: Date
     // tags: Array<Tag>;
 };
-

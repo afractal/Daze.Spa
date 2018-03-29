@@ -7,7 +7,7 @@
 
 *v1.0*
 
-- rewrite in react
+- rewrite in react & redux
 
 *v0.2.\**
 

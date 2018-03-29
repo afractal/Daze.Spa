@@ -1,9 +1,9 @@
 export * from './types';
-import { combineReducers, Reducer } from 'redux';
-import postReducer from './postReducer';
+import { combineReducers } from 'redux';
+import postReducer from './postsReducer';
 import { RootState } from './types';
 
-export default <Reducer<RootState>> combineReducers({
+export default combineReducers<RootState>({
     post: postReducer
 });
 

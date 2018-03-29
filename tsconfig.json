@@ -2,6 +2,7 @@
     "compileOnSave": true,
     "compilerOptions": {
         "outDir": "build/dist",
+        "baseUrl": "./",
         "module": "esnext",
         "target": "es5",
         "sourceMap": true,

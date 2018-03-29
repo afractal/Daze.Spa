@@ -5,4 +5,4 @@ export type Project = {
     description: string
     url: string
     publishedYear: number
-}
+};

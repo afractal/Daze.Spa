@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 
-type LeftnavBarProps = {}
+type LeftnavBarProps = {};
 
 export const LeftnavBar = (props: LeftnavBarProps) => (
     <nav>
@@ -51,7 +51,7 @@ export const LeftnavBar = (props: LeftnavBarProps) => (
 
             <li className="leftnavbarAction">
                 <a href="https://twitter.com/hermesgjini" target="_blank" rel="noopener noreferrer">
-                    <del style={{ pointerEvents: "none" }}>
+                    <del style={{ pointerEvents: 'none' }}>
                         <span>twitter</span>
                     </del>
                 </a>
@@ -59,7 +59,7 @@ export const LeftnavBar = (props: LeftnavBarProps) => (
 
             <li className="leftnavbarAction">
                 <a href="https://www.producthunt.com/@hermesgjini/submitted" target="_blank" rel="noopener noreferrer">
-                    <del style={{ pointerEvents: "none" }}>
+                    <del style={{ pointerEvents: 'none' }}>
                         <span>product hunt</span>
                     </del>
                 </a>
@@ -67,7 +67,6 @@ export const LeftnavBar = (props: LeftnavBarProps) => (
         </ul>
     </nav>
 );
-
 
 // <!--<footer class="version">
 //     Copyright &copy; Hermes Gjini All Rights Reserved.<br /> Version: <em>{{version}}</em>

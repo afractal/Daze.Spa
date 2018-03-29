@@ -8,7 +8,7 @@ type EnvironmentNode = {
 type Environment = {
     production: EnvironmentNode,
     development: EnvironmentNode
-}
+};
 
 const environment: Environment = {
     production: {

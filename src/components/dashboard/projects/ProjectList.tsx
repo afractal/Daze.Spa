@@ -1,7 +1,7 @@
 import * as React from 'react';
 import './ProjectList.sass';
 
-type ProjectListProps = {}
+type ProjectListProps = {};
 
 export const ProjectList = (props: ProjectListProps) => (
     <></>
