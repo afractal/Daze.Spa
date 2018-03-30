@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
+import { PostListContainer } from './dashboard/posts/PostListContainer';
 
 const Home = () => (
     <h1>hello there</h1>
@@ -13,7 +14,7 @@ class App extends React.Component {
                 <div>
 
                     <Switch>
-                        <Route exact={true} path="/" component={Home} />
+                        <Route exact={true} path="/" component={PostListContainer} />
                         <Route path="/posts" component={Home} />
                         <Route path="/posts/:slug" component={Home} />
                         <Route path="/skills" component={Home} />

@@ -1,3 +1,4 @@
+import { Dispatch as ReduxDispatch } from 'redux';
 
 export const POSTS_REQUESTED = 'POSTS_REQUESTED';
 export const POSTS_SUCCEEDED = 'POSTS_SUCCEEDED';
@@ -49,3 +50,5 @@ export type PostsActions =
     Action2<PostsRequestedType, PostsRequestedPayload> |
     Action2<PostsRequestedType, PostsRequestedPayload>
     ;
+
+export type ApplicationDispatch<T> = ReduxDispatch<T>;

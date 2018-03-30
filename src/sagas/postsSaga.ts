@@ -1,4 +1,4 @@
 
-export const lol = () => {
+export function* lol() {
     return null;
-};
+}

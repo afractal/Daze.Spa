@@ -1,13 +1,14 @@
 import * as React from 'react';
-import './PostList.sass';
+import './PostList.css';
+import { Post } from 'src/domain';
 // import { Post } from './post/Post';
 
 type PostListProps = {
-    posts: Object[]
+    posts: Post[]
 };
 
-const renderPosts = (posts: Object[]) => {
-    return posts.map(p => <></>);
+const renderPosts = (posts: Post[]) => {
+    return (posts || []).map(p => <></>);
 };
 
 // <h1>Post List</h1>
