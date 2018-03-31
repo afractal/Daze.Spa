@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Post } from 'src/domain';
 import { connect } from 'react-redux';
 import { RootState } from 'src/reducers';
-// import { PostList } from './PostList';
+import { PostList } from './PostList';
 import { ApplicationDispatch, postActions, PostsPayloads } from 'src/actions';
 import { bindActionCreators } from 'redux';
 
@@ -17,16 +17,23 @@ type PostListContainerProps = PostListContainerDispatch & PostListContainerOwnPr
     readonly posts: Post[]
 };
 
-const PostListContainerComponent = (props: PostListContainerProps) => {
-    console.log('hello there');
-    return (<div>hello </div>);
-    // return (
-    //     <PostList posts={props.posts} />
-    // );
-};
+class PostListContainerComponent extends React.Component<PostListContainerProps> {
+
+    componentDidMount() {
+        this.props.getPosts({});
+    }
+
+    render() {
+        return (
+            <PostList
+                posts={this.props.posts}
+            />
+        );
+    }
+}
 
 const mapStateToProps = (state: RootState) => ({
-    props: state.posts
+    posts: state.posts.items
 });
 
 const mapDispatchToProps = (dispatch: ApplicationDispatch<RootState>): PostListContainerDispatch => (
@@ -35,7 +42,7 @@ const mapDispatchToProps = (dispatch: ApplicationDispatch<RootState>): PostListC
     }, dispatch)
 );
 
-export const PostListContainer = connect<{}>(
+export const PostListContainer = connect(
     mapStateToProps,
     mapDispatchToProps
 )(PostListContainerComponent);

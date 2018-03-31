@@ -1,12 +1,12 @@
 import * as React from 'react';
-import './Post.sass';
+import './Post.css';
 import { Link } from 'react-router-dom';
 
 type PostProps = {
     slug: string
     title: string
-    coverImage: string
-    heroContent: string
+    coverImage: string | undefined
+    heroContent: string | undefined
 };
 
 export const Post = (props: PostProps) => (
