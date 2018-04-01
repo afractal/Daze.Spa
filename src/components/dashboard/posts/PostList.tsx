@@ -2,7 +2,6 @@ import * as React from 'react';
 import './PostList.css';
 import { Post as PostDomain } from 'src/domain';
 import { Post } from './post/Post';
-// import { Post } from './post/Post';
 
 type PostListProps = {
     posts: PostDomain[]
