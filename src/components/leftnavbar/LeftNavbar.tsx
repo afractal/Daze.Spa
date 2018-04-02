@@ -30,12 +30,13 @@ export const LeftnavBar = (props: LeftnavBarProps) => (
 
             {/*          
             <li className="leftnavbarAction">
-                    <a routerLink="/skills" routerLinkActive="active" style="pointer-events: none">
-                        <del style="pointer-events: none">
-                            <span>skills</span>
-                        </del>
-                    </a>
-                </li> */}
+                <a routerLink="/skills" routerLinkActive="active" Fstyle="pointer-events: none">
+                    <del style="pointer-events: none">
+                        <span>skills</span>
+                    </del>
+                </a>
+            </li> 
+            */}
 
             <li className="leftnavbarAction">
                 <a href="https://github.com/afractal">

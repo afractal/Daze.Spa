@@ -1,5 +1,5 @@
 
-import * as sagas from '../sagas';
+import * as sagas from 'src/sagas';
 import { SagaMiddleware } from 'redux-saga';
 
 export default <T>(sagaMiddleware: SagaMiddleware<T>) => {

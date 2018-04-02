@@ -4,7 +4,7 @@ import { Store } from 'react-redux';
 import createSagaMiddleware from 'redux-saga';
 import loggerMiddleware from 'redux-logger';
 import immutableStateInvariantMiddleware from 'redux-immutable-state-invariant';
-import initSagas from '../sagas/initSagas';
+import initSagas from './initSagas';
 
 const sagaMiddleware = createSagaMiddleware();
 

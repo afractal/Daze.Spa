@@ -2,6 +2,7 @@ import * as React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
 import { PostListContainer } from './dashboard/posts/PostListContainer';
+import { ProjectListContainer } from './dashboard/projects/ProjectListContainer';
 
 const Home = () => (
     <h1>hello there</h1>
@@ -15,10 +16,10 @@ class App extends React.Component {
 
                     <Switch>
                         <Route exact={true} path="/" component={PostListContainer} />
-                        <Route path="/posts" component={Home} />
+                        <Route path="/posts" component={PostListContainer} />
                         <Route path="/posts/:slug" component={Home} />
+                        <Route path="/projects" component={ProjectListContainer} />
                         <Route path="/skills" component={Home} />
-                        <Route path="/projects" component={Home} />
                         <Route path="/about" component={Home} />
                         <Route path="/login" component={Home} />
                         <Route path="/admin" component={Home} />

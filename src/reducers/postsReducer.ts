@@ -1,5 +1,5 @@
-import { PostsActions, POSTS_REQUESTED, POSTS_SUCCEEDED } from '../actions';
 import { PostsState } from '.';
+import { PostsActions, POSTS_REQUESTED, POSTS_SUCCEEDED } from 'src/actions';
 
 const initialState: PostsState = {
     items: [],
@@ -9,13 +9,11 @@ const initialState: PostsState = {
 export default (state = initialState, action: PostsActions): PostsState => {
     switch (action.type) {
         case POSTS_REQUESTED: {
-            console.log('reducer requested', state);
             return { ...state };
         }
 
         case POSTS_SUCCEEDED: {
             const items = action.payload.posts;
-            console.log('reducer succeeded', items);
             return { ...state, items };
         }
 
