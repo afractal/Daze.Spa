@@ -1,5 +1,7 @@
 import * as React from 'react';
+import './LeftNavbar.css';
 import { Link } from 'react-router-dom';
+import { Avatar } from './avatar/Avatar';
 
 type LeftnavBarProps = {};
 
@@ -7,7 +9,7 @@ export const LeftnavBar = (props: LeftnavBarProps) => (
     <nav>
         <ul className="leftnavbarActionsList nonDraggable">
             <li>
-                {/* <avatar></avatar> */}
+                <Avatar />
             </li>
 
             <li className="leftnavbarAction">
@@ -45,24 +47,32 @@ export const LeftnavBar = (props: LeftnavBarProps) => (
             </li>
 
             <li className="leftnavbarAction">
-                <a href="https://www.codewars.com/users/afractal" target="_blank" rel="noopener noreferrer">
+                <a
+                    href="https://www.codewars.com/users/afractal"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
                     <span>codewars</span>
                 </a>
             </li>
 
             <li className="leftnavbarAction">
-                <a href="https://twitter.com/hermesgjini" target="_blank" rel="noopener noreferrer">
-                    <del style={{ pointerEvents: 'none' }}>
-                        <span>twitter</span>
-                    </del>
+                <a
+                    href="https://twitter.com/hermesgjini"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <span>twitter</span>
                 </a>
             </li>
 
             <li className="leftnavbarAction">
-                <a href="https://www.producthunt.com/@hermesgjini/submitted" target="_blank" rel="noopener noreferrer">
-                    <del style={{ pointerEvents: 'none' }}>
-                        <span>product hunt</span>
-                    </del>
+                <a
+                    href="https://www.producthunt.com/@hermesgjini/submitted"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <span>product hunt</span>
                 </a>
             </li>
         </ul>

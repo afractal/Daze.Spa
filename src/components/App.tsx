@@ -3,9 +3,10 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
 import { PostListContainer } from './dashboard/posts/PostListContainer';
 import { ProjectListContainer } from './dashboard/projects/ProjectListContainer';
+import { LeftnavBar } from './leftnavbar/LeftNavbar';
 
-const Home = () => (
-    <h1>hello there</h1>
+const NotFound = () => (
+    <h2>page not found</h2>
 );
 
 class App extends React.Component {
@@ -13,28 +14,34 @@ class App extends React.Component {
         return (
             <BrowserRouter>
                 <div>
+                    <div className="leftnavbar">
+                        <React.StrictMode>
+                            <LeftnavBar />
+                        </React.StrictMode>
+                    </div>
+                    <div className="dashboard">
+                        <Switch>
+                            <Route exact={true} path="/" component={PostListContainer} />
+                            <Route path="/posts" component={PostListContainer} />
+                            <Route path="/posts/:slug" component={NotFound} />
+                            <Route path="/projects" component={ProjectListContainer} />
+                            <Route path="/skills" component={NotFound} />
+                            <Route path="/about" component={NotFound} />
+                            <Route path="/login" component={NotFound} />
+                            <Route path="/admin" component={NotFound} />
+                            <Route path="/admin/posts" component={NotFound} />
+                            <Route path="/admin/posts/create" component={NotFound} />
+                            <Route path="/admin/posts/update/:id" component={NotFound} />
+                            <Route path="/admin/projects" component={NotFound} />
+                            <Route path="/admin/projects/create" component={NotFound} />
+                            <Route path="/admin/projects/update/:id" component={NotFound} />
+                            <Route path="/admin/skills" component={NotFound} />
+                            <Route path="/admin/skills/create" component={NotFound} />
+                            <Route path="/admin/skills/update/:id" component={NotFound} />
 
-                    <Switch>
-                        <Route exact={true} path="/" component={PostListContainer} />
-                        <Route path="/posts" component={PostListContainer} />
-                        <Route path="/posts/:slug" component={Home} />
-                        <Route path="/projects" component={ProjectListContainer} />
-                        <Route path="/skills" component={Home} />
-                        <Route path="/about" component={Home} />
-                        <Route path="/login" component={Home} />
-                        <Route path="/admin" component={Home} />
-                        <Route path="/admin/posts" component={Home} />
-                        <Route path="/admin/posts/create" component={Home} />
-                        <Route path="/admin/posts/update/:id" component={Home} />
-                        <Route path="/admin/projects" component={Home} />
-                        <Route path="/admin/projects/create" component={Home} />
-                        <Route path="/admin/projects/update/:id" component={Home} />
-                        <Route path="/admin/skills" component={Home} />
-                        <Route path="/admin/skills/create" component={Home} />
-                        <Route path="/admin/skills/update/:id" component={Home} />
-
-                        <Route component={Home} />
-                    </Switch>
+                            <Route component={NotFound} />
+                        </Switch>
+                    </div>
                 </div>
             </BrowserRouter>
         );

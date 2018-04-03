@@ -1,16 +1,21 @@
+
 .avatarImageContainer > img {
-  height: 8em;
-  width: 8em;
-  pointer-events: none;
-  object-fit: contain;
-  -o-object-fit: contain;
-  object-position: center;
-  -o-object-position: center;
-  font-family: 'object-fit: contain;'; }
+    height: 8em;
+    width: 8em;
+    pointer-events: none;
+    object-fit: contain;
+    -o-object-fit: contain;
+    object-position: center;
+    -o-object-position: center;
+    font-family: 'object-fit: contain;';
+}
 
 .penName {
-  letter-spacing: 0.2em; }
+    letter-spacing: 0.2em; 
+}
 
 @media screen and (max-width: 870px) {
-  .avatarImageContainer, .penName {
-    display: none; } }
+    .avatarImageContainer, .penName {
+        display: none; 
+    } 
+}

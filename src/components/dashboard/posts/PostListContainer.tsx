@@ -25,9 +25,11 @@ class PostListContainerComponent extends React.Component<PostListContainerProps>
 
     render() {
         return (
-            <PostList
-                posts={this.props.posts}
-            />
+            <React.StrictMode>
+                <PostList
+                    posts={this.props.posts}
+                />
+            </React.StrictMode>
         );
     }
 }

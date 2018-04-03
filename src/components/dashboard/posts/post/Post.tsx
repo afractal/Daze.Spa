@@ -17,8 +17,9 @@ export const Post = (props: PostProps) => (
             </div>
             <div className="postArticleBody">
                 <h3 className="postArticleBodyTitle">
-                    <Link to={`/posts/${props.slug}`} />
-                    <span>{props.title}</span>
+                    <Link to={`/posts/${props.slug}`} className="blogLink">
+                        <span>{props.title}</span>
+                    </Link>
                 </h3>
                 <hr />
                 <p className="postArticleBodyDetails">
@@ -26,7 +27,7 @@ export const Post = (props: PostProps) => (
                 </p>
             </div>
         </article>
-    </li >
+    </li>
 );
 
 // <spinner [isSpinning] = "isLoading" ></spinner>
