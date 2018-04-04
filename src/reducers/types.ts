@@ -5,6 +5,11 @@ export type PostsState = {
     readonly loading: boolean
 };
 
+export type PostState = {
+    readonly item: Post
+    readonly loading: boolean
+};
+
 export type ProjectsState = {
     readonly items: Project[]
     readonly loading: boolean
@@ -12,5 +17,6 @@ export type ProjectsState = {
 
 export type RootState = {
     posts: PostsState
+    post: PostState
     projects: ProjectsState
 };

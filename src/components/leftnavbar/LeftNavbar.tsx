@@ -1,5 +1,5 @@
 import * as React from 'react';
-import './LeftNavbar.css';
+import './LeftNavBar.css';
 import { Link } from 'react-router-dom';
 import { Avatar } from './avatar/Avatar';
 
@@ -30,14 +30,14 @@ export const LeftnavBar = (props: LeftnavBarProps) => (
                 </Link>
             </li>
 
-            {/*          
+            {/*
             <li className="leftnavbarAction">
                 <a routerLink="/skills" routerLinkActive="active" Fstyle="pointer-events: none">
                     <del style="pointer-events: none">
                         <span>skills</span>
                     </del>
                 </a>
-            </li> 
+            </li>
             */}
 
             <li className="leftnavbarAction">

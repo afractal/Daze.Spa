@@ -1,6 +1,6 @@
 import * as React from 'react';
 import './Avatar.css';
-const Logo = require('./afractal_logo_white.png');
+const Logo = require('src/assets/images/afractal_logo_white.png');
 
 type AvatarProps = {};
 

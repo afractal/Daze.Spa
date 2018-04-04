@@ -1,12 +1,14 @@
 export * from './types';
 import { combineReducers } from 'redux';
-import postReducer from './postsReducer';
-import projectReducer from './projectsReducer';
+import postsReducer from './postsReducer';
+import postReducer from './postReducer';
+import projectsReducer from './projectsReducer';
 import { RootState } from './types';
 
 export default combineReducers<RootState>({
-    posts: postReducer,
-    projects: projectReducer
+    posts: postsReducer,
+    post: postReducer,
+    projects: projectsReducer
 });
 
 // dashboard

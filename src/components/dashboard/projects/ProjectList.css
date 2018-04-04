@@ -4,7 +4,7 @@ a {
 }
 
 a:hover {
-    color: rgba(255, 255, 255, 0.8); 
+    color: rgba(255, 255, 255, 0.8);
 }
 
 .project-section {
@@ -17,5 +17,5 @@ a:hover {
     align-content: center;
     justify-content: center;
     text-align: center;
-    margin: 2em 1em; 
+    margin: 2em 1em;
 }

@@ -3,7 +3,7 @@
     width: 40em;
     margin-bottom: 2em;
     box-shadow: 14px 2px 6px 0px darkgrey;
-    /*box-shadow: 0 2px 2px rgba(0,0,0,0.24);*/ 
+    /*box-shadow: 0 2px 2px rgba(0,0,0,0.24);*/
 }
 
 .project-head {
@@ -16,52 +16,58 @@
     background-color: #22384e;
     color: white;
     padding: 0.6em;
-    border-radius: 0.2em 0.2em 0 0; 
+    border-radius: 0.2em 0.2em 0 0;
 }
 
 .project-name {
     flex-basis: 80%;
-    text-align: left; 
+    text-align: left;
+    color: white;
+    text-decoration-line: none;
+}
+
+.project-name:hover {
+    color: rgba(255, 255, 255, 0.8);
 }
 
 .published-date-holder {
     flex-basis: 20%;
-    text-align: right; 
+    text-align: right;
 }
 
 .published-date {
     background-color: #6b6571;
     border-radius: 0.6em;
-    padding: 0.1em 1em; 
+    padding: 0.1em 1em;
 }
 
 .project-body {
     background-color: #f1f1f1;
     width: 100%;
     padding: 1em 0.6em;
-    border-radius: 0 0 0.2em 0.2em; 
+    border-radius: 0 0 0.2em 0.2em;
 }
 
 @media screen and (max-width: 1170px) {
     .project-template {
-        width: 35em; 
-    } 
+        width: 35em;
+    }
 }
 
 @media screen and (max-width: 1070px) {
     .project-template {
         width: 30em;
-    } 
+    }
 }
 
 @media screen and (max-width: 970px) {
     .project-template {
-        width: 25em; 
-    } 
+        width: 25em;
+    }
 }
 
 @media screen and (max-width: 570px) {
     .project-template {
         width: 20em;
-    } 
+    }
 }

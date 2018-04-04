@@ -13,7 +13,7 @@ export const Project = (props: ProjectProps) => (
         <div className="project-head">
             <div className="project-name">
                 <a href={props.url} target="_blank" rel="noopener">
-                    {props.name}
+                    {(props as any).projectName}
                 </a>
             </div>
             <div className="published-date-holder">

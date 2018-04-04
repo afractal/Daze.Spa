@@ -25,9 +25,7 @@ class ProjectListContainerComponent extends React.Component<ProjectListContainer
     render() {
         return (
             <React.StrictMode>
-                <ProjectList
-                    projects={this.props.projects}
-                />
+                <ProjectList projects={this.props.projects} />
             </React.StrictMode>
         );
     }
