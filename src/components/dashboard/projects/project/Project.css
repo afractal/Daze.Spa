@@ -22,11 +22,14 @@
 .project-name {
     flex-basis: 80%;
     text-align: left;
+}
+
+.project-link {
     color: white;
     text-decoration-line: none;
 }
 
-.project-name:hover {
+.project-link:hover {
     color: rgba(255, 255, 255, 0.8);
 }
 

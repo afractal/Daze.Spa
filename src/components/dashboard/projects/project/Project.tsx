@@ -12,7 +12,12 @@ export const Project = (props: ProjectProps) => (
     <div className="project-template" >
         <div className="project-head">
             <div className="project-name">
-                <a href={props.url} target="_blank" rel="noopener">
+                <a
+                    className="project-link"
+                    href={props.url}
+                    target="_blank"
+                    rel="noopener"
+                >
                     {(props as any).projectName}
                 </a>
             </div>

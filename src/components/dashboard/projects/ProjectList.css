@@ -1,11 +1,3 @@
-a {
-    color: white;
-    text-decoration-line: none;
-}
-
-a:hover {
-    color: rgba(255, 255, 255, 0.8);
-}
 
 .project-section {
     display: inline-flex;

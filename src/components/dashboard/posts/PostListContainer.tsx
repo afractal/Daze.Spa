@@ -3,7 +3,7 @@ import { Post } from 'src/domain';
 import { connect } from 'react-redux';
 import { RootState } from 'src/reducers';
 import { PostList } from './PostList';
-import { ApplicationDispatch, postActions, PostsPayloads } from 'src/actions';
+import { ApplicationDispatch, postsActions, PostsPayloads } from 'src/actions';
 import { bindActionCreators } from 'redux';
 
 type PostListContainerDispatch = {
@@ -38,7 +38,7 @@ const mapStateToProps = (state: RootState) => ({
 
 const mapDispatchToProps = (dispatch: ApplicationDispatch<RootState>): PostListContainerDispatch => (
     bindActionCreators({
-        getPosts: postActions.requestPosts
+        getPosts: postsActions.requestPosts
     }, dispatch)
 );
 
