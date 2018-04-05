@@ -5,6 +5,10 @@ export const POSTS_REQUESTED = 'POSTS_REQUESTED';
 export const POSTS_SUCCEEDED = 'POSTS_SUCCEEDED';
 export const POSTS_FAILED = 'POSTS_FAILED';
 
+export const MORE_POSTS_REQUESTED = 'MORE_POSTS_REQUESTED';
+export const MORE_POSTS_SUCCEEDED = 'MORE_POSTS_SUCCEEDED';
+export const MORE_POSTS_FAILED = 'MORE_POSTS_FAILED';
+
 export const POST_REQUESTED = 'POST_REQUESTED';
 export const POST_SUCCEEDED = 'POST_SUCCEEDED';
 export const POST_FAILED = 'POST_FAILED';
@@ -16,6 +20,10 @@ export const PROJECTS_FAILED = 'PROJECTS_FAILED';
 export type PostsRequestedType = 'POSTS_REQUESTED';
 export type PostsSucceededType = 'POSTS_SUCCEEDED';
 export type PostsFailedType = 'POSTS_FAILED';
+
+export type MorePostsRequestedType = 'MORE_POSTS_REQUESTED';
+export type MorePostsSucceededType = 'MORE_POSTS_SUCCEEDED';
+export type MorePostsFailedType = 'MORE_POSTS_FAILED';
 
 export type PostRequestedType = 'POST_REQUESTED';
 export type PostSucceededType = 'POST_SUCCEEDED';
@@ -31,6 +39,14 @@ export type PostsSucceededPayload = {
     readonly posts: Post[]
 };
 export type PostsFailedPayload = {
+};
+
+export type MorePostsRequestedPayload = {
+};
+export type MorePostsSucceededPayload = {
+    readonly posts: Post[]
+};
+export type MorePostsFailedPayload = {
 };
 
 export type PostRequestedPayload = {
@@ -56,6 +72,12 @@ export type PostsPayloads =
     PostsFailedPayload
     ;
 
+export type MorePostsPayloads =
+    MorePostsRequestedPayload |
+    MorePostsSucceededPayload |
+    MorePostsFailedPayload
+    ;
+
 export type PostPayloads =
     PostRequestedPayload |
     PostSucceededPayload |
@@ -74,6 +96,12 @@ type PostsActionTypes =
     PostsFailedType
     ;
 
+type MorePostsActionTypes =
+    MorePostsRequestedType |
+    MorePostsSucceededType |
+    MorePostsFailedType
+    ;
+
 type PostActionTypes =
     PostRequestedType |
     PostSucceededType |
@@ -88,12 +116,14 @@ type ProjectsActionTypes =
 
 export type ActionPayloads =
     PostsPayloads |
+    MorePostsActionTypes |
     PostActionTypes |
     ProjectsPayloads
     ;
 
 export type ActionTypes =
     PostsActionTypes |
+    MorePostsActionTypes |
     PostActionTypes |
     ProjectsActionTypes
     ;
@@ -112,6 +142,12 @@ export type PostsActions =
     Action<PostsRequestedType, PostsRequestedPayload> |
     Action<PostsSucceededType, PostsSucceededPayload> |
     Action<PostsFailedType, PostsFailedPayload>
+    ;
+
+export type MorePostsActions =
+    Action<MorePostsRequestedType, MorePostsRequestedPayload> |
+    Action<MorePostsSucceededType, MorePostsSucceededPayload> |
+    Action<MorePostsFailedType, MorePostsFailedPayload>
     ;
 
 export type PostActions =

@@ -7,20 +7,20 @@ import { PostDetail } from './PostDetail';
 import { match } from 'react-router-dom';
 
 type ReactDetailContainerDispatch = {
-    getPost: (payload: PostPayloads) => void
+    readonly getPost: (payload: PostPayloads) => void
 };
 
 type ReactDetailContainerOwnProps = {};
 
 type ReactDetailContainerProps = ReactDetailContainerDispatch & ReactDetailContainerOwnProps & {
-    slug: string
-    title: string
-    heroContent: string | undefined
-    content: string | undefined
-    coverImage: string | undefined
-    createdAt: Date
-    modifiedAt: Date
-    match: match<{ slug: string }>
+    readonly slug: string
+    readonly title: string
+    readonly heroContent: string | undefined
+    readonly content: string | undefined
+    readonly coverImage: string | undefined
+    readonly createdAt: Date
+    readonly modifiedAt: Date
+    readonly match: match<{ slug: string }>
 };
 
 class ReactDetailContainerComponent extends React.Component<ReactDetailContainerProps> {

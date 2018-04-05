@@ -3,10 +3,10 @@ import './Post.css';
 import { Link } from 'react-router-dom';
 
 type PostProps = {
-    slug: string
-    title: string
-    coverImage: string | undefined
-    heroContent: string | undefined
+    readonly slug: string
+    readonly title: string
+    readonly coverImage: string | undefined
+    readonly heroContent: string | undefined
 };
 
 export const Post = (props: PostProps) => (

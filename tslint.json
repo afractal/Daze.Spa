@@ -20,7 +20,7 @@
             true,
             "never-prefix"
         ],
-        "jsdoc-format": true,
+        "jsdoc-format": false,
         "jsx-no-lambda": false,
         "jsx-no-multiline-js": false,
         "label-position": true,

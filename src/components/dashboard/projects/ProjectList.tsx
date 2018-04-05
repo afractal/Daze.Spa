@@ -4,7 +4,7 @@ import { Project as ProjectDomain } from 'src/domain';
 import { Project } from './project/Project';
 
 type ProjectListProps = {
-    projects: ProjectDomain[]
+    readonly projects: ProjectDomain[]
 };
 
 const mapToProject = (project: ProjectDomain, index: number) =>

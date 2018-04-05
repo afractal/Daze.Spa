@@ -53,29 +53,46 @@ label {
     color: grey;
 }
 
-button.btn {
+.btn {
     font-weight: bold;
     font-size: 11pt;
-    height: 3em;
-    width: 10em;
+    height: 2.4em;
+    width: 9em;
     color: #22384e;
     background-color: white;
     border: 0;
     border-radius: 0.2em;
+    margin: 0 0 2em 0;
     box-shadow: 0 2px 2px rgba(0,0,0,0.24), 0 0 2px rgba(0,0,0,0.12);
-    margin: 0 0 1em 0;
+    transition: all .2s ease-out;
+    outline: none;
 }
 
-button.btn:hover {
+.btn:hover {
     transition: cubic-bezier(0.075, 0.82, 0.165, 1);
     transition-duration: 1200ms;
     transition-delay: 2ms;
     cursor: pointer;
-    height: 3em;
+    height: 2.4em;
     width: 10em;
     color: white;
     background-color: #22384e;
     box-shadow: 0 2px 2px rgba(0,0,0,0.24), 0 0 2px rgba(0,0,0,0.12);
+}
+
+.visible {
+    visibility : visible;
+}
+
+.hidden {
+    visibility : hidden;
+}
+
+.disabled, .disabled:hover {
+    pointer-events: none;
+    cursor: none;
+    user-select: none;
+    opacity: 0.6;
 }
 
 .blogLink {

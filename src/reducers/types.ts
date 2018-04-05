@@ -5,6 +5,11 @@ export type PostsState = {
     readonly loading: boolean
 };
 
+export type MorePostsState = {
+    readonly items: Post[]
+    readonly loading: boolean
+};
+
 export type PostState = {
     readonly item: Post
     readonly loading: boolean

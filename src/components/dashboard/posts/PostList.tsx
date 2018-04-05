@@ -4,7 +4,7 @@ import { Post as PostDomain } from 'src/domain';
 import { Post } from './post/Post';
 
 type PostListProps = {
-    posts: PostDomain[]
+    readonly posts: PostDomain[]
 };
 
 const mapToPost = (post: PostDomain, index: number) =>

@@ -1,18 +1,18 @@
-import { PostsState } from '.';
-import { PostsActions, POSTS_REQUESTED, POSTS_SUCCEEDED } from 'src/actions';
+import { MorePostsState } from '.';
+import { MORE_POSTS_REQUESTED, MORE_POSTS_SUCCEEDED, MorePostsActions } from 'src/actions';
 
-const initialState: PostsState = {
+const initialState: MorePostsState = {
     items: [],
     loading: false
 };
 
-export default (state = initialState, action: PostsActions): PostsState => {
+export default (state = initialState, action: MorePostsActions): MorePostsState => {
     switch (action.type) {
-        case POSTS_REQUESTED: {
+        case MORE_POSTS_REQUESTED: {
             return { ...state, loading: true };
         }
 
-        case POSTS_SUCCEEDED: {
+        case MORE_POSTS_SUCCEEDED: {
             const items = action.payload.posts;
             return {
                 ...state,

@@ -2,10 +2,10 @@ import * as React from 'react';
 import './Project.css';
 
 type ProjectProps = {
-    name: string
-    description: string
-    url: string
-    publishedYear: number
+    readonly name: string
+    readonly description: string
+    readonly url: string
+    readonly publishedYear: number
 };
 
 export const Project = (props: ProjectProps) => (

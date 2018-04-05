@@ -3,8 +3,8 @@ import './PostDetail.css';
 import { parseToHtml } from 'src/services';
 
 type PostDetailProps = {
-    title: string
-    content: string | undefined
+    readonly title: string
+    readonly content: string | undefined
 };
 
 export const PostDetail = (props: PostDetailProps) => {
