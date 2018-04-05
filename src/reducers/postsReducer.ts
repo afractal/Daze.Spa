@@ -14,7 +14,7 @@ export default (state = initialState, action: PostsActions): PostsState => {
 
         case POSTS_SUCCEEDED: {
             const items = action.payload.posts;
-            return { ...state, items };
+            return { ...state, items: [...items, ...items] };
         }
 
         default:

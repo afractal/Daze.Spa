@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import './App.css';
-import 'src/assets/styles/github-markdown.css';
+import '../assets/styles/github-markdown.css';
 import 'highlight.js/styles/github-gist.css';
 import { PostListContainer } from './dashboard/posts/PostListContainer';
 import { ProjectListContainer } from './dashboard/projects/ProjectListContainer';
@@ -47,7 +47,7 @@ class App extends React.Component {
                         </Switch>
                     </div>
                 </div>
-            </BrowserRouter>
+            </BrowserRouter >
         );
     }
 }
