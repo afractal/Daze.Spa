@@ -10,12 +10,16 @@ const initialState: PostState = {
 export default (state = initialState, action: PostActions): PostState => {
     switch (action.type) {
         case POST_REQUESTED: {
-            return { ...state };
+            return { ...state, loading: true };
         }
 
         case POST_SUCCEEDED: {
             const item = action.payload.post;
-            return { ...state, item };
+            return {
+                ...state,
+                loading: false,
+                item
+            };
         }
 
         default:

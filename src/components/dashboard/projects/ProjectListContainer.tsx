@@ -6,6 +6,7 @@ import { RootState } from 'src/reducers';
 import { ApplicationDispatch, ProjectsPayloads, projectsActions } from 'src/actions';
 import { bindActionCreators } from 'redux';
 import { Spinner } from '../../shared/spinner/Spinner';
+import { Visibility } from '../../shared/visibility/Visibility';
 
 type ProjectListContainerDispatch = {
     readonly getProjects: (payload: ProjectsPayloads) => void
@@ -27,7 +28,9 @@ class ProjectListContainerComponent extends React.Component<ProjectListContainer
     render() {
         return (
             <React.StrictMode>
-                <ProjectList projects={this.props.projects} />
+                <Visibility willShow={!this.props.loading}>
+                    <ProjectList projects={this.props.projects} />
+                </Visibility>
                 <Spinner willSpin={this.props.loading} />
             </React.StrictMode>
         );

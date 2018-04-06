@@ -37,8 +37,8 @@ class PostListContainerComponent extends React.Component<PostListContainerProps>
     render() {
         return (
             <React.StrictMode>
-                <PostList posts={this.props.posts} />
                 <Visibility willShow={!this.props.loading}>
+                    <PostList posts={this.props.posts} />
                     <Disability whillDisable={false}>
                         <Button onClicked={this.loadMore} />
                     </Disability>

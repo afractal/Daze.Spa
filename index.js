@@ -4,13 +4,13 @@ const compression = require('compression');
 
 const app = express();
 
-app.set('port', (process.env.PORT || 5000));
+const PORT = process.env.PORT || 5000;
 
 app.use(compression());
 app.use(express.static(path.join(__dirname, './dist')));
 
-app.listen(app.get('port'), function () {
-    console.log('Node app is running on port', app.get('port'));
+app.listen(PORT, function () {
+    console.log('Node app is running on port', PORT);
     console.log(__dirname);
 });
 
