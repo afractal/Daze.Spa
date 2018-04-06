@@ -5,6 +5,7 @@ import { Project } from 'src/domain';
 import { RootState } from 'src/reducers';
 import { ApplicationDispatch, ProjectsPayloads, projectsActions } from 'src/actions';
 import { bindActionCreators } from 'redux';
+import { Spinner } from '../../shared/spinner/Spinner';
 
 type ProjectListContainerDispatch = {
     readonly getProjects: (payload: ProjectsPayloads) => void
@@ -14,6 +15,7 @@ type ProjectListContainerOwnProps = {};
 
 type ProjectListContainerProps = ProjectListContainerDispatch & ProjectListContainerOwnProps & {
     readonly projects: Project[]
+    readonly loading: boolean
 };
 
 class ProjectListContainerComponent extends React.Component<ProjectListContainerProps> {
@@ -26,13 +28,15 @@ class ProjectListContainerComponent extends React.Component<ProjectListContainer
         return (
             <React.StrictMode>
                 <ProjectList projects={this.props.projects} />
+                <Spinner willSpin={this.props.loading} />
             </React.StrictMode>
         );
     }
 }
 
 const mapStateToProps = (state: RootState) => ({
-    projects: state.projects.items
+    projects: state.projects.items,
+    loading: state.projects.loading
 });
 
 const mapDispatchToProps = (dispatch: ApplicationDispatch<RootState>): ProjectListContainerDispatch => (
@@ -41,7 +45,7 @@ const mapDispatchToProps = (dispatch: ApplicationDispatch<RootState>): ProjectLi
     }, dispatch)
 );
 
-export const ProjectListContainer = connect(
+export const ProjectListContainer = connect<{}>(
     mapStateToProps,
     mapDispatchToProps
 )(ProjectListContainerComponent);

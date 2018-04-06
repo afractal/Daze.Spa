@@ -9,12 +9,16 @@ const initialState: ProjectsState = {
 export default (state = initialState, action: ProjectsActions): ProjectsState => {
     switch (action.type) {
         case PROJECTS_REQUESTED: {
-            return { ...state };
+            return { ...state, loading: true };
         }
 
         case PROJECTS_SUCCEEDED: {
             const items = action.payload.projects;
-            return { ...state, items };
+            return {
+                ...state,
+                loading: false,
+                items
+            };
         }
 
         default:

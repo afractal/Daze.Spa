@@ -19,5 +19,6 @@ const updateSpinner = (shouldSpin: boolean) => {
 // TODO: replace fdsf with childrens
 export const Spinner = ({ willSpin }: SpinnerProps) => {
     updateSpinner(willSpin);
-    return <span> loading </span>;
+    // return <span> loading </span>;
+    return <div className="lol" />;
 };

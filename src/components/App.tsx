@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import './App.css';
 import '../assets/styles/github-markdown.css';
 import 'highlight.js/styles/github-gist.css';
+import 'nprogress/nprogress.css';
 import { PostListContainer } from './dashboard/posts/PostListContainer';
 import { ProjectListContainer } from './dashboard/projects/ProjectListContainer';
 import { LeftnavBar } from './leftnavbar/LeftNavbar';
