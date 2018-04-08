@@ -21,6 +21,8 @@ type PostListContainerOwnProps = {
 type PostListContainerProps = PostListContainerDispatch & PostListContainerOwnProps & {
     readonly posts: Post[]
     readonly loading: boolean
+    readonly offset: number
+    readonly limit: number
 };
 
 class PostListContainerComponent extends React.Component<PostListContainerProps> {
@@ -30,8 +32,10 @@ class PostListContainerComponent extends React.Component<PostListContainerProps>
     }
 
     loadMore = () => {
-        this.props.getMorePosts({});
-        console.log('load more clicked');
+        this.props.getMorePosts({
+            offset: this.props.offset,
+            limit: this.props.limit
+        });
     }
 
     render() {
@@ -49,15 +53,20 @@ class PostListContainerComponent extends React.Component<PostListContainerProps>
     }
 }
 
-const mapStateToProps = (state: RootState) => ({
-    posts: state.posts.items,
-    loading: state.posts.loading
+const mapStateToProps = ({ posts, morePosts }: RootState) => ({
+    posts: [
+        ...posts.items,
+        ...morePosts.items
+    ],
+    offset: morePosts.offset,
+    limit: morePosts.limit,
+    loading: posts.loading
 });
 
 const mapDispatchToProps = (dispatch: ApplicationDispatch<RootState>): PostListContainerDispatch => (
     bindActionCreators({
         getPosts: postsActions.requestPosts,
-        getMorePosts: morePostsActions.requstMorePosts
+        getMorePosts: morePostsActions.requestMorePosts
     }, dispatch)
 );
 

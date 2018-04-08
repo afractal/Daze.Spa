@@ -3,7 +3,9 @@ import { MORE_POSTS_REQUESTED, MORE_POSTS_SUCCEEDED, MorePostsActions } from 'sr
 
 const initialState: MorePostsState = {
     items: [],
-    loading: false
+    loading: false,
+    offset: 3,
+    limit: 2
 };
 
 export default (state = initialState, action: MorePostsActions): MorePostsState => {
@@ -13,11 +15,13 @@ export default (state = initialState, action: MorePostsActions): MorePostsState 
         }
 
         case MORE_POSTS_SUCCEEDED: {
-            const items = action.payload.posts;
+            const { offset, limit, posts } = action.payload;
             return {
                 ...state,
                 loading: false,
-                items
+                offset: offset + limit,
+                limit: limit,
+                items: [...state.items, ...posts]
             };
         }
 

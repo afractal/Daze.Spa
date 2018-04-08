@@ -42,9 +42,13 @@ export type PostsFailedPayload = {
 };
 
 export type MorePostsRequestedPayload = {
+    readonly offset: number
+    readonly limit: number
 };
 export type MorePostsSucceededPayload = {
     readonly posts: Post[]
+    readonly offset: number
+    readonly limit: number
 };
 export type MorePostsFailedPayload = {
 };

@@ -8,6 +8,8 @@ export type PostsState = {
 export type MorePostsState = {
     readonly items: Post[]
     readonly loading: boolean
+    readonly offset: number
+    readonly limit: number
 };
 
 export type PostState = {
@@ -22,6 +24,7 @@ export type ProjectsState = {
 
 export type RootState = {
     posts: PostsState
+    morePosts: MorePostsState
     post: PostState
     projects: ProjectsState
 };

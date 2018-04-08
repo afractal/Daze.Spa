@@ -13,10 +13,13 @@ export function* watchMorePosts() {
 
 function* fetchMorePosts(action: Action<MorePostsRequestedType, MorePostsRequestedPayload>) {
     try {
-        const response: HAL<Post> = yield services.getPostsPaginated(1, 1);
+        const { offset, limit } = action.payload;
+        const response: HAL<Post> = yield services.getPostsPaginated(offset, limit);
         yield put(
             createAction(MORE_POSTS_SUCCEEDED, {
-                posts: response._embedded
+                posts: response._embedded,
+                offset,
+                limit
             })
         );
     } catch {
