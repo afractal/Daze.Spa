@@ -4,15 +4,13 @@ import { connect } from 'react-redux';
 import { PostList } from './PostList';
 import { Post } from 'src/domain';
 import { RootState } from 'src/reducers';
-import { ApplicationDispatch, postsActions, morePostsActions, PostsPayloads, MorePostsPayloads } from 'src/actions';
+import { ApplicationDispatch, postsActions, PostsPayloads } from 'src/actions';
 import { Disability } from '../../shared/disability/Disability';
 import { Button } from '../../shared/button/Button';
-import { Visibility } from '../../shared/visibility/Visibility';
 import { Spinner } from '../../shared/spinner/Spinner';
 
 type PostListContainerDispatch = {
     readonly getPosts: (payload: PostsPayloads) => void
-    readonly getMorePosts: (payload: MorePostsPayloads) => void
 };
 
 type PostListContainerOwnProps = {
@@ -28,11 +26,14 @@ type PostListContainerProps = PostListContainerDispatch & PostListContainerOwnPr
 class PostListContainerComponent extends React.Component<PostListContainerProps> {
 
     componentDidMount() {
-        this.props.getPosts({});
+        this.props.getPosts({
+            offset: this.props.offset,
+            limit: this.props.limit
+        });
     }
 
     loadMore = () => {
-        this.props.getMorePosts({
+        this.props.getPosts({
             offset: this.props.offset,
             limit: this.props.limit
         });
@@ -41,32 +42,26 @@ class PostListContainerComponent extends React.Component<PostListContainerProps>
     render() {
         return (
             <React.StrictMode>
-                <Visibility willShow={!this.props.loading}>
-                    <PostList posts={this.props.posts} />
-                    <Disability whillDisable={false}>
-                        <Button onClicked={this.loadMore} />
-                    </Disability>
-                </Visibility>
                 <Spinner willSpin={this.props.loading} />
+                <PostList posts={this.props.posts} />
+                <Disability whillDisable={this.props.loading}>
+                    <Button onClicked={this.loadMore} />
+                </Disability>
             </React.StrictMode>
         );
     }
 }
 
-const mapStateToProps = ({ posts, morePosts }: RootState) => ({
-    posts: [
-        ...posts.items,
-        ...morePosts.items
-    ],
-    offset: morePosts.offset,
-    limit: morePosts.limit,
+const mapStateToProps = ({ posts }: RootState) => ({
+    posts: posts.items,
+    offset: posts.offset,
+    limit: posts.limit,
     loading: posts.loading
 });
 
 const mapDispatchToProps = (dispatch: ApplicationDispatch<RootState>): PostListContainerDispatch => (
     bindActionCreators({
         getPosts: postsActions.requestPosts,
-        getMorePosts: morePostsActions.requestMorePosts
     }, dispatch)
 );
 
