@@ -18,7 +18,7 @@ export const Project = (props: ProjectProps) => (
                     target="_blank"
                     rel="noopener"
                 >
-                    {(props as any).projectName}
+                    {props.name}
                 </a>
             </div>
             <div className="published-date-holder">

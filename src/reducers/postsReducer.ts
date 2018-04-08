@@ -17,7 +17,7 @@ export default (state = initialState, action: PostsActions): PostsState => {
             return {
                 ...state,
                 loading: false,
-                items: [...items, ...items]
+                items
             };
         }
 
