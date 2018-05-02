@@ -3,11 +3,8 @@ import { Post, Project } from 'src/domain';
 export type PostsState = {
     readonly items: Post[]
     readonly loading: boolean
-};
-
-export type MorePostsState = {
-    readonly items: Post[]
-    readonly loading: boolean
+    readonly offset: number
+    readonly limit: number
 };
 
 export type PostState = {

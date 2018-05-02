@@ -6,7 +6,7 @@ type EnvironmentNode = {
 };
 
 type Environment = {
-    production: EnvironmentNode,
+    production: EnvironmentNode
     development: EnvironmentNode
 };
 
@@ -15,8 +15,8 @@ const environment: Environment = {
         apiUrl: 'https://daze-api.herokuapp.com/api'
     },
     development: {
-        apiUrl: 'https://daze-api.herokuapp.com/api'
-        // apiUrl: 'http://127.0.0.1:8080/api'
+        // apiUrl: 'https://daze-api.herokuapp.com/api'
+        apiUrl: 'http://127.0.0.1:8080/api'
     }
 };
 

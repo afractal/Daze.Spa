@@ -3,7 +3,9 @@ import { PostsActions, POSTS_REQUESTED, POSTS_SUCCEEDED } from 'src/actions';
 
 const initialState: PostsState = {
     items: [],
-    loading: false
+    loading: false,
+    offset: 1,
+    limit: 2
 };
 
 export default (state = initialState, action: PostsActions): PostsState => {
@@ -13,11 +15,13 @@ export default (state = initialState, action: PostsActions): PostsState => {
         }
 
         case POSTS_SUCCEEDED: {
-            const items = action.payload.posts;
+            const { posts, offset, limit } = action.payload;
             return {
                 ...state,
                 loading: false,
-                items: [...items, ...items]
+                offset: offset + limit,
+                limit: limit,
+                items: [...state.items, ...posts]
             };
         }
 

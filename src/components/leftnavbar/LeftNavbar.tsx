@@ -1,5 +1,5 @@
 import * as React from 'react';
-import './LeftNavBar.css';
+import './LeftNavbar.css';
 import { Link } from 'react-router-dom';
 import { Avatar } from './avatar/Avatar';
 

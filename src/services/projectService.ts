@@ -4,6 +4,6 @@ import { HAL } from 'src/services';
 import env from 'src/common/environment';
 
 export const getProjects = async (): Promise<HAL<Project>> => {
-    const response = await fetch(`${env.apiUrl}/project/`);
+    const response = await fetch(`${env.apiUrl}/projects/`);
     return await response.json();
 };
