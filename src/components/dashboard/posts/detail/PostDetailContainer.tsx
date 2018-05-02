@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import { ApplicationDispatch, postActions, PostPayloads } from 'src/actions';
+import { bindActionCreators, Dispatch, AnyAction } from 'redux';
+import { postActions, PostPayloads } from 'src/actions';
 import { RootState } from 'src/reducers';
 import { PostDetail } from './PostDetail';
 import { match } from 'react-router-dom';
@@ -57,7 +57,7 @@ const mapStateToProps = ({ post }: RootState) => ({
     loading: post.loading
 });
 
-const mapDispatchToProps = (dispatch: ApplicationDispatch<RootState>) => (
+const mapDispatchToProps = (dispatch: Dispatch<AnyAction>) => (
     bindActionCreators({
         getPost: postActions.requestPost
     }, dispatch)

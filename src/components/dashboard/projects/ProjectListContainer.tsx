@@ -3,8 +3,8 @@ import { ProjectList } from './ProjectList';
 import { connect } from 'react-redux';
 import { Project } from 'src/domain';
 import { RootState } from 'src/reducers';
-import { ApplicationDispatch, ProjectsPayloads, projectsActions } from 'src/actions';
-import { bindActionCreators } from 'redux';
+import { ProjectsPayloads, projectsActions } from 'src/actions';
+import { bindActionCreators, AnyAction, Dispatch } from 'redux';
 import { Spinner } from '../../shared/spinner/Spinner';
 import { Visibility } from '../../shared/visibility/Visibility';
 
@@ -42,7 +42,7 @@ const mapStateToProps = (state: RootState) => ({
     loading: state.projects.loading
 });
 
-const mapDispatchToProps = (dispatch: ApplicationDispatch<RootState>): ProjectListContainerDispatch => (
+const mapDispatchToProps = (dispatch: Dispatch<AnyAction>): ProjectListContainerDispatch => (
     bindActionCreators({
         getProjects: projectsActions.requestProjects
     }, dispatch)

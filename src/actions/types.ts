@@ -1,4 +1,3 @@
-import { Dispatch as ReduxDispatch } from 'redux';
 import { Post, Project } from 'src/domain';
 
 export const POSTS_REQUESTED = 'POSTS_REQUESTED';
@@ -161,5 +160,3 @@ export type ProjectsActions =
     Action<ProjectsSucceededType, ProjectsSucceededPayload> |
     Action<ProjectsFailedType, ProjectsFailedPayload>
     ;
-
-export type ApplicationDispatch<T> = ReduxDispatch<T>;

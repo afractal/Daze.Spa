@@ -1,10 +1,10 @@
 import * as React from 'react';
-import { bindActionCreators } from 'redux';
+import { bindActionCreators, AnyAction, Dispatch } from 'redux';
 import { connect } from 'react-redux';
 import { PostList } from './PostList';
 import { Post } from 'src/domain';
 import { RootState } from 'src/reducers';
-import { ApplicationDispatch, postsActions, morePostsActions, PostsPayloads, MorePostsPayloads } from 'src/actions';
+import { postsActions, morePostsActions, PostsPayloads, MorePostsPayloads } from 'src/actions';
 import { Disability } from '../../shared/disability/Disability';
 import { Button } from '../../shared/button/Button';
 import { Visibility } from '../../shared/visibility/Visibility';
@@ -54,7 +54,7 @@ const mapStateToProps = (state: RootState) => ({
     loading: state.posts.loading
 });
 
-const mapDispatchToProps = (dispatch: ApplicationDispatch<RootState>): PostListContainerDispatch => (
+const mapDispatchToProps = (dispatch: Dispatch<AnyAction>): PostListContainerDispatch => (
     bindActionCreators({
         getPosts: postsActions.requestPosts,
         getMorePosts: morePostsActions.requstMorePosts

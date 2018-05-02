@@ -1,17 +1,19 @@
 export * from './types';
-import { combineReducers } from 'redux';
+import { combineReducers, Reducer } from 'redux';
+import { RootState } from './types';
 import postsReducer from './postsReducer';
 import morePostsReducer from './morePostsReducer';
 import postReducer from './postReducer';
 import projectsReducer from './projectsReducer';
-import { RootState } from './types';
 
-export default combineReducers<RootState>({
+const rootReducer: Reducer<RootState> = combineReducers({
     posts: postsReducer,
     morePosts: morePostsReducer,
     post: postReducer,
     projects: projectsReducer
 });
+
+export default rootReducer;
 
 // dashboard
 // leftnavbar
