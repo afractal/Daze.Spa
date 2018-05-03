@@ -5,6 +5,9 @@
     "author": "afractal",
     "license": "MIT",
     "homepage": "http://afractal.me",
+    "engines": {
+        "node": "8.9.4"
+    },
     "scripts": {
         "postinstall": "npm run build",
         "start": "react-scripts-ts start",
