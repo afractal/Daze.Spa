@@ -6,7 +6,7 @@ import 'highlight.js/styles/github-gist.css';
 import 'nprogress/nprogress.css';
 import { PostListContainer } from './dashboard/posts/PostListContainer';
 import { ProjectListContainer } from './dashboard/projects/ProjectListContainer';
-import { LeftnavBar } from './leftnavbar/LeftNavbar';
+import { LeftnavBar } from './leftnavbar/Navbar';
 import { PostDetailContainer } from './dashboard/posts/detail/PostDetailContainer';
 
 const NotFound = () => (
