@@ -1,0 +1,7 @@
+{
+    "name": "daze spa",
+    "description": "afractal frontend",
+    "repository": "https://github.com/afractal/Daze.Spa",
+    "logo": "https://cdn.rawgit.com/heroku/node-js-getting-started/master/public/node.svg",
+    "image": "heroku/nodejs"
+}

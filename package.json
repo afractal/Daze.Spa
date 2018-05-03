@@ -6,6 +6,7 @@
     "license": "MIT",
     "homepage": "http://afractal.me",
     "scripts": {
+        "postinstall": "npm run build",
         "start": "react-scripts-ts start",
         "build": "react-scripts-ts build",
         "test": "react-scripts-ts test --env=jsdom",
