@@ -1,5 +1,5 @@
 import { ProjectsState } from '.';
-import { ProjectsActions, PROJECTS_REQUESTED, PROJECTS_SUCCEEDED } from 'src/actions';
+import { ProjectsActions, PROJECTS_REQUESTED, PROJECTS_SUCCEEDED } from '../actions';
 
 const initialState: ProjectsState = {
     items: [],

@@ -1,4 +1,4 @@
-import { Post, Project } from 'src/domain';
+import { Post, Project } from '../domain';
 
 export const POSTS_REQUESTED = 'POSTS_REQUESTED';
 export const POSTS_SUCCEEDED = 'POSTS_SUCCEEDED';

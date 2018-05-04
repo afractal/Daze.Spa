@@ -1,7 +1,7 @@
 import * as fetch from 'isomorphic-fetch';
-import { Post } from 'src/domain';
-import { HAL } from 'src/services';
-import env from 'src/common/environment';
+import { Post } from '../domain';
+import { HAL } from '../services';
+import env from '../common/environment';
 
 /**
  * @param offset the offset number for the page starting at 1

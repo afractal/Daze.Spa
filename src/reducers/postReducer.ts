@@ -1,6 +1,6 @@
-import { PostActions, POST_SUCCEEDED, POST_REQUESTED } from 'src/actions';
+import { PostActions, POST_SUCCEEDED, POST_REQUESTED } from '../actions';
 import { Post } from '../domain';
-import { PostState } from 'src/reducers';
+import { PostState } from '../reducers';
 
 const initialState: PostState = {
     item: {} as Post,

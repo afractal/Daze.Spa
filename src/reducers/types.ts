@@ -1,4 +1,4 @@
-import { Post, Project } from 'src/domain';
+import { Post, Project } from '../domain';
 
 export type PostsState = {
     readonly items: Post[]

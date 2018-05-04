@@ -1,10 +1,10 @@
 import * as React from 'react';
-import { ProjectList } from './ProjectList';
 import { connect } from 'react-redux';
-import { Project } from 'src/domain';
-import { RootState } from 'src/reducers';
-import { ProjectsPayloads, projectsActions } from 'src/actions';
 import { bindActionCreators, AnyAction, Dispatch } from 'redux';
+import { ProjectList } from './ProjectList';
+import { Project } from '../../../domain';
+import { RootState } from '../../../reducers';
+import { ProjectsPayloads, projectsActions } from '../../../actions';
 import { Spinner } from '../../shared/spinner/Spinner';
 import { Visibility } from '../../shared/visibility/Visibility';
 

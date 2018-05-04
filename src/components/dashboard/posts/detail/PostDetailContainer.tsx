@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators, Dispatch, AnyAction } from 'redux';
-import { postActions, PostPayloads } from 'src/actions';
-import { RootState } from 'src/reducers';
-import { PostDetail } from './PostDetail';
 import { match } from 'react-router-dom';
+import { bindActionCreators, Dispatch, AnyAction } from 'redux';
+import { postActions, PostPayloads } from '../../../../actions';
+import { RootState } from '../../../../reducers';
+import { PostDetail } from './PostDetail';
 import { Spinner } from '../../../shared/spinner/Spinner';
 import { Visibility } from '../../../shared/visibility/Visibility';
 

@@ -1,12 +1,12 @@
+import { takeLatest, put } from 'redux-saga/effects';
+import * as services from '../services';
+import { Post } from '../domain';
+import { HAL } from '../services';
 import {
     Action, createAction,
     PostRequestedType, PostRequestedPayload,
     POST_REQUESTED, POST_FAILED, POST_SUCCEEDED
-} from 'src/actions';
-import { takeLatest, put } from 'redux-saga/effects';
-import * as services from 'src/services';
-import { Post } from 'src/domain';
-import { HAL } from 'src/services';
+} from '../actions';
 
 export function* watchPost() {
     yield takeLatest(POST_REQUESTED, fetchPost);

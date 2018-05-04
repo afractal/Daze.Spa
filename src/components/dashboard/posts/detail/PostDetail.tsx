@@ -1,6 +1,6 @@
 import * as React from 'react';
 import './PostDetail.css';
-import { parseToHtml } from 'src/services';
+import { parseToHtml } from '../../../../services';
 
 type PostDetailProps = {
     readonly title: string

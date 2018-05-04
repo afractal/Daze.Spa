@@ -1,6 +1,6 @@
 import * as React from 'react';
 import './ProjectList.css';
-import { Project as ProjectDomain } from 'src/domain';
+import { Project as ProjectDomain } from '../../../domain';
 import { Project } from './project/Project';
 
 type ProjectListProps = {

@@ -1,11 +1,11 @@
 import {
     PROJECTS_REQUESTED, ProjectsRequestedPayload, ProjectsRequestedType,
     Action, createAction, PROJECTS_SUCCEEDED, PROJECTS_FAILED
-} from 'src/actions';
+} from '../actions';
 import { takeLatest, put } from 'redux-saga/effects';
-import { Project } from 'src/domain';
-import * as services from 'src/services';
-import { HAL } from 'src/services';
+import { Project } from '../domain';
+import * as services from '../services';
+import { HAL } from '../services';
 
 export function* watchProjects() {
     yield takeLatest(PROJECTS_REQUESTED, fetchProjects);
@@ -23,4 +23,4 @@ function* fetchProjects(action: Action<ProjectsRequestedType, ProjectsRequestedP
         createAction(PROJECTS_FAILED, {});
         return;
     }
-} 
+}

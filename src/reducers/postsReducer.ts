@@ -1,5 +1,5 @@
 import { PostsState } from '.';
-import { PostsActions, POSTS_REQUESTED, POSTS_SUCCEEDED } from 'src/actions';
+import { PostsActions, POSTS_REQUESTED, POSTS_SUCCEEDED } from '../actions';
 
 const initialState: PostsState = {
     items: [],
