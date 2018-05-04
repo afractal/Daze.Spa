@@ -9,10 +9,8 @@ import initSagas from './initSagas';
 const sagaMiddleware = createSagaMiddleware();
 
 const configureStoreForDev = (): Store<RootState> => {
-    const composeEnhancers = (
-        // @ts-ignore
-        window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-    ) || compose;
+    // @ts-ignore
+    const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
     const enhancer = composeEnhancers(
         applyMiddleware(
             sagaMiddleware,

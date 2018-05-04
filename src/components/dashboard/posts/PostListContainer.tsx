@@ -8,6 +8,7 @@ import { postsActions, PostsPayloads } from 'src/actions';
 import { Disability } from '../../shared/disability/Disability';
 import { Button } from '../../shared/button/Button';
 import { Spinner } from '../../shared/spinner/Spinner';
+import { Visibility } from '../../shared/visibility/Visibility';
 
 type PostListContainerDispatch = {
     readonly getPosts: (payload: PostsPayloads) => void
@@ -44,9 +45,11 @@ class PostListContainerComponent extends React.Component<PostListContainerProps>
             <React.StrictMode>
                 <Spinner willSpin={this.props.loading} />
                 <PostList posts={this.props.posts} />
-                <Disability whillDisable={this.props.loading}>
-                    <Button onClicked={this.loadMore} />
-                </Disability>
+                <Visibility willShow={!!this.props.posts.length}>
+                    <Disability whillDisable={this.props.loading}>
+                        <Button onClicked={this.loadMore} />
+                    </Disability>
+                </Visibility>
             </React.StrictMode>
         );
     }

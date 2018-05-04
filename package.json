@@ -6,10 +6,10 @@
     "license": "MIT",
     "homepage": "http://afractal.me",
     "engines": {
-        "node": "8.9.4"
+        "node": "8.11.1"
     },
     "scripts": {
-        "postinstall": "npm run build",
+        "postinstall": "yarn run build",
         "start": "react-scripts-ts start",
         "build": "react-scripts-ts build",
         "test": "react-scripts-ts test --env=jsdom",
