@@ -30,6 +30,12 @@ export const LeftnavBar = (props: LeftnavBarProps) => (
                 </Link>
             </li>
 
+            <li className="leftnavbarAction">
+                <Link to="/resources">
+                    <span>resources</span>
+                </Link>
+            </li>
+
             {/*
             <li className="leftnavbarAction">
                 <a routerLink="/skills" routerLinkActive="active" Fstyle="pointer-events: none">
