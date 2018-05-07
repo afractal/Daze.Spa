@@ -4,11 +4,13 @@ import { RootState } from './types';
 import postsReducer from './postsReducer';
 import postReducer from './postReducer';
 import projectsReducer from './projectsReducer';
+import resourcesReducer from './resourcesReducer';
 
 const rootReducer: Reducer<RootState> = combineReducers({
     posts: postsReducer,
     post: postReducer,
-    projects: projectsReducer
+    projects: projectsReducer,
+    resources: resourcesReducer
 });
 
 export default rootReducer;

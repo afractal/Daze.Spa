@@ -2,6 +2,7 @@ export * from './types';
 export { default as postsActions } from './postsActions';
 export { default as postActions } from './postActions';
 export { default as projectsActions } from './projectsActions';
+export { default as resourcesActions } from './resourcesActions';
 
 import { ActionTypes, ActionPayloads, AllAction } from './types';
 

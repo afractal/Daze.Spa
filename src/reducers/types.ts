@@ -1,24 +1,30 @@
-import { Post, Project } from '../domain';
+import { Post, Project, Resource } from '../domain';
 
-export type PostsState = {
-    readonly items: Post[]
-    readonly loading: boolean
-    readonly offset: number
-    readonly limit: number
-};
+export type PostsState = Readonly<{
+    items: Post[]
+    loading: boolean
+    offset: number
+    limit: number
+}>;
 
-export type PostState = {
-    readonly item: Post
-    readonly loading: boolean
-};
+export type PostState = Readonly<{
+    item: Post
+    loading: boolean
+}>;
 
-export type ProjectsState = {
-    readonly items: Project[]
-    readonly loading: boolean
-};
+export type ProjectsState = Readonly<{
+    items: Project[]
+    loading: boolean
+}>;
 
-export type RootState = {
+export type ResourcesState = Readonly<{
+    items: Resource[]
+    loading: boolean
+}>;
+
+export type RootState = Readonly<{
     posts: PostsState
     post: PostState
     projects: ProjectsState
-};
+    resources: ResourcesState
+}>;
