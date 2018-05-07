@@ -1,44 +1,9 @@
 import * as React from 'react';
 import './ResourcesContainer.css';
+import { Resource as ResourceDomain } from '../../../domain';
+import { Resource } from './resource/Resource';
 
-const renderResource = (resource: Resource, indx: number) => {
-    return (
-        <div className="resource" key={indx}>
-            <div className="resource-header">
-                <a className="blogLink" href={resource.link}>
-                    <span>{resource.name}</span>
-                </a>
-            </div>
-            <p className="resource-description">
-                {resource.description}
-            </p>
-        </div>
-    );
-};
-
-const renderResources = (resources: Resource[]) => {
-    return (
-        <>
-            <div>
-                <h2 className="resource-category">
-                    category
-                </h2>
-            </div>
-            <div className="resource-list">
-                {resources.map(renderResource)}
-            </div>
-        </>
-    );
-};
-
-type Resource = {
-    category: string
-    name: string
-    link: string
-    description: string
-};
-
-const resourcesList: Resource[] = [
+const resourcesList: ResourceDomain[] = [
     {
         category: 'podcasts',
         name: 'Coding Blocks',
@@ -62,15 +27,36 @@ const resourcesList: Resource[] = [
     }
 ];
 
-type ResourcesContainerProps = {
-};
+type ResourcesContainerProps = Readonly<{
+}>;
 
 export class ResourcesContainer extends React.Component<ResourcesContainerProps> {
+
+    renderResource = (resource: ResourceDomain, indx: number) => (
+        <Resource
+            key={indx}
+            name={resource.name}
+            link={resource.link}
+            description={resource.description}
+        />
+    )
+
+    renderResources = (resources: ResourceDomain[]) => (
+        <>
+            <div className="resource-category">
+                category
+            </div>
+            <div className="resource-list">
+                {resources.map(this.renderResource)}
+            </div>
+        </>
+    )
+
     render() {
         return (
             <React.StrictMode>
                 <div className="resources-container">
-                    {renderResources(resourcesList)}
+                    {this.renderResources(resourcesList)}
                 </div>
             </React.StrictMode>
         );
