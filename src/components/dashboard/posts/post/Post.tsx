@@ -11,7 +11,7 @@ type PostProps = {
 
 export const Post = (props: PostProps) => (
     <li>
-        <article className="postArticle card">
+        <article className="postArticle">
             <div className="postArticleImage">
                 <img src={props.coverImage} alt="post image" />
             </div>

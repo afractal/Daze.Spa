@@ -2,11 +2,17 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import rootReducer, { RootState } from '../reducers';
 import { Store } from 'redux';
 import createSagaMiddleware from 'redux-saga';
-import loggerMiddleware from 'redux-logger';
+import { createLogger } from 'redux-logger';
 import immutableStateInvariantMiddleware from 'redux-immutable-state-invariant';
 import initSagas from './initSagas';
 
 const sagaMiddleware = createSagaMiddleware();
+
+const loggerMiddleware = createLogger({
+    collapsed: true,
+    duration: true,
+    diff: true
+});
 
 const configureStoreForDev = (): Store<RootState> => {
     // @ts-ignore
