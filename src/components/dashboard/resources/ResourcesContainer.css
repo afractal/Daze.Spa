@@ -1,9 +1,13 @@
 
-/*
-.resources-container a {
-    text-decoration: none
+.resources-container {
+    margin: 2em;
 }
-*/
+
+.resource-list {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(2, auto);
+}
 
 .resource {
     margin: 0.6em;
@@ -13,10 +17,20 @@
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
     transition: all ease-in-out 200ms;
     cursor: default;
+    text-align: left;
 }
 
 .resource:hover {
     box-shadow: 0 0 0px 2px #22384e;
 }
 
+.resource-category {
+}
 
+.resource-header {
+    margin-bottom: 0.2em;
+    font-weight: bold;
+}
+
+.resource-description {
+}

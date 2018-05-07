@@ -5,6 +5,12 @@
 
 ## Changes
 
+*v1.1*
+
+- readd load more
+- add code climate
+- add product hunt link
+
 *v1.0*
 
 - rewrite in react & redux
