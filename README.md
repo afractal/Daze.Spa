@@ -7,9 +7,8 @@
 
 *v1.1*
 
+- add resources page
 - readd load more
-- add code climate
-- add product hunt link
 
 *v1.0*
 
