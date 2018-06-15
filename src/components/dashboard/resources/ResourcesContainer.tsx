@@ -1,39 +1,32 @@
 import * as React from 'react';
 import './ResourcesContainer.css';
 import { Resource as ResourceDomain } from '../../../domain';
-import { Resource } from './resource/Resource';
+import { Resource as ResourceComponent } from './resource/Resource';
+import { connect } from 'react-redux';
+import { Dispatch, AnyAction, bindActionCreators } from 'redux';
+import { resourcesActions, ResourcesPayloads } from '../../../actions';
+import { RootState } from '../../../reducers';
 
-const resourcesList: ResourceDomain[] = [
-    {
-        category: 'podcasts',
-        name: 'Coding Blocks',
-        link: 'https://www.codingblocks.net',
-        // tslint:disable-next-line:max-line-length
-        description: 'We are a few guys who’ve been professional programmers for years.'
-    },
-    {
-        category: 'podcasts',
-        name: 'Coding Blocks',
-        link: 'https://www.codingblocks.net',
-        // tslint:disable-next-line:max-line-length
-        description: 'We are a few guys who’ve been professional programmers for years. As avid listeners of podcasts and'
-    },
-    {
-        category: 'podcasts',
-        name: 'Simple Programmer',
-        link: 'https://www.simpleprogrammer.com',
-        // tslint:disable-next-line:max-line-length
-        description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys'
-    }
-];
-
-type ResourcesContainerProps = Readonly<{
+type ResourcesContainerDispatch = Readonly<{
+    fetchResources: (payload: ResourcesPayloads) => void
 }>;
 
-export class ResourcesContainer extends React.Component<ResourcesContainerProps> {
+type ResourcesContainerOwnProps = Readonly<{
+    resources: ResourceDomain[]
+    loading: boolean
+}>;
+
+type ResourcesContainerProps = ResourcesContainerDispatch & ResourcesContainerOwnProps & Readonly<{
+}>;
+
+class ResourcesContainerComponent extends React.Component<ResourcesContainerProps> {
+
+    componentDidMount() {
+        this.props.fetchResources({});
+    }
 
     renderResource = (resource: ResourceDomain, indx: number) => (
-        <Resource
+        <ResourceComponent
             key={indx}
             name={resource.name}
             link={resource.link}
@@ -56,9 +49,25 @@ export class ResourcesContainer extends React.Component<ResourcesContainerProps>
         return (
             <React.StrictMode>
                 <div className="resources-container">
-                    {this.renderResources(resourcesList)}
+                    {this.renderResources(this.props.resources)}
                 </div>
             </React.StrictMode>
         );
     }
 }
+
+const mapStateToProps = (state: RootState) => ({
+    resources: state.resources.items,
+    loading: state.resources.loading
+});
+
+const mapDispatchToProps = (dispatch: Dispatch<AnyAction>) => (
+    bindActionCreators({
+        fetchResources: resourcesActions.requestResources
+    }, dispatch)
+);
+
+export const ResourcesContainer = connect<{}>(
+    mapStateToProps,
+    mapDispatchToProps
+)(ResourcesContainerComponent);
