@@ -2,10 +2,10 @@ import * as React from 'react';
 import './PostDetail.css';
 import { parseToHtml } from '../../../../services';
 
-type PostDetailProps = {
-    readonly title: string
-    readonly content: string | undefined
-};
+type PostDetailProps = Readonly<{
+    title: string
+    content?: string
+}>;
 
 export const PostDetail = (props: PostDetailProps) => {
     return (

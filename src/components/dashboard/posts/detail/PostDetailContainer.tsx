@@ -8,23 +8,24 @@ import { PostDetail } from './PostDetail';
 import { Spinner } from '../../../shared/spinner/Spinner';
 import { Visibility } from '../../../shared/visibility/Visibility';
 
-type ReactDetailContainerDispatch = {
-    readonly getPost: (payload: PostPayloads) => void
-};
+type ReactDetailContainerDispatch = Readonly<{
+    getPost: (payload: PostPayloads) => void
+}>;
 
-type ReactDetailContainerOwnProps = {};
+type ReactDetailContainerOwnProps = Readonly<{
+}>;
 
-type ReactDetailContainerProps = ReactDetailContainerDispatch & ReactDetailContainerOwnProps & {
-    readonly slug: string
-    readonly title: string
-    readonly heroContent: string | undefined
-    readonly content: string | undefined
-    readonly coverImage: string | undefined
-    readonly createdAt: Date
-    readonly modifiedAt: Date
-    readonly match: match<{ slug: string }>
-    readonly loading: boolean
-};
+type ReactDetailContainerProps = ReactDetailContainerDispatch & ReactDetailContainerOwnProps & Readonly<{
+    slug: string
+    title: string
+    heroContent: string | undefined
+    content: string | undefined
+    coverImage: string | undefined
+    createdAt: Date
+    modifiedAt: Date
+    match: match<{ slug: string }>
+    loading: boolean
+}>;
 
 class ReactDetailContainerComponent extends React.Component<ReactDetailContainerProps> {
 

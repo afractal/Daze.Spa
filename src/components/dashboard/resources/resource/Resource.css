@@ -2,12 +2,14 @@
 .resource {
     margin: 0.6em;
     padding: 1em;
-    border-radius: 3px;
-    background-color: #fff;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
-    transition: all ease-in-out 200ms;
+    
     cursor: default;
+    transition: all ease-in-out 200ms;
     text-align: left;
+    
+    background-color: #fff;
+    border-radius: 3px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
 }
 
 .resource:hover {
@@ -15,8 +17,23 @@
 }
 
 .resource-header {
+    width: 100%;
     margin-bottom: 0.2em;
     font-weight: bold;
+    
+    display: inline-flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+.resource-category {
+    font-size: 11pt;
+    font-weight: normal;
+    text-transform: lowercase;
+}
+
+.resource-category:hover {
+    color: #054d94
 }
 
 .resource-description {

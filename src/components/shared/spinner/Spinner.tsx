@@ -2,9 +2,9 @@ import * as React from 'react';
 import * as NProgress from 'nprogress';
 import './Spinner.css';
 
-type SpinnerProps = {
+type SpinnerProps = Readonly<{
     willSpin: boolean
-};
+}>;
 
 const updateSpinner = (shouldSpin: boolean) => {
     NProgress.configure({

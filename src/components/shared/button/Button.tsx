@@ -1,8 +1,8 @@
 import * as React from 'react';
 
-type ButtonProps = {
+type ButtonProps = Readonly<{
     onClicked: () => void
-};
+}>;
 
 const clickHandler = (onClicked: () => void) => () => {
     onClicked();

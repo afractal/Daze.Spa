@@ -19,9 +19,6 @@ const renderResources = (resources: ResourceDomain[]) =>
 
 export const ResourceList = (props: ResourceListProps) => (
     <div className="resources-section">
-        <div className="resource-category">
-            category
-        </div>
         <div className="resource-list">
             {renderResources(props.resources)}
         </div>

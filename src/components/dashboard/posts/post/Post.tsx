@@ -2,12 +2,12 @@ import * as React from 'react';
 import './Post.css';
 import { Link } from 'react-router-dom';
 
-type PostProps = {
-    readonly slug: string
-    readonly title: string
-    readonly coverImage: string | undefined
-    readonly heroContent: string | undefined
-};
+type PostProps = Readonly<{
+    slug: string
+    title: string
+    coverImage?: string
+    heroContent?: string
+}>;
 
 export const Post = (props: PostProps) => (
     <li>

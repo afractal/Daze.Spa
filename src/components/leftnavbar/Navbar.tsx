@@ -47,7 +47,11 @@ export const LeftnavBar = (props: LeftnavBarProps) => (
             */}
 
             <li className="leftnavbarAction">
-                <a href="https://github.com/afractal">
+                <a
+                    href="https://github.com/afractal"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
                     <span>github</span>
                 </a>
             </li>

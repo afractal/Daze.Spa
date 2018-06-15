@@ -1,9 +1,9 @@
 import * as React from 'react';
 
-type DisabilityProps = {
-    readonly whillDisable: boolean
-    readonly children?: React.ReactNode
-};
+type DisabilityProps = Readonly<{
+    whillDisable: boolean
+    children?: React.ReactNode
+}>;
 
 const disabled = (children?: any) => (
     <div className={`disabled`}>

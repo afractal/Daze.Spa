@@ -1,9 +1,9 @@
 import * as  React from 'react';
 
-type VisibilityProps = {
-    readonly willShow: boolean
-    readonly children?: React.ReactNode
-};
+type VisibilityProps = Readonly<{
+    willShow: boolean
+    children?: React.ReactNode
+}>;
 
 const visible = (children?: any) => (
     <div style={{ visibility: 'visible' }}>
