@@ -8,21 +8,22 @@ import { ProjectsPayloads, projectsActions } from '../../../actions';
 import { Spinner } from '../../shared/spinner/Spinner';
 import { Visibility } from '../../shared/visibility/Visibility';
 
-type ProjectListContainerDispatch = {
-    readonly getProjects: (payload: ProjectsPayloads) => void
-};
+type ProjectListContainerDispatch = Readonly<{
+    fetchProjects: (payload: ProjectsPayloads) => void
+}>;
 
-type ProjectListContainerOwnProps = {};
+type ProjectListContainerOwnProps = Readonly<{
+}>;
 
-type ProjectListContainerProps = ProjectListContainerDispatch & ProjectListContainerOwnProps & {
-    readonly projects: Project[]
-    readonly loading: boolean
-};
+type ProjectListContainerProps = ProjectListContainerDispatch & ProjectListContainerOwnProps & Readonly<{
+    projects: Project[]
+    loading: boolean
+}>;
 
 class ProjectListContainerComponent extends React.Component<ProjectListContainerProps> {
 
     componentDidMount() {
-        this.props.getProjects({});
+        this.props.fetchProjects({});
     }
 
     render() {
@@ -44,11 +45,11 @@ const mapStateToProps = (state: RootState) => ({
 
 const mapDispatchToProps = (dispatch: Dispatch<AnyAction>): ProjectListContainerDispatch => (
     bindActionCreators({
-        getProjects: projectsActions.requestProjects
+        fetchProjects: projectsActions.requestProjects
     }, dispatch)
 );
 
-export const ProjectListContainer = connect<{}>(
+export const ProjectListContainer = connect(
     mapStateToProps,
     mapDispatchToProps
 )(ProjectListContainerComponent);

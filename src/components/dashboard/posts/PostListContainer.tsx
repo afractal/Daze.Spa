@@ -10,31 +10,31 @@ import { Button } from '../../shared/button/Button';
 import { Spinner } from '../../shared/spinner/Spinner';
 import { Visibility } from '../../shared/visibility/Visibility';
 
-type PostListContainerDispatch = {
-    readonly getPosts: (payload: PostsPayloads) => void
-};
+type PostListContainerDispatch = Readonly<{
+    fetchPosts: (payload: PostsPayloads) => void
+}>;
 
-type PostListContainerOwnProps = {
-};
+type PostListContainerOwnProps = Readonly<{
+}>;
 
-type PostListContainerProps = PostListContainerDispatch & PostListContainerOwnProps & {
-    readonly posts: Post[]
-    readonly loading: boolean
-    readonly offset: number
-    readonly limit: number
-};
+type PostListContainerProps = PostListContainerDispatch & PostListContainerOwnProps & Readonly<{
+    posts: Post[]
+    loading: boolean
+    offset: number
+    limit: number
+}>;
 
 class PostListContainerComponent extends React.Component<PostListContainerProps> {
 
     componentDidMount() {
-        this.props.getPosts({
+        this.props.fetchPosts({
             offset: this.props.offset,
             limit: this.props.limit
         });
     }
 
     loadMore = () => {
-        this.props.getPosts({
+        this.props.fetchPosts({
             offset: this.props.offset,
             limit: this.props.limit
         });
@@ -64,7 +64,7 @@ const mapStateToProps = ({ posts }: RootState) => ({
 
 const mapDispatchToProps = (dispatch: Dispatch<AnyAction>): PostListContainerDispatch => (
     bindActionCreators({
-        getPosts: postsActions.requestPosts,
+        fetchPosts: postsActions.requestPosts,
     }, dispatch)
 );
 
