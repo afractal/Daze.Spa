@@ -1,14 +1,16 @@
 
-.project-section {
-    display: inline-flex;
-    flex-direction: column;
-    -ms-flex-direction: column;
-    flex-wrap: nowrap;
-    -ms-flex-wrap: nowrap;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
+.projects-section {
+    margin: 2em;
+}
+
+.project-list {
+
     text-align: center;
-    margin: 2em 1em;
     cursor: default;
+
+    display: inline-flex;
+    flex-flow: column nowrap;
+    align-content: center;
+    align-items: flex-start;
+    justify-content: center;
 }

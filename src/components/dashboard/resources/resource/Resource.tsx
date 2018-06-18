@@ -9,15 +9,21 @@ type ResourceProps = Readonly<{
 }>;
 
 export const Resource = (props: ResourceProps) => (
-    <div className="resource">
+    <div className="resource-template">
         <div className="resource-header">
-            <a className="blogLink" href={props.link}>
-                <span>{props.name}</span>
+            <a
+                className="blogLink"
+                href={props.link}
+                target="_blank"
+                rel="noopener"
+            >
+                {props.name}
             </a>
             <span className="resource-category">
                 {props.category}
             </span>
         </div>
+
         <p className="resource-description">
             {props.description}
         </p>

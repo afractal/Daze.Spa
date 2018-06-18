@@ -1,26 +1,26 @@
 
-.resource {
+.resource-template {
     margin: 0.6em;
     padding: 1em;
-    
+
     cursor: default;
     transition: all ease-in-out 200ms;
     text-align: left;
-    
+
     background-color: #fff;
     border-radius: 3px;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
 }
 
 .resource:hover {
-    box-shadow: 0 0 0px 2px #22384e;
+    box-shadow: 0 0 0px 2px rgb(34, 56, 78);
 }
 
 .resource-header {
     width: 100%;
     margin-bottom: 0.2em;
     font-weight: bold;
-    
+
     display: inline-flex;
     flex-flow: row nowrap;
     justify-content: space-between;

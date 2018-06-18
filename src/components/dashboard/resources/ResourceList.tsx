@@ -18,9 +18,9 @@ const renderResources = (resources: ResourceDomain[]) =>
     resources.map(renderResource);
 
 export const ResourceList = (props: ResourceListProps) => (
-    <div className="resources-section">
+    <section className="resources-section">
         <div className="resource-list">
             {renderResources(props.resources)}
         </div>
-    </div>
+    </section>
 );
