@@ -7,6 +7,7 @@
 
 *v1.1*
 
+- redesign projects styles
 - add resources page
 - readd load more
 

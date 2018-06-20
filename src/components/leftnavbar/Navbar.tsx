@@ -25,17 +25,23 @@ export const LeftnavBar = (props: LeftnavBarProps) => (
             </li>
 
             <li className="leftnavbarAction">
+                <Link to="/skills">
+                    <span>skills</span>
+                </Link>
+            </li>
+
+            <li className="leftnavbarAction">
                 <Link to="/resources">
                     <span>resources</span>
                 </Link>
             </li>
 
-            {/* 
+            {/*
             <li className="leftnavbarAction">
                 <Link to="/about" >
                     <span>about</span>
                 </Link>
-            </li> 
+            </li>
             */}
 
             {/*
