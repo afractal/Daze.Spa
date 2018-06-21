@@ -18,7 +18,7 @@ const calculatePercentages = (num: number) => {
 
 export const Skill = (props: SkillProps) => (
     <div className="skill-template">
-        <div>{props.name}</div>
+        <div className="skill-label">{props.name}</div>
         <SkillLevel
             {...calculatePercentages(props.level)}
         />
