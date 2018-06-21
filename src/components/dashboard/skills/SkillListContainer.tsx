@@ -2,18 +2,14 @@ import * as React from 'react';
 import { Spinner } from '../../shared/spinner/Spinner';
 import { Visibility } from '../../shared/visibility/Visibility';
 import './SkillList.css';
-import { Skill } from './skill/Skill';
+import { Skill as SkillDomain } from '../../../domain';
+import { SkillList } from './SkillList';
 
 type SkillListContainerProps = Readonly<{
-    // skills: Skill[]
+    skills: SkillDomain[]
 }>;
 
-type Skill = {
-    name: string
-    level: number
-};
-
-const skills: Skill[] = ([
+const skills: SkillDomain[] = ([
     {
         name: 'javascript',
         level: 6.9
@@ -37,13 +33,7 @@ export const SkillListContainer = (props: SkillListContainerProps) => (
         <Spinner willSpin={false} />
         <Visibility willShow={true} >
             <section className="skills-section">
-                {skills.map((skill, indx) => (
-                    <Skill
-                        key={indx}
-                        {...skill}
-                    />
-                ))
-                }
+                <SkillList skills={props.skills} />
             </section>
         </Visibility>
     </React.StrictMode>
