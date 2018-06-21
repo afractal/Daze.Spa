@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Spinner } from '../../shared/spinner/Spinner';
 import { Visibility } from '../../shared/visibility/Visibility';
 import './SkillList.css';
+import { Skill } from './skill/Skill';
 
 type SkillListContainerProps = Readonly<{
     // skills: Skill[]
@@ -31,41 +32,18 @@ const skills: Skill[] = ([
     }
 ]);
 
-const calculatePercentages = (num: number) => {
-    const fillPercentage = (num * 100) / 10;
-    const emptyPercentage = 100 - fillPercentage;
-    return {
-        fill: fillPercentage,
-        empty: emptyPercentage
-    };
-};
-
-
-const renderSkill = (skill: Skill, indx: number) => {
-    const { fill, empty } = calculatePercentages(skill.level);
-    return (
-        <div key={indx} className="skill-template">
-            <div>{skill.name}</div>
-            <div className="skill-level">
-                <div
-                    style={{ flexBasis: `${fill}%` }}
-                    className="skill-level-fill"
-                />
-                <div
-                    style={{ flexBasis: `${empty}%` }}
-                    className="skill-level-empty"
-                />
-            </div>
-        </div>
-    );
-};
-
 export const SkillListContainer = (props: SkillListContainerProps) => (
     <React.StrictMode>
         <Spinner willSpin={false} />
         <Visibility willShow={true} >
             <section className="skills-section">
-                {skills.map(renderSkill)}
+                {skills.map((skill, indx) => (
+                    <Skill
+                        key={indx}
+                        {...skill}
+                    />
+                ))
+                }
             </section>
         </Visibility>
     </React.StrictMode>
