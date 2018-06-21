@@ -1,4 +1,5 @@
 import * as React from 'react';
+import './SkillList.css';
 import { Skill as SkillDomain } from '../../../domain';
 import { Skill } from './skill/Skill';
 
@@ -17,7 +18,9 @@ const renderSkills = (skills: SkillDomain[]) =>
     skills.map(renderSkill);
 
 export const SkillList = (props: SkillListProps) => (
-    <div className="skill-list">
-        {renderSkills(props.skills)}
-    </div>
+    <section className="skills-section">
+        <div className="skill-list">
+            {renderSkills(props.skills)}
+        </div>
+    </section>
 );

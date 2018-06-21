@@ -1,54 +1,9 @@
 
 .skills-section {
+    margin: 2em;
+}
+
+.skill-list {
     display: inline-flex;
     flex-flow: column nowrap;
 }
-
-
-.skill-template {
-    display: inline-flex;
-    flex-flow: column nowrap;
-    margin-top: 2em;
-    align-content: flex-start;
-    align-items: flex-start;
-}
-
-.skill-level {
-    /* height: 2.4em;
-    width: 40em;
-    border: 1px solid black;
-    background-image: linear-gradient(blue, red); */
-
-    /* background-color: #013A6B;
-    background-image: -webkit-linear-gradient(0deg, #013A6B 80%, #004E95 50%);
-    min-height: 2.4em;
-    width: 40em;
-    border-radius: 2em; */
-
-    height: 0.8em;
-    width: 40em;
-    border-radius: 2em;
-
-    display: inline-flex;
-    flex-flow: row nowrap;
-
-    border: 1px solid black;
-}
-
-.skill-level-fill {
-    height: 100%;
-    flex-basis: 80%;
-    background-color: rgb(74, 192, 80);
-    border-radius: 2em 0 0 2em;
-}
-
-.skill-level-empty {
-    height: 100%;
-
-    flex-basis: 20%;
-    background-color: rgb(69, 69, 182);
-    border-radius: 0 2em 2em 0;
-}
-
-
-

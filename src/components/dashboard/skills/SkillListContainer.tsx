@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { Spinner } from '../../shared/spinner/Spinner';
 import { Visibility } from '../../shared/visibility/Visibility';
-import './SkillList.css';
 import { Skill as SkillDomain } from '../../../domain';
 import { SkillList } from './SkillList';
 
@@ -32,9 +31,7 @@ export const SkillListContainer = (props: SkillListContainerProps) => (
     <React.StrictMode>
         <Spinner willSpin={false} />
         <Visibility willShow={true} >
-            <section className="skills-section">
-                <SkillList skills={props.skills} />
-            </section>
+            <SkillList skills={skills} />
         </Visibility>
     </React.StrictMode>
 );
