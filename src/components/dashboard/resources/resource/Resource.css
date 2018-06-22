@@ -12,7 +12,7 @@
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
 }
 
-.resource:hover {
+.resource-template:hover {
     box-shadow: 0 0 0px 2px rgb(34, 56, 78);
 }
 

@@ -16,9 +16,7 @@ const updateSpinner = (shouldSpin: boolean) => {
     shouldSpin ? NProgress.start() : NProgress.done();
 };
 
-// TODO: replace fdsf with childrens
 export const Spinner = ({ willSpin }: SpinnerProps) => {
     updateSpinner(willSpin);
-    // return <span> loading </span>;
-    return <div className="lol" />;
+    return <></>;
 };
