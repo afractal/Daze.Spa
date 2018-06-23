@@ -17,7 +17,7 @@ export default (state = initialState, action: ResourcesActions): ResourcesState 
             return {
                 ...state,
                 loading: false,
-                items: [...state.items, ...resources]
+                items: resources
             };
         }
 

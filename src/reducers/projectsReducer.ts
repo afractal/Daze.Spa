@@ -13,11 +13,11 @@ export default (state = initialState, action: ProjectsActions): ProjectsState =>
         }
 
         case PROJECTS_SUCCEEDED: {
-            const items = action.payload.projects;
+            const { projects } = action.payload;
             return {
                 ...state,
                 loading: false,
-                items
+                items: projects
             };
         }
 
