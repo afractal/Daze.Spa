@@ -1,6 +1,6 @@
 import * as fetch from 'isomorphic-fetch';
 import { Post } from '../domain';
-import { HAL } from '../services';
+import { HAL } from '.';
 import env from '../common/environment';
 
 /**

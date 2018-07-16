@@ -10,6 +10,7 @@ import { LeftnavBar } from './leftnavbar/Navbar';
 import { PostDetailContainer } from './dashboard/posts/detail/PostDetailContainer';
 import { ResourceListContainer } from './dashboard/resources/ResourceListContainer';
 import { SkillListContainer } from './dashboard/skills/SkillListContainer';
+import { BookListContainer } from './dashboard/books/BookListContainer';
 
 const NotFound = () => (
     <h2>page not found</h2>
@@ -32,8 +33,9 @@ class App extends React.Component {
                             <Route path="/posts/:slug" component={PostDetailContainer} />
                             <Route path="/projects" component={ProjectListContainer} />
                             <Route path="/skills" component={SkillListContainer} />
-                            <Route path="/about" component={NotFound} />
+                            <Route path="/books" component={BookListContainer} />
                             <Route path="/resources" component={ResourceListContainer} />
+                            <Route path="/about" component={NotFound} />
                             <Route path="/login" component={NotFound} />
                             <Route path="/admin" component={NotFound} />
                             <Route path="/admin/posts" component={NotFound} />

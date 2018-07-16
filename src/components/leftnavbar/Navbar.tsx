@@ -31,28 +31,16 @@ export const LeftnavBar = (props: LeftnavBarProps) => (
             </li>
 
             <li className="leftnavbarAction">
+                <Link to="/books">
+                    <span>books</span>
+                </Link>
+            </li>
+
+            <li className="leftnavbarAction">
                 <Link to="/resources">
                     <span>resources</span>
                 </Link>
             </li>
-
-            {/*
-            <li className="leftnavbarAction">
-                <Link to="/about" >
-                    <span>about</span>
-                </Link>
-            </li>
-            */}
-
-            {/*
-            <li className="leftnavbarAction">
-                <a routerLink="/skills" routerLinkActive="active" Fstyle="pointer-events: none">
-                    <del style="pointer-events: none">
-                        <span>skills</span>
-                    </del>
-                </a>
-            </li>
-            */}
 
             <li className="leftnavbarAction">
                 <a

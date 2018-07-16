@@ -1,4 +1,4 @@
-import { createAction, POSTS_REQUESTED, PostsPayloads } from './';
+import { createAction, POSTS_REQUESTED, PostsPayloads } from '.';
 
 export const requestPosts = (payload: PostsPayloads) =>
     createAction(POSTS_REQUESTED, payload);
