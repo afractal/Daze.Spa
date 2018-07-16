@@ -24,11 +24,11 @@ export const LeftnavBar = (props: LeftnavBarProps) => (
                 </Link>
             </li>
 
-            <li className="leftnavbarAction">
+            {/* <li className="leftnavbarAction">
                 <Link to="/skills">
                     <span>skills</span>
                 </Link>
-            </li>
+            </li> */}
 
             <li className="leftnavbarAction">
                 <Link to="/books">
