@@ -14,8 +14,11 @@ export const Book = (props: BookProps) => (
             src={props.image}
         />
         <div className="book-body">
-            <div className="book-title">{props.title}</div>
-            <div className="book-authors">fdsf sfsd fsdf
+            <div className="book-title">
+                {props.title}
+            </div>
+            <div className="book-authors">
+                Author Pence
                 {/* {props.authors} */}
             </div>
         </div>

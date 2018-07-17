@@ -25,7 +25,8 @@
 
 .book-image {
     height: 12em;
-    width: auto;
+    width: 9em;
+    outline: 1px solid #dadada;
 }
 
 .book-body {
@@ -33,11 +34,13 @@
 }
 
 .book-title {
-    font-size: 12pt;
+    font-size: 11pt;
 }
 
 .book-authors {
-    font-size: 10pt;
+    font-size: 11pt;
+    font-style: italic;
+    color: #544e4e;
 }
 
 @media screen and (max-width: 1170px) {

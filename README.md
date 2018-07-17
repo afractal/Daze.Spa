@@ -5,6 +5,10 @@
 
 ## Changes
 
+*v1.2*
+
+- add library page
+
 *v1.1*
 
 - re-add skills page
