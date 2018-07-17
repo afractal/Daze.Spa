@@ -1,4 +1,4 @@
-import { Post, Project, Resource, Skill } from '../domain';
+import { Post, Project, Resource, Skill, Book } from '../domain';
 
 export const POSTS_REQUESTED = 'POSTS_REQUESTED';
 export const POSTS_SUCCEEDED = 'POSTS_SUCCEEDED';
@@ -20,6 +20,10 @@ export const SKILLS_REQUESTED = 'SKILLS_REQUESTED';
 export const SKILLS_SUCCEEDED = 'SKILLS_SUCCEEDED';
 export const SKILLS_FAILED = 'SKILLS_FAILED';
 
+export const BOOKS_REQUESTED = 'BOOKS_REQUESTED';
+export const BOOKS_SUCCEEDED = 'BOOKS_SUCCEEDED';
+export const BOOKS_FAILED = 'BOOKS_FAILED';
+
 export type PostsRequestedType = 'POSTS_REQUESTED';
 export type PostsSucceededType = 'POSTS_SUCCEEDED';
 export type PostsFailedType = 'POSTS_FAILED';
@@ -39,6 +43,10 @@ export type ResourcesFailedType = 'RESOURCES_FAILED';
 export type SkillsRequestedType = 'SKILLS_REQUESTED';
 export type SkillsSucceededType = 'SKILLS_SUCCEEDED';
 export type SkillsFailedType = 'SKILLS_FAILED';
+
+export type BooksRequestedType = 'BOOKS_REQUESTED';
+export type BooksSucceededType = 'BOOKS_SUCCEEDED';
+export type BooksFailedType = 'BOOKS_FAILED';
 
 export type PostsRequestedPayload = {
     readonly offset: number
@@ -85,6 +93,14 @@ export type SkillsSucceededPayload = {
 export type SkillsFailedPayload = {
 };
 
+export type BooksRequestedPayload = {
+};
+export type BooksSucceededPayload = {
+    readonly books: Book[]
+};
+export type BooksFailedPayload = {
+};
+
 export type PostsPayloads =
     PostsRequestedPayload |
     PostsSucceededPayload |
@@ -113,6 +129,12 @@ export type SkillsPayloads =
     SkillsRequestedPayload |
     SkillsSucceededPayload |
     SkillsFailedPayload
+    ;
+
+export type BooksPayloads =
+    BooksRequestedPayload |
+    BooksSucceededPayload |
+    BooksFailedPayload
     ;
 
 type PostsActionTypes =
@@ -145,12 +167,19 @@ type SkillsActionTypes =
     SkillsFailedType
     ;
 
+type BooksActionTypes =
+    BooksRequestedType |
+    BooksSucceededType |
+    BooksFailedType
+    ;
+
 export type ActionPayloads =
     PostsPayloads |
     PostActionTypes |
     ProjectsPayloads |
     ResourcesPayloads |
-    SkillsPayloads
+    SkillsPayloads |
+    BooksPayloads
     ;
 
 export type ActionTypes =
@@ -158,7 +187,8 @@ export type ActionTypes =
     PostActionTypes |
     ProjectsActionTypes |
     ResourcesActionTypes |
-    SkillsActionTypes
+    SkillsActionTypes |
+    BooksActionTypes
     ;
 
 export type AllAction = {
@@ -199,4 +229,10 @@ export type SkillsActions =
     Action<SkillsRequestedType, SkillsRequestedPayload> |
     Action<SkillsSucceededType, SkillsSucceededPayload> |
     Action<SkillsFailedType, SkillsFailedPayload>
+    ;
+
+export type BooksActions =
+    Action<BooksRequestedType, BooksRequestedPayload> |
+    Action<BooksSucceededType, BooksSucceededPayload> |
+    Action<BooksFailedType, BooksFailedPayload>
     ;

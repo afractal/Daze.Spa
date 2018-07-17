@@ -6,12 +6,14 @@ import postReducer from './postReducer';
 import projectsReducer from './projectsReducer';
 import resourcesReducer from './resourcesReducer';
 import skillsReducer from './skillsReducer';
+import booksReducer from './booksReducer';
 
 const rootReducer: Reducer<RootState> = combineReducers({
     posts: postsReducer,
     post: postReducer,
     projects: projectsReducer,
     resources: resourcesReducer,
+    books: booksReducer,
     skills: skillsReducer
 });
 

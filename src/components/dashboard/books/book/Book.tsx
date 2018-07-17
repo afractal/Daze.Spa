@@ -7,6 +7,10 @@ type BookProps = Readonly<{
     authors: string[]
 }>;
 
+const formatAuthors = (authors: string[]) => (
+    authors.join(', ')
+);
+
 export const Book = (props: BookProps) => (
     <div className="book-template" >
         <img
@@ -18,8 +22,7 @@ export const Book = (props: BookProps) => (
                 {props.title}
             </div>
             <div className="book-authors">
-                Author Pence
-                {/* {props.authors} */}
+                {formatAuthors(props.authors)}
             </div>
         </div>
     </div>

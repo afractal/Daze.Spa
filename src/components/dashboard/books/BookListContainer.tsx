@@ -3,18 +3,31 @@ import { Spinner } from '../../shared/spinner/Spinner';
 import { Visibility } from '../../shared/visibility/Visibility';
 import { BookList } from './BookList';
 import { Book as BookDomain } from '../../../domain';
+import { connect } from 'react-redux';
+import { bindActionCreators, Dispatch, AnyAction } from '../../../../node_modules/redux';
+import { RootState } from '../../../reducers';
+import { BooksPayloads, booksActions } from '../../../actions';
 
-type BookListContainerProps = Readonly<{
+type BookListContainerDispatch = Readonly<{
+    fetchBooks: (payload: BooksPayloads) => void
+}>;
+
+type BookListContainerOwnProps = Readonly<{
+}>;
+
+type BookListContainerProps = BookListContainerDispatch & BookListContainerOwnProps & Readonly<{
+    books: BookDomain[]
+    boolean: boolean
 }>;
 
 const books: BookDomain[] = new Array(11).fill({
     // tslint:disable-next-line:max-line-length
-    image: 'http://books.google.com/books/content?id=iPUuIirDFikC&printsec=frontcover&img=1&zoom=6&edge=curl&imgtk=AFLRE73EjeaX47iDCWOITG4hiT1xbhjZJ7AuycGV8ZeXFFnCE8akTFYUZuLExRRH5pBOYn2SBRgUSu0GORwjspqwb9Z8Xwtt0IQOy6ql0TK2YWANomTSG8uhEGfyfX_LXk2pz3rj4yO_&source=gbs_api',
+    image: 'https://images-na.ssl-images-amazon.com/images/I/51T7Pr0pjZL._SX328_BO1,204,203,200_.jpg',
     title: 'The Art Of War',
-    authors: ['Bob', 'Jane']
+    authors: ['Author Pence', 'Jane', 'Author Pence', 'Author Pence']
 });
 
-export const BookListContainer = (props: BookListContainerProps) => {
+export const BookListContainerComponent = (props: BookListContainerProps) => {
     return (
         <React.StrictMode>
             <Visibility willShow={true}>
@@ -24,3 +37,19 @@ export const BookListContainer = (props: BookListContainerProps) => {
         </React.StrictMode>
     );
 };
+
+const mapStateToProps = (state: RootState) => ({
+    books: state.books.items,
+    loading: state.books.loading
+});
+
+const mapDispatchToProps = (dispatch: Dispatch<AnyAction>): BookListContainerDispatch => (
+    bindActionCreators({
+        fetchBooks: booksActions.requestBooks
+    }, dispatch)
+);
+
+export const BookListContainer = connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(BookListContainerComponent);

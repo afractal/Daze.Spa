@@ -1,4 +1,4 @@
-import { Post, Project, Resource, Skill } from '../domain';
+import { Post, Project, Resource, Skill, Book } from '../domain';
 
 export type PostsState = Readonly<{
     items: Post[]
@@ -27,10 +27,16 @@ export type SkillsState = Readonly<{
     loading: boolean
 }>;
 
+export type BooksState = Readonly<{
+    items: Book[]
+    loading: boolean
+}>;
+
 export type RootState = Readonly<{
     posts: PostsState
     post: PostState
     projects: ProjectsState
     resources: ResourcesState
     skills: SkillsState
+    books: BooksState
 }>;

@@ -6,30 +6,27 @@
 
     cursor: default;
     transition: all ease-in-out 200ms;
-    text-align: left;
+    text-align: center;
 
     display: inline-flex;
     flex-flow: column nowrap;
+    align-items: center;
 
-    /*
-    background-color: #fff;
-    border-radius: 3px;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
-    */
 }
 
 .book-template:hover {
-    /* box-shadow: 0 0 0px 2px rgb(34, 56, 78); */
 }
 
-
 .book-image {
-    height: 12em;
+    height: 13.6em;
     width: 9em;
     outline: 1px solid #dadada;
+    object-fit: scale-down;
+    object-position: 50% 50%;
 }
 
 .book-body {
+    width: 9em;
     margin-top: 0.6em;
 }
 
@@ -44,25 +41,13 @@
 }
 
 @media screen and (max-width: 1170px) {
-    /* .book-template {
-        width: 35em;
-    } */
 }
 
 @media screen and (max-width: 1070px) {
-    /* .book-template {
-        width: 30em;
-    } */
 }
 
 @media screen and (max-width: 970px) {
-    /* .book-template {
-        width: 25em;
-    } */
 }
 
 @media screen and (max-width: 570px) {
-    /* .book-template {
-        width: 20em;
-    } */
 }

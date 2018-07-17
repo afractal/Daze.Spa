@@ -6,8 +6,7 @@ import { SkillList } from './SkillList';
 import { connect } from 'react-redux';
 import { RootState } from '../../../reducers';
 import { Dispatch, AnyAction, bindActionCreators } from 'redux';
-import { SkillsPayloads } from '../../../actions';
-import skillsActions from '../../../actions/skillsActions';
+import { SkillsPayloads, skillsActions } from '../../../actions';
 
 type SkillListContainerDispatch = Readonly<{
     fetchSkills: (payload: SkillsPayloads) => void
