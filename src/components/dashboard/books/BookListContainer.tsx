@@ -4,7 +4,7 @@ import { Visibility } from '../../shared/visibility/Visibility';
 import { BookList } from './BookList';
 import { Book as BookDomain } from '../../../domain';
 import { connect } from 'react-redux';
-import { bindActionCreators, Dispatch, AnyAction } from '../../../../node_modules/redux';
+import { bindActionCreators, Dispatch, AnyAction } from 'redux';
 import { RootState } from '../../../reducers';
 import { BooksPayloads, booksActions } from '../../../actions';
 
