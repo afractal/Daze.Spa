@@ -39,15 +39,11 @@ class App extends React.Component {
                             <Route path="/about" component={NotFound} />
                             <Route path="/login" component={NotFound} />
                             <Route path="/admin" component={AdminContainer} />
-                            <Route path="/admin/posts" component={NotFound} />
-                            <Route path="/admin/posts/create" component={NotFound} />
-                            <Route path="/admin/posts/update/:id" component={NotFound} />
-                            <Route path="/admin/projects" component={NotFound} />
-                            <Route path="/admin/projects/create" component={NotFound} />
-                            <Route path="/admin/projects/update/:id" component={NotFound} />
-                            <Route path="/admin/skills" component={NotFound} />
-                            <Route path="/admin/skills/create" component={NotFound} />
-                            <Route path="/admin/skills/update/:id" component={NotFound} />
+                            <Route path="/admin/posts" component={AdminPostsContainer} />
+                            <Route path="/admin/projects" component={AdminProjectsContainer} />
+                            <Route path="/admin/skills" component={AdminSkillsContainer} />
+                            <Route path="/admin/resources" component={AdminResourcesContainer} />
+                            <Route path="/admin/books" component={AdminBooksContainer} />
 
                             {/* <Route component={NotFound} /> */}
                             <Redirect to="/" />

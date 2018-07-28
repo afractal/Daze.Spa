@@ -8,11 +8,31 @@ export const AdminContainer = (props: AdminContainerProps) => (
     <div className="admin-dashboard">
         <div className="admin-dashboard__top">
             <select className="admin-dashboard__context-switcher">
-                <option value="posts">posts</option>
-                <option value="projects">projects</option>
-                <option value="skills">skills</option>
-                <option value="resources">resources</option>
-                <option value="books">books</option>
+                <option value="posts">
+                    <Link to="/admin/posts">
+                        <span>posts</span>
+                    </Link>
+                </option>
+                <option value="projects">
+                    <Link to="/admin/projects">
+                        <span>projects</span>
+                    </Link>
+                </option>
+                <option value="skills">
+                    <Link to="/admin/skills">
+                        <span>skills</span>
+                    </Link>
+                </option>
+                <option value="resources">
+                    <Link to="/admin/resources">
+                        <span>resources</span>
+                    </Link>
+                </option>
+                <option value="books">
+                    <Link to="/admin/books">
+                        <span><books</span>
+                    </Link>
+                </option>
             </select>
         </div>
 

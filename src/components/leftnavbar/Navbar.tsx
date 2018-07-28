@@ -3,7 +3,8 @@ import './Navbar.css';
 import { Link } from 'react-router-dom';
 import { Avatar } from './avatar/Avatar';
 
-type LeftnavBarProps = {};
+type LeftnavBarProps = Readonly<{
+}>;
 
 export const LeftnavBar = (props: LeftnavBarProps) => (
     <nav>
