@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import './App.css';
 import '../assets/styles/github-markdown.css';
 import 'highlight.js/styles/github-gist.css';
 import 'nprogress/nprogress.css';
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import { PostListContainer } from './dashboard/posts/PostListContainer';
 import { ProjectListContainer } from './dashboard/projects/ProjectListContainer';
 import { LeftnavBar } from './leftnavbar/Navbar';
@@ -12,6 +12,11 @@ import { ResourceListContainer } from './dashboard/resources/ResourceListContain
 import { SkillListContainer } from './dashboard/skills/SkillListContainer';
 import { BookListContainer } from './dashboard/books/BookListContainer';
 import { AdminContainer } from './admin/AdminContainer';
+import { AdminPostsContainer } from './admin/posts/AdminPostsContainer';
+import { AdminProjectsContainer } from './admin/projects/AdminProjectsContainer';
+import { AdminSkillsContainer } from './admin/skills/AdminSkillsContainer';
+import { AdminResourcesContainer } from './admin/resources/AdminResourcesContainer';
+import { AdminBooksContainer } from './admin/book/AdminBooksContainer';
 
 const NotFound = () => (
     <h2>page not found</h2>

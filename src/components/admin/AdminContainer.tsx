@@ -1,5 +1,6 @@
 import * as React from 'react';
 import './AdminContainer.css';
+import { Link } from 'react-router-dom';
 
 type AdminContainerProps = Readonly<{
 }>;
@@ -30,7 +31,7 @@ export const AdminContainer = (props: AdminContainerProps) => (
                 </option>
                 <option value="books">
                     <Link to="/admin/books">
-                        <span><books</span>
+                        <span>books</span>
                     </Link>
                 </option>
             </select>
