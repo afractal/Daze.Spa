@@ -8,41 +8,41 @@ type AdminContainerProps = Readonly<{
 export const AdminContainer = (props: AdminContainerProps) => (
     <div className="admin-dashboard">
         <div className="admin-dashboard__top">
-            <select className="admin-dashboard__context-switcher">
-                <option value="posts">
+            <ul className="admin-dashboard__context-switcher">
+                <li>
                     <Link to="/admin/posts">
                         <span>posts</span>
                     </Link>
-                </option>
-                <option value="projects">
+                </li>
+                <li>
                     <Link to="/admin/projects">
                         <span>projects</span>
                     </Link>
-                </option>
-                <option value="skills">
+                </li>
+                <li>
                     <Link to="/admin/skills">
                         <span>skills</span>
                     </Link>
-                </option>
-                <option value="resources">
+                </li>
+                <li>
                     <Link to="/admin/resources">
                         <span>resources</span>
                     </Link>
-                </option>
-                <option value="books">
+                </li>
+                <li>
                     <Link to="/admin/books">
                         <span>books</span>
                     </Link>
-                </option>
-            </select>
+                </li>
+            </ul>
         </div>
 
         <div className="admin-dashboard__middle">
             <div className="admin-dashboard__actions">
-                <button className="admin-dashboard__actions__new">New^</button>
+                <button className="admin-dashboard__actions__new">left</button>
             </div>
             <div className="admin-dashboard__actions">
-                <button className="admin-dashboard__actions__new">New^</button>
+                <button className="admin-dashboard__actions__new">New</button>
             </div>
         </div>
 

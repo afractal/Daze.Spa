@@ -16,7 +16,7 @@ import { AdminPostsContainer } from './admin/posts/AdminPostsContainer';
 import { AdminProjectsContainer } from './admin/projects/AdminProjectsContainer';
 import { AdminSkillsContainer } from './admin/skills/AdminSkillsContainer';
 import { AdminResourcesContainer } from './admin/resources/AdminResourcesContainer';
-import { AdminBooksContainer } from './admin/book/AdminBooksContainer';
+import { AdminBooksContainer } from './admin/books/AdminBooksContainer';
 
 const NotFound = () => (
     <h2>page not found</h2>
@@ -44,7 +44,7 @@ class App extends React.Component {
                             <Route path="/about" component={NotFound} />
                             <Route path="/login" component={NotFound} />
                             <Route path="/admin" component={AdminContainer} />
-                            <Route path="/admin/posts" component={AdminPostsContainer} />
+                            <Route path="/admin-posts" component={AdminPostsContainer} />
                             <Route path="/admin/projects" component={AdminProjectsContainer} />
                             <Route path="/admin/skills" component={AdminSkillsContainer} />
                             <Route path="/admin/resources" component={AdminResourcesContainer} />
